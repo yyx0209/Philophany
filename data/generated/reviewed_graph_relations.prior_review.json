@@ -1,0 +1,733 @@
+{
+  "metadata": {
+    "source": "OpenRouter local candidate review",
+    "model": "openai/gpt-5.5",
+    "generatedAt": "2026-05-18T15:28:49Z",
+    "inputFile": "/Users/xyy/Desktop/Data/Philophany/data/generated/local_graph_candidates.json",
+    "candidateCount": 27,
+    "acceptedCount": 21,
+    "needsHumanConfirmation": true
+  },
+  "reviews": [
+    {
+      "source": "plato",
+      "target": "socrates",
+      "localScore": 0.86,
+      "qualityTier": "strong_candidate",
+      "localEvidence": [
+        "知识论",
+        "政治",
+        "真理",
+        "知识",
+        "道德"
+      ],
+      "decision": "revise",
+      "proposedRelation": {
+        "type": "influence",
+        "weight": 0.95,
+        "reason": "苏格拉底的诘问法和德性追问为柏拉图的对话写作与理念论问题提供出发点，能让圆桌讨论从追问方法转向形而上学体系的生成。"
+      },
+      "confidence": 0.95,
+      "llmReason": "候选关系成立但方向应改为苏格拉底影响柏拉图，因为历史师承和思想出发点都很明确。",
+      "evidenceBasis": [
+        "relation_prior",
+        "sourceCard.influencedBy",
+        "wikipediaSummary",
+        "coreConcepts",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "aristotle",
+      "target": "plato",
+      "localScore": 0.84,
+      "qualityTier": "strong_candidate",
+      "localEvidence": [
+        "巴门尼德",
+        "苏格拉底",
+        "赫拉克利特",
+        "政治",
+        "真理",
+        "知识",
+        "道德"
+      ],
+      "decision": "revise",
+      "proposedRelation": {
+        "type": "influence",
+        "weight": 0.94,
+        "reason": "柏拉图学院和理念论问题构成亚里士多德形式、实体与目的论讨论的关键背景，能让圆桌呈现继承与反驳并存的师承关系。"
+      },
+      "confidence": 0.94,
+      "llmReason": "影响关系很强，但方向应为柏拉图影响亚里士多德，而不是亚里士多德影响柏拉图。",
+      "evidenceBasis": [
+        "relation_prior",
+        "sourceCard.influencedBy",
+        "wikipediaSummary",
+        "coreConcepts",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "hume",
+      "target": "kant",
+      "localScore": 0.84,
+      "qualityTier": "strong_candidate",
+      "localEvidence": [
+        "啟蒙時代",
+        "形而上学",
+        "知识论",
+        "喬治·伯克利",
+        "真理",
+        "知识",
+        "行动",
+        "道德"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "influence",
+        "weight": 0.94,
+        "reason": "休谟对因果性和经验确定性的怀疑直接刺激康德重构先验知识论，能让圆桌聚焦经验主义挑战如何催生批判哲学。"
+      },
+      "confidence": 0.95,
+      "llmReason": "休谟对康德的历史影响有明确谱系依据，且核心问题集中在因果性、经验和理性限度。",
+      "evidenceBasis": [
+        "relation_prior",
+        "targetCard.influencedBy",
+        "wikipediaExtract",
+        "coreConcepts",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "hegel",
+      "target": "kant",
+      "localScore": 0.82,
+      "qualityTier": "strong_candidate",
+      "localEvidence": [
+        "德国唯心主义",
+        "真理",
+        "知识",
+        "自由",
+        "行动"
+      ],
+      "decision": "revise",
+      "proposedRelation": {
+        "type": "influence",
+        "weight": 0.9,
+        "reason": "康德的先验哲学、自由与理性限度问题构成黑格尔德国唯心主义体系的关键前提，能让圆桌讨论从批判哲学过渡到整体性辩证体系。"
+      },
+      "confidence": 0.9,
+      "llmReason": "候选有强历史依据，但影响方向应为康德影响黑格尔。",
+      "evidenceBasis": [
+        "relation_prior",
+        "sourceCard.influencedBy",
+        "movement",
+        "coreConcepts",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "confucius",
+      "target": "wang-yangming",
+      "localScore": 0.8,
+      "qualityTier": "strong_candidate",
+      "localEvidence": [
+        "意义",
+        "政治",
+        "知识",
+        "行动",
+        "道德"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "affinity",
+        "weight": 0.84,
+        "reason": "孔子的修身仁礼传统与王阳明的致良知和知行合一共同围绕道德实践如何成就人格展开，能让圆桌比较儒家内部从礼到心的实践路径。"
+      },
+      "confidence": 0.86,
+      "llmReason": "这不是直接师承影响，而是儒家内部围绕修身、道德知识与实践统一的清晰亲缘关系。",
+      "evidenceBasis": [
+        "relation_prior",
+        "coreConcepts",
+        "summary",
+        "tradition",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "confucius",
+      "target": "zhuangzi",
+      "localScore": 0.78,
+      "qualityTier": "strong_candidate",
+      "localEvidence": [
+        "意义",
+        "政治"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.9,
+        "reason": "孔子以仁礼修身连接个人德性与政治秩序，庄子则怀疑礼法名分并主张自然逍遥，能让圆桌展开儒道关于治理与自由的核心冲突。"
+      },
+      "confidence": 0.91,
+      "llmReason": "二者在礼法、政治秩序、自然自由和道德规范普遍性上存在明确的同题冲突。",
+      "evidenceBasis": [
+        "relation_prior",
+        "stance_opposition",
+        "coreConcepts",
+        "summary",
+        "wikipediaExtract"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "kant",
+      "target": "nietzsche",
+      "localScore": 0.78,
+      "qualityTier": "strong_candidate",
+      "localEvidence": [
+        "意义",
+        "真理",
+        "自由",
+        "道德"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.86,
+        "reason": "康德的普遍义务论和理性自律与尼采对普遍道德及理性支配的谱系式怀疑形成正面冲突，能让圆桌集中辩论道德是否需要普遍根据。"
+      },
+      "confidence": 0.88,
+      "llmReason": "二者围绕道德普遍性、理性权威和欲望生命评价有明确张力。",
+      "evidenceBasis": [
+        "relation_prior",
+        "stance_opposition",
+        "coreConcepts",
+        "summary",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "nietzsche",
+      "target": "plato",
+      "localScore": 0.78,
+      "qualityTier": "strong_candidate",
+      "localEvidence": [
+        "赫拉克利特",
+        "意义",
+        "真理",
+        "道德"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.88,
+        "reason": "柏拉图以理念和至善奠定超感性真理与德性秩序，尼采则批判这类超越世界和普遍道德，能让圆桌呈现西方形而上学根基与其现代反叛。"
+      },
+      "confidence": 0.9,
+      "llmReason": "尼采与柏拉图在真理、价值和欲望评价上构成经典哲学张力，批判性关系应归入 tension。",
+      "evidenceBasis": [
+        "relation_prior",
+        "stance_opposition",
+        "coreConcepts",
+        "summary",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "hegel",
+      "target": "nietzsche",
+      "localScore": 0.76,
+      "qualityTier": "strong_candidate",
+      "localEvidence": [
+        "赫拉克利特",
+        "真理",
+        "自由"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.86,
+        "reason": "黑格尔把自由与真理置于理性历史和客观精神的展开中，而尼采以谱系批判和价值重估质疑这种历史理性与普遍规范。"
+      },
+      "confidence": 0.88,
+      "llmReason": "二者围绕历史是否具有理性结构、价值是否可由普遍精神奠基形成清晰冲突，能显著推动圆桌辩论。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "stanceRelationHint",
+        "relation_prior",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "kant",
+      "target": "sartre",
+      "localScore": 0.74,
+      "qualityTier": "strong_candidate",
+      "localEvidence": [
+        "伦理学",
+        "知识论",
+        "意义",
+        "自由",
+        "行动",
+        "道德"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.81,
+        "reason": "康德将自由理解为服从普遍自律法则的理性能力，萨特则强调无预设本质中的处境化选择与个人责任。"
+      },
+      "confidence": 0.82,
+      "llmReason": "二者围绕自由、责任和道德规范的根据有明确分歧，适合形成伦理圆桌中的核心争点。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "problemAxes",
+        "relation_prior",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "wang-yangming",
+      "target": "zhuangzi",
+      "localScore": 0.72,
+      "qualityTier": "medium_candidate",
+      "localEvidence": [
+        "意义",
+        "政治"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.78,
+        "reason": "王阳明以良知和知行合一强调道德实践担当，庄子则以齐物逍遥和反圣智消解人为规范的执著。"
+      },
+      "confidence": 0.79,
+      "llmReason": "二者围绕修身行动究竟应承担道德规范还是摆脱名教成见形成清楚张力，能丰富中式哲学圆桌。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "stanceRelationHint",
+        "relation_prior"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "aristotle",
+      "target": "nietzsche",
+      "localScore": 0.665,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "赫拉克利特",
+        "真理",
+        "道德"
+      ],
+      "decision": "reject",
+      "proposedRelation": null,
+      "confidence": 0.66,
+      "llmReason": "虽然二者都涉及道德和德性问题，但该候选主要依赖宽泛主题与立场差异，未足以支撑弱候选进入审核台。",
+      "evidenceBasis": [
+        "qualityTier",
+        "relationEvidenceScore",
+        "problemAxes",
+        "sharedEvidence"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "nietzsche",
+      "target": "socrates",
+      "localScore": 0.661,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "真理",
+        "道德"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.9,
+        "reason": "尼采对苏格拉底式理性主义和道德化知识的批判，与苏格拉底把德性、知识和自我审查相连的立场构成直接张力。"
+      },
+      "confidence": 0.91,
+      "llmReason": "尽管本地证据分低，尼采与苏格拉底在理性、生命和德性问题上的批判性对峙非常明确，值得进入圆桌辩论。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "stanceRelationHint",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "confucius",
+      "target": "nietzsche",
+      "localScore": 0.653,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "意义",
+        "道德"
+      ],
+      "decision": "reject",
+      "proposedRelation": null,
+      "confidence": 0.69,
+      "llmReason": "孔子与尼采可被构造成礼法伦理和价值重估的对比，但当前证据主要停留在道德、意义等大词和抽象立场差异上。",
+      "evidenceBasis": [
+        "qualityTier",
+        "relationEvidenceScore",
+        "problemAxes",
+        "sharedEvidence"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "hegel",
+      "target": "zhuangzi",
+      "localScore": 0.571,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "政治",
+        "自由"
+      ],
+      "decision": "revise",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.72,
+        "reason": "黑格尔把自由落实为社会制度中的理性自我实现，庄子则以无为、齐物和反圣智怀疑制度化治理与知识秩序。"
+      },
+      "confidence": 0.74,
+      "llmReason": "原候选分数偏弱，但二者在自由、政治秩序和理性治理问题上的对立足够清楚，可作为经改写后的圆桌张力。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "stanceRelationHint",
+        "problemAxes"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "confucius",
+      "target": "sartre",
+      "localScore": 0.561,
+      "qualityTier": "medium_candidate",
+      "localEvidence": [
+        "伦理学",
+        "意义",
+        "政治",
+        "行动",
+        "道德"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.76,
+        "reason": "孔子将自我实现置于仁礼、修身和关系秩序中，萨特则从无预设本质的自由选择出发理解责任与行动。"
+      },
+      "confidence": 0.77,
+      "llmReason": "二者围绕自我是由角色伦理塑造还是由自由选择承担有明确张力，能形成跨传统伦理辩论。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "problemAxes",
+        "stanceRelationHint",
+        "sharedEvidence"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "kant",
+      "target": "socrates",
+      "localScore": 0.528,
+      "qualityTier": "medium_candidate",
+      "localEvidence": [
+        "伦理学",
+        "知识论",
+        "真理",
+        "知识",
+        "行动",
+        "道德"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "affinity",
+        "weight": 0.72,
+        "reason": "康德的理性自律伦理与苏格拉底的德性追问都把正当生活系于理性的自我审查，可在圆桌中共同追问知识与道德如何相连。"
+      },
+      "confidence": 0.76,
+      "llmReason": "二者并非只是共享道德和知识等大词，而是在理性、德性与自我审查的结构上有可互补的讨论焦点。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "problemAxes",
+        "stanceRelationHint"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "buddha",
+      "target": "zhuangzi",
+      "localScore": 0.515,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "意义",
+        "欲望",
+        "死亡"
+      ],
+      "decision": "revise",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.64,
+        "reason": "佛陀以苦、无执与八正道提出规范性的解脱道路，而庄子更怀疑圣智名教并偏向逍遥无为，这能让圆桌围绕解脱是否需要修行规范展开分歧。"
+      },
+      "confidence": 0.72,
+      "llmReason": "本地以道德普遍主义对立为理由过窄，但二者在欲望、死亡与解脱方式上的规范道路与自然逍遥之差异具有讨论价值。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "problemAxes",
+        "stanceRelationHint",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "plato",
+      "target": "zhuangzi",
+      "localScore": 0.508,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "意义",
+        "政治"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.78,
+        "reason": "柏拉图把知识、善与城邦秩序系于理性把握的理念，而庄子怀疑圣智和以知识治理天下，这能在圆桌中形成关于真理能否奠定政治秩序的强张力。"
+      },
+      "confidence": 0.8,
+      "llmReason": "二者围绕理性知识、善与政治秩序是否应被制度化存在清晰冲突，弱候选分数低但哲学结构较明确。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "problemAxes",
+        "stanceRelationHint"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "aristotle",
+      "target": "zhuangzi",
+      "localScore": 0.492,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "政治"
+      ],
+      "decision": "reject",
+      "proposedRelation": null,
+      "confidence": 0.69,
+      "llmReason": "该候选主要只落在政治这一宽泛轴线上，材料不足以稳定支持亚里士多德目的论德性伦理与庄子无为齐物之间的具体张力边。",
+      "evidenceBasis": [
+        "problemAxes",
+        "sharedEvidence",
+        "relationEvidenceScore"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "hegel",
+      "target": "sartre",
+      "localScore": 0.488,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "政治",
+        "自由",
+        "行动"
+      ],
+      "decision": "revise",
+      "proposedRelation": {
+        "type": "influence",
+        "weight": 0.84,
+        "reason": "萨特的角色卡明确列出黑格尔为影响来源，使二者关于自由、他人与社会历史处境的讨论能在圆桌中形成有谱系依据的对话。"
+      },
+      "confidence": 0.87,
+      "llmReason": "这里不应仅按个人与集体立场对立处理，因为目标卡已给出黑格尔对萨特的明确影响依据。",
+      "evidenceBasis": [
+        "targetCard.influencedBy",
+        "coreConcepts",
+        "summary",
+        "sharedEvidence"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "kant",
+      "target": "plato",
+      "localScore": 0.46,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "知识论",
+        "意义",
+        "真理",
+        "知识",
+        "道德"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "affinity",
+        "weight": 0.75,
+        "reason": "康德的先验条件与道德普遍主义可同柏拉图的理念论和至善形成互补讨论，帮助圆桌比较理性如何支撑知识与规范性。"
+      },
+      "confidence": 0.77,
+      "llmReason": "二者在理性、知识条件和道德规范性的结构上有明确亲缘，适合作为 affinity 而非历史影响边。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "problemAxes",
+        "stanceRelationHint"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "confucius",
+      "target": "socrates",
+      "localScore": 0.422,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "伦理学",
+        "政治",
+        "知识",
+        "行动",
+        "道德"
+      ],
+      "decision": "accept",
+      "proposedRelation": {
+        "type": "affinity",
+        "weight": 0.72,
+        "reason": "孔子的修身、学习与仁礼实践同苏格拉底的德性追问和公共诘问相互呼应，能让圆桌比较伦理生活如何通过教育与自我审查形成。"
+      },
+      "confidence": 0.74,
+      "llmReason": "虽然候选为弱档，但二者都把哲学实践落实为德性养成、对话教育与正当生活的追问，关系不只是词面重合。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "problemAxes",
+        "sharedEvidence",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "sartre",
+      "target": "socrates",
+      "localScore": 0.414,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "伦理学",
+        "知识论",
+        "政治",
+        "行动",
+        "道德"
+      ],
+      "decision": "reject",
+      "proposedRelation": null,
+      "confidence": 0.71,
+      "llmReason": "该候选主要依赖伦理、政治、行动等宽泛共享主题，缺少足够清晰的共同问题结构来支持萨特与苏格拉底的 affinity 边。",
+      "evidenceBasis": [
+        "problemAxes",
+        "stanceRelationHint",
+        "sharedEvidence",
+        "relationEvidenceScore"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "aristotle",
+      "target": "hegel",
+      "localScore": 0.381,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "赫拉克利特",
+        "政治",
+        "真理",
+        "知识",
+        "行动"
+      ],
+      "decision": "reject",
+      "proposedRelation": null,
+      "confidence": 0.68,
+      "llmReason": "虽然本地证据偏弱，但二者都以理性结构理解自然、伦理与政治秩序，足以支持一条适度的亲和关系。 weak_candidate 需要至少 0.72 的 LLM confidence。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "problemAxes",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "hegel",
+      "target": "plato",
+      "localScore": 0.378,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "赫拉克利特",
+        "政治",
+        "真理",
+        "知识"
+      ],
+      "decision": "reject",
+      "proposedRelation": null,
+      "confidence": 0.7,
+      "llmReason": "二者都把真理、知识与政治秩序置于理性整体中理解，虽有历史化与超越理念之别，但作为亲和边有圆桌价值。 weak_candidate 需要至少 0.72 的 LLM confidence。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "problemAxes",
+        "stanceRelationHint",
+        "philosophical common knowledge"
+      ],
+      "humanDecision": "pending"
+    },
+    {
+      "source": "hume",
+      "target": "socrates",
+      "localScore": 0.362,
+      "qualityTier": "weak_candidate",
+      "localEvidence": [
+        "知识论",
+        "政治",
+        "真理",
+        "知识",
+        "行动",
+        "道德"
+      ],
+      "decision": "revise",
+      "proposedRelation": {
+        "type": "tension",
+        "weight": 0.66,
+        "reason": "休谟把道德判断和行动动力奠基于情感与同情，而苏格拉底式伦理更强调德性、知识和理性审查之间的关联。"
+      },
+      "confidence": 0.72,
+      "llmReason": "候选不宜作为亲和关系，但二者围绕理性知识是否能奠定德性与行动有清晰冲突，适合改为张力边。",
+      "evidenceBasis": [
+        "coreConcepts",
+        "summary",
+        "stance",
+        "problemAxes"
+      ],
+      "humanDecision": "pending"
+    }
+  ]
+}

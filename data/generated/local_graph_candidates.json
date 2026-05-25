@@ -1,0 +1,900 @@
+{
+  "metadata": {
+    "source": "local-networkx-embeddings",
+    "generatedAt": "2026-05-19T13:55:42Z",
+    "needsReview": true,
+    "embeddingBackend": "sentence-transformers",
+    "embeddingModel": "BAAI/bge-m3",
+    "philosophers": 13,
+    "graphNodes": 191,
+    "graphEdges": 281,
+    "wikipediaCache": "/Users/xyy/Desktop/Data/Philophany/data/generated/wikipedia_philosophy_extracts.json",
+    "cards": "/Users/xyy/Desktop/Data/Philophany/data/generated/reviewed_philosopher_cards.json",
+    "existingRelations": "",
+    "relationPriors": "/Users/xyy/Desktop/Data/Philophany/data/seeds/relation_priors.json",
+    "relationPriorCount": 12,
+    "wikipediaExtracts": 13,
+    "wikipediaSections": 41,
+    "minScore": 0.34,
+    "maxPerPhilosopher": 6,
+    "scoringWeights": {
+      "semantic_recall": 0.12,
+      "graph_proximity": 0.28,
+      "structured_evidence": 0.3,
+      "problem_axis": 0.2,
+      "stance_relation": 0.1
+    },
+    "candidateCount": 28,
+    "candidateSourceKinds": [
+      "relation_prior",
+      "shared_evidence",
+      "stance_opposition",
+      "wikidata_influenced_by"
+    ],
+    "note": "Local relation candidates. retrievalScore is ranking only; semantic similarity is not relation evidence."
+  },
+  "candidateRelations": [
+    {
+      "source": "socrates",
+      "target": "plato",
+      "suggestedType": "influence",
+      "candidateSources": [
+        "shared_evidence",
+        "relation_prior",
+        "wikidata_influenced_by"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold",
+        "relation_prior: 苏格拉底的诘问法和德性问题构成柏拉图哲学写作和理念论展开的重要出发点。",
+        "wikidata_influenced_by: Wikidata P737: 柏拉图 influenced by 苏格拉底; mapped as 苏格拉底 -> 柏拉图."
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.86,
+      "relationEvidenceScore": 0.96,
+      "semanticSimilarityScore": 0.747,
+      "graphProximityScore": 0.284,
+      "structuredEvidenceScore": 0.425,
+      "problemAxisScore": 0.471,
+      "problemAxes": [
+        "知识论",
+        "政治",
+        "真理",
+        "知识"
+      ],
+      "stanceRelationHint": "same_problem_aligned_positions",
+      "sharedEvidence": [
+        "知识论",
+        "政治",
+        "真理",
+        "知识",
+        "道德"
+      ]
+    },
+    {
+      "source": "plato",
+      "target": "aristotle",
+      "suggestedType": "influence",
+      "candidateSources": [
+        "shared_evidence",
+        "relation_prior",
+        "wikidata_influenced_by"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold",
+        "relation_prior: 亚里士多德在柏拉图学院传统中形成思想，并在形式、实体和目的论上继承又反驳柏拉图。",
+        "wikidata_influenced_by: Wikidata P737: 亚里士多德 influenced by 柏拉图; mapped as 柏拉图 -> 亚里士多德."
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.84,
+      "relationEvidenceScore": 0.94,
+      "semanticSimilarityScore": 0.768,
+      "graphProximityScore": 0.486,
+      "structuredEvidenceScore": 0.601,
+      "problemAxisScore": 0.229,
+      "problemAxes": [
+        "政治",
+        "真理",
+        "知识"
+      ],
+      "stanceRelationHint": "same_problem_aligned_positions",
+      "sharedEvidence": [
+        "巴门尼德",
+        "苏格拉底",
+        "赫拉克利特",
+        "政治",
+        "真理",
+        "知识",
+        "道德"
+      ]
+    },
+    {
+      "source": "hume",
+      "target": "kant",
+      "suggestedType": "influence",
+      "candidateSources": [
+        "shared_evidence",
+        "relation_prior",
+        "wikidata_influenced_by"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold",
+        "relation_prior: 休谟的经验主义和因果怀疑是康德重构知识与理性限度的重要刺激。",
+        "wikidata_influenced_by: Wikidata P737: 伊曼努尔·康德 influenced by 大卫·休谟; mapped as 大卫·休谟 -> 伊曼努尔·康德."
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.84,
+      "relationEvidenceScore": 0.94,
+      "semanticSimilarityScore": 0.642,
+      "graphProximityScore": 0.517,
+      "structuredEvidenceScore": 0.795,
+      "problemAxisScore": 0.572,
+      "problemAxes": [
+        "形而上学",
+        "知识论",
+        "真理",
+        "知识"
+      ],
+      "stanceRelationHint": "no_clear_stance_signal",
+      "sharedEvidence": [
+        "啟蒙時代",
+        "形而上学",
+        "知识论",
+        "喬治·伯克利",
+        "真理",
+        "知识",
+        "行动",
+        "道德"
+      ]
+    },
+    {
+      "source": "confucius",
+      "target": "wang-yangming",
+      "suggestedType": "influence",
+      "candidateSources": [
+        "relation_prior"
+      ],
+      "candidateNotes": [
+        "relation_prior: 孔子作为儒家经典传统的源头之一，对王阳明心学关于修身、良知、知行与道德实践的问题框架构成历史思想影响；这里不是直接师承，而是传统谱系中的深层影响。"
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.82,
+      "relationEvidenceScore": 0.9,
+      "semanticSimilarityScore": 0.665,
+      "graphProximityScore": 0.152,
+      "structuredEvidenceScore": 0.22,
+      "problemAxisScore": 0.229,
+      "problemAxes": [
+        "意义",
+        "政治",
+        "知识"
+      ],
+      "stanceRelationHint": "same_problem_aligned_positions",
+      "sharedEvidence": [
+        "意义",
+        "政治",
+        "知识",
+        "行动",
+        "道德"
+      ]
+    },
+    {
+      "source": "kant",
+      "target": "hegel",
+      "suggestedType": "influence",
+      "candidateSources": [
+        "shared_evidence",
+        "relation_prior",
+        "wikidata_influenced_by"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold",
+        "relation_prior: 康德的先验哲学和自由自律问题构成黑格尔德国唯心主义体系的关键背景。",
+        "wikidata_influenced_by: Wikidata P737: 格奥尔格·威廉·弗里德里希·黑格尔 influenced by 伊曼努尔·康德; mapped as 伊曼努尔·康德 -> 格奥尔格·威廉·弗里德里希·黑格尔."
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.82,
+      "relationEvidenceScore": 0.9,
+      "semanticSimilarityScore": 0.672,
+      "graphProximityScore": 0.349,
+      "structuredEvidenceScore": 0.43,
+      "problemAxisScore": 0.177,
+      "problemAxes": [
+        "真理",
+        "知识"
+      ],
+      "stanceRelationHint": "same_problem_aligned_positions",
+      "sharedEvidence": [
+        "德国唯心主义",
+        "真理",
+        "知识",
+        "自由",
+        "行动"
+      ]
+    },
+    {
+      "source": "socrates",
+      "target": "aristotle",
+      "suggestedType": "influence",
+      "candidateSources": [
+        "wikidata_influenced_by"
+      ],
+      "candidateNotes": [
+        "wikidata_influenced_by_type_note: suggested type changed from affinity to influence",
+        "wikidata_influenced_by: Wikidata P737: 亚里士多德 influenced by 苏格拉底; mapped as 苏格拉底 -> 亚里士多德."
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.78,
+      "relationEvidenceScore": 0.86,
+      "semanticSimilarityScore": 0.692,
+      "graphProximityScore": 0.169,
+      "structuredEvidenceScore": 0.22,
+      "problemAxisScore": 0.229,
+      "problemAxes": [
+        "政治",
+        "真理",
+        "知识"
+      ],
+      "stanceRelationHint": "same_problem_aligned_positions",
+      "sharedEvidence": [
+        "政治",
+        "真理",
+        "知识",
+        "行动",
+        "道德"
+      ]
+    },
+    {
+      "source": "confucius",
+      "target": "zhuangzi",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "stance_opposition",
+        "relation_prior"
+      ],
+      "candidateNotes": [
+        "stance_opposition: opposed stance dimensions individualCollective:opposed, moralUniversalism:opposed",
+        "relation_prior: 孔子的礼法修身与庄子的自然逍遥、反圣智形成儒道之间的核心张力。"
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.78,
+      "relationEvidenceScore": 0.9,
+      "semanticSimilarityScore": 0.739,
+      "graphProximityScore": 0.066,
+      "structuredEvidenceScore": 0.157,
+      "problemAxisScore": 0.177,
+      "problemAxes": [
+        "意义",
+        "政治"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "意义",
+        "政治"
+      ]
+    },
+    {
+      "source": "hegel",
+      "target": "sartre",
+      "suggestedType": "influence",
+      "candidateSources": [
+        "stance_opposition",
+        "wikidata_influenced_by"
+      ],
+      "candidateNotes": [
+        "stance_opposition: opposed stance dimensions individualCollective:opposed",
+        "wikidata_influenced_by_type_note: suggested type changed from tension to influence",
+        "wikidata_influenced_by: Wikidata P737: 让-保罗·萨特 influenced by 格奥尔格·威廉·弗里德里希·黑格尔; mapped as 格奥尔格·威廉·弗里德里希·黑格尔 -> 让-保罗·萨特."
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.78,
+      "relationEvidenceScore": 0.86,
+      "semanticSimilarityScore": 0.535,
+      "graphProximityScore": 0.05,
+      "structuredEvidenceScore": 0.137,
+      "problemAxisScore": 0.119,
+      "problemAxes": [
+        "政治"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "政治",
+        "自由",
+        "行动"
+      ]
+    },
+    {
+      "source": "kant",
+      "target": "nietzsche",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "stance_opposition",
+        "relation_prior"
+      ],
+      "candidateNotes": [
+        "stance_opposition: opposed stance dimensions desireDiscipline:opposed, moralUniversalism:opposed, reasonInstinct:opposed",
+        "relation_prior: 康德的普遍义务论与尼采对普遍道德的谱系式怀疑形成现代道德哲学中的强张力。"
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.78,
+      "relationEvidenceScore": 0.86,
+      "semanticSimilarityScore": 0.566,
+      "graphProximityScore": 0.081,
+      "structuredEvidenceScore": 0.18,
+      "problemAxisScore": 0.177,
+      "problemAxes": [
+        "意义",
+        "真理"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "意义",
+        "真理",
+        "自由",
+        "道德"
+      ]
+    },
+    {
+      "source": "nietzsche",
+      "target": "plato",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "shared_evidence",
+        "stance_opposition",
+        "relation_prior"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold",
+        "stance_opposition: opposed stance dimensions desireDiscipline:opposed, moralUniversalism:opposed, reasonInstinct:opposed",
+        "relation_prior: 柏拉图以理念和至善奠定真理与德性，尼采则批判超感性真理和普遍道德。"
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.78,
+      "relationEvidenceScore": 0.88,
+      "semanticSimilarityScore": 0.513,
+      "graphProximityScore": 0.225,
+      "structuredEvidenceScore": 0.389,
+      "problemAxisScore": 0.177,
+      "problemAxes": [
+        "意义",
+        "真理"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "赫拉克利特",
+        "意义",
+        "真理",
+        "道德"
+      ]
+    },
+    {
+      "source": "hegel",
+      "target": "nietzsche",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "shared_evidence",
+        "stance_opposition",
+        "relation_prior"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold",
+        "stance_opposition: opposed stance dimensions individualCollective:opposed, moralUniversalism:opposed, reasonInstinct:opposed",
+        "relation_prior: 黑格尔的理性历史和客观精神与尼采的谱系批判、价值重估形成关于历史理性的张力。"
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.76,
+      "relationEvidenceScore": 0.84,
+      "semanticSimilarityScore": 0.591,
+      "graphProximityScore": 0.206,
+      "structuredEvidenceScore": 0.357,
+      "problemAxisScore": 0.119,
+      "problemAxes": [
+        "真理"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "赫拉克利特",
+        "真理",
+        "自由"
+      ]
+    },
+    {
+      "source": "buddha",
+      "target": "confucius",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "relation_prior"
+      ],
+      "candidateNotes": [
+        "relation_prior: 佛陀关于苦、无我、出离与解脱的取向，和孔子关于仁礼、家庭伦理、政治秩序与入世修身的取向形成跨传统张力。"
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.74,
+      "relationEvidenceScore": 0.82,
+      "semanticSimilarityScore": 0.59,
+      "graphProximityScore": 0.094,
+      "structuredEvidenceScore": 0.137,
+      "problemAxisScore": 0.119,
+      "problemAxes": [
+        "意义"
+      ],
+      "stanceRelationHint": "same_problem_aligned_positions",
+      "sharedEvidence": [
+        "意义",
+        "行动",
+        "道德"
+      ]
+    },
+    {
+      "source": "kant",
+      "target": "sartre",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "shared_evidence",
+        "relation_prior"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold",
+        "relation_prior: 康德把自由系于普遍自律法则，萨特强调无预设本质中的处境化选择与责任。"
+      ],
+      "qualityTier": "strong_candidate",
+      "retrievalScore": 0.74,
+      "relationEvidenceScore": 0.82,
+      "semanticSimilarityScore": 0.538,
+      "graphProximityScore": 0.317,
+      "structuredEvidenceScore": 0.502,
+      "problemAxisScore": 0.546,
+      "problemAxes": [
+        "伦理学",
+        "知识论",
+        "意义"
+      ],
+      "stanceRelationHint": "no_clear_stance_signal",
+      "sharedEvidence": [
+        "伦理学",
+        "知识论",
+        "意义",
+        "自由",
+        "行动",
+        "道德"
+      ]
+    },
+    {
+      "source": "wang-yangming",
+      "target": "zhuangzi",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "stance_opposition",
+        "relation_prior"
+      ],
+      "candidateNotes": [
+        "stance_opposition: opposed stance dimensions moralUniversalism:opposed",
+        "relation_prior: 庄子的齐物逍遥与王阳明的良知道德实践可形成自然解放与道德担当之间的张力。"
+      ],
+      "qualityTier": "medium_candidate",
+      "retrievalScore": 0.72,
+      "relationEvidenceScore": 0.78,
+      "semanticSimilarityScore": 0.578,
+      "graphProximityScore": 0.067,
+      "structuredEvidenceScore": 0.157,
+      "problemAxisScore": 0.177,
+      "problemAxes": [
+        "意义",
+        "政治"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "意义",
+        "政治"
+      ]
+    },
+    {
+      "source": "aristotle",
+      "target": "nietzsche",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "shared_evidence",
+        "stance_opposition"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold",
+        "stance_opposition: opposed stance dimensions desireDiscipline:opposed, moralUniversalism:opposed, reasonInstinct:opposed"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.665,
+      "relationEvidenceScore": 0.326,
+      "semanticSimilarityScore": 0.52,
+      "graphProximityScore": 0.207,
+      "structuredEvidenceScore": 0.357,
+      "problemAxisScore": 0.119,
+      "problemAxes": [
+        "真理"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "赫拉克利特",
+        "真理",
+        "道德"
+      ]
+    },
+    {
+      "source": "nietzsche",
+      "target": "socrates",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "stance_opposition"
+      ],
+      "candidateNotes": [
+        "stance_opposition: opposed stance dimensions desireDiscipline:opposed, moralUniversalism:opposed, reasonInstinct:opposed"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.661,
+      "relationEvidenceScore": 0.195,
+      "semanticSimilarityScore": 0.494,
+      "graphProximityScore": 0.043,
+      "structuredEvidenceScore": 0.125,
+      "problemAxisScore": 0.119,
+      "problemAxes": [
+        "真理"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "真理",
+        "道德"
+      ]
+    },
+    {
+      "source": "confucius",
+      "target": "nietzsche",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "stance_opposition"
+      ],
+      "candidateNotes": [
+        "stance_opposition: opposed stance dimensions desireDiscipline:opposed, individualCollective:opposed, moralUniversalism:opposed"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.653,
+      "relationEvidenceScore": 0.194,
+      "semanticSimilarityScore": 0.445,
+      "graphProximityScore": 0.041,
+      "structuredEvidenceScore": 0.125,
+      "problemAxisScore": 0.119,
+      "problemAxes": [
+        "意义"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "意义",
+        "道德"
+      ]
+    },
+    {
+      "source": "hegel",
+      "target": "zhuangzi",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "stance_opposition"
+      ],
+      "candidateNotes": [
+        "stance_opposition: opposed stance dimensions individualCollective:opposed, moralUniversalism:opposed"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.571,
+      "relationEvidenceScore": 0.189,
+      "semanticSimilarityScore": 0.491,
+      "graphProximityScore": 0.083,
+      "structuredEvidenceScore": 0.125,
+      "problemAxisScore": 0.119,
+      "problemAxes": [
+        "政治"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "政治",
+        "自由"
+      ]
+    },
+    {
+      "source": "confucius",
+      "target": "sartre",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "shared_evidence",
+        "stance_opposition"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold",
+        "stance_opposition: opposed stance dimensions individualCollective:opposed"
+      ],
+      "qualityTier": "medium_candidate",
+      "retrievalScore": 0.561,
+      "relationEvidenceScore": 0.388,
+      "semanticSimilarityScore": 0.433,
+      "graphProximityScore": 0.238,
+      "structuredEvidenceScore": 0.404,
+      "problemAxisScore": 0.437,
+      "problemAxes": [
+        "伦理学",
+        "意义",
+        "政治"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "伦理学",
+        "意义",
+        "政治",
+        "行动",
+        "道德"
+      ]
+    },
+    {
+      "source": "kant",
+      "target": "socrates",
+      "suggestedType": "affinity",
+      "candidateSources": [
+        "shared_evidence"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold"
+      ],
+      "qualityTier": "medium_candidate",
+      "retrievalScore": 0.528,
+      "relationEvidenceScore": 0.515,
+      "semanticSimilarityScore": 0.624,
+      "graphProximityScore": 0.369,
+      "structuredEvidenceScore": 0.518,
+      "problemAxisScore": 0.572,
+      "problemAxes": [
+        "伦理学",
+        "知识论",
+        "真理",
+        "知识"
+      ],
+      "stanceRelationHint": "same_problem_aligned_positions",
+      "sharedEvidence": [
+        "伦理学",
+        "知识论",
+        "真理",
+        "知识",
+        "行动",
+        "道德"
+      ]
+    },
+    {
+      "source": "buddha",
+      "target": "zhuangzi",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "stance_opposition"
+      ],
+      "candidateNotes": [
+        "stance_opposition: opposed stance dimensions moralUniversalism:opposed"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.515,
+      "relationEvidenceScore": 0.24,
+      "semanticSimilarityScore": 0.511,
+      "graphProximityScore": 0.144,
+      "structuredEvidenceScore": 0.198,
+      "problemAxisScore": 0.229,
+      "problemAxes": [
+        "意义",
+        "欲望",
+        "死亡"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "意义",
+        "欲望",
+        "死亡"
+      ]
+    },
+    {
+      "source": "plato",
+      "target": "zhuangzi",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "stance_opposition"
+      ],
+      "candidateNotes": [
+        "stance_opposition: opposed stance dimensions moralUniversalism:opposed"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.508,
+      "relationEvidenceScore": 0.189,
+      "semanticSimilarityScore": 0.554,
+      "graphProximityScore": 0.064,
+      "structuredEvidenceScore": 0.157,
+      "problemAxisScore": 0.177,
+      "problemAxes": [
+        "意义",
+        "政治"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "意义",
+        "政治"
+      ]
+    },
+    {
+      "source": "aristotle",
+      "target": "zhuangzi",
+      "suggestedType": "tension",
+      "candidateSources": [
+        "stance_opposition"
+      ],
+      "candidateNotes": [
+        "stance_opposition: opposed stance dimensions moralUniversalism:opposed"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.492,
+      "relationEvidenceScore": 0.151,
+      "semanticSimilarityScore": 0.556,
+      "graphProximityScore": 0.033,
+      "structuredEvidenceScore": 0.112,
+      "problemAxisScore": 0.119,
+      "problemAxes": [
+        "政治"
+      ],
+      "stanceRelationHint": "same_problem_opposed_positions",
+      "sharedEvidence": [
+        "政治"
+      ]
+    },
+    {
+      "source": "kant",
+      "target": "plato",
+      "suggestedType": "affinity",
+      "candidateSources": [
+        "shared_evidence"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.46,
+      "relationEvidenceScore": 0.429,
+      "semanticSimilarityScore": 0.686,
+      "graphProximityScore": 0.272,
+      "structuredEvidenceScore": 0.425,
+      "problemAxisScore": 0.471,
+      "problemAxes": [
+        "知识论",
+        "意义",
+        "真理",
+        "知识"
+      ],
+      "stanceRelationHint": "same_problem_aligned_positions",
+      "sharedEvidence": [
+        "知识论",
+        "意义",
+        "真理",
+        "知识",
+        "道德"
+      ]
+    },
+    {
+      "source": "confucius",
+      "target": "socrates",
+      "suggestedType": "affinity",
+      "candidateSources": [
+        "shared_evidence"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.422,
+      "relationEvidenceScore": 0.401,
+      "semanticSimilarityScore": 0.579,
+      "graphProximityScore": 0.28,
+      "structuredEvidenceScore": 0.404,
+      "problemAxisScore": 0.437,
+      "problemAxes": [
+        "伦理学",
+        "政治",
+        "知识"
+      ],
+      "stanceRelationHint": "same_problem_aligned_positions",
+      "sharedEvidence": [
+        "伦理学",
+        "政治",
+        "知识",
+        "行动",
+        "道德"
+      ]
+    },
+    {
+      "source": "sartre",
+      "target": "socrates",
+      "suggestedType": "affinity",
+      "candidateSources": [
+        "shared_evidence"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.414,
+      "relationEvidenceScore": 0.396,
+      "semanticSimilarityScore": 0.541,
+      "graphProximityScore": 0.324,
+      "structuredEvidenceScore": 0.496,
+      "problemAxisScore": 0.546,
+      "problemAxes": [
+        "伦理学",
+        "知识论",
+        "政治"
+      ],
+      "stanceRelationHint": "no_clear_stance_signal",
+      "sharedEvidence": [
+        "伦理学",
+        "知识论",
+        "政治",
+        "行动",
+        "道德"
+      ]
+    },
+    {
+      "source": "aristotle",
+      "target": "hegel",
+      "suggestedType": "affinity",
+      "candidateSources": [
+        "shared_evidence"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.381,
+      "relationEvidenceScore": 0.355,
+      "semanticSimilarityScore": 0.572,
+      "graphProximityScore": 0.267,
+      "structuredEvidenceScore": 0.418,
+      "problemAxisScore": 0.229,
+      "problemAxes": [
+        "政治",
+        "真理",
+        "知识"
+      ],
+      "stanceRelationHint": "same_problem_aligned_positions",
+      "sharedEvidence": [
+        "赫拉克利特",
+        "政治",
+        "真理",
+        "知识",
+        "行动"
+      ]
+    },
+    {
+      "source": "hegel",
+      "target": "plato",
+      "suggestedType": "affinity",
+      "candidateSources": [
+        "shared_evidence"
+      ],
+      "candidateNotes": [
+        "shared_evidence: local graph and embedding retrieval score passed threshold"
+      ],
+      "qualityTier": "weak_candidate",
+      "retrievalScore": 0.378,
+      "relationEvidenceScore": 0.35,
+      "semanticSimilarityScore": 0.576,
+      "graphProximityScore": 0.263,
+      "structuredEvidenceScore": 0.41,
+      "problemAxisScore": 0.229,
+      "problemAxes": [
+        "政治",
+        "真理",
+        "知识"
+      ],
+      "stanceRelationHint": "same_problem_aligned_positions",
+      "sharedEvidence": [
+        "赫拉克利特",
+        "政治",
+        "真理",
+        "知识"
+      ]
+    }
+  ]
+}

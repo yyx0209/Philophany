@@ -1,0 +1,78 @@
+[
+  {
+    "id": "socrates",
+    "name": "苏格拉底",
+    "wikidataId": "Q913",
+    "searchLabel": "Socrates"
+  },
+  {
+    "id": "plato",
+    "name": "柏拉图",
+    "wikidataId": "Q859",
+    "searchLabel": "Plato"
+  },
+  {
+    "id": "aristotle",
+    "name": "亚里士多德",
+    "wikidataId": "Q868",
+    "searchLabel": "Aristotle"
+  },
+  {
+    "id": "zhuangzi",
+    "name": "庄子",
+    "searchLabel": "Zhuang Zhou"
+  },
+  {
+    "id": "confucius",
+    "name": "孔子",
+    "wikidataId": "Q4604",
+    "searchLabel": "Confucius"
+  },
+  {
+    "id": "buddha",
+    "name": "佛陀",
+    "wikidataId": "Q9441",
+    "searchLabel": "Gautama Buddha"
+  },
+  {
+    "id": "hume",
+    "name": "休谟",
+    "wikidataId": "Q37160",
+    "searchLabel": "David Hume"
+  },
+  {
+    "id": "kant",
+    "name": "康德",
+    "wikidataId": "Q9312",
+    "searchLabel": "Immanuel Kant"
+  },
+  {
+    "id": "hegel",
+    "name": "黑格尔",
+    "wikidataId": "Q9235",
+    "searchLabel": "Georg Wilhelm Friedrich Hegel"
+  },
+  {
+    "id": "nietzsche",
+    "name": "尼采",
+    "wikidataId": "Q9358",
+    "searchLabel": "Friedrich Nietzsche"
+  },
+  {
+    "id": "sartre",
+    "name": "萨特",
+    "wikidataId": "Q9364",
+    "searchLabel": "Jean-Paul Sartre"
+  },
+  {
+    "id": "wittgenstein",
+    "name": "维特根斯坦",
+    "wikidataId": "Q9391",
+    "searchLabel": "Ludwig Wittgenstein"
+  },
+  {
+    "id": "wang-yangming",
+    "name": "王阳明",
+    "searchLabel": "Wang Yangming"
+  }
+]

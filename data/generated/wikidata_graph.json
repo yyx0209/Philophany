@@ -1,0 +1,3033 @@
+{
+  "metadata": {
+    "source": "Wikidata",
+    "generatedAt": "2026-05-16T10:23:57Z",
+    "note": "Generated candidate graph. Review before merging into curated app data."
+  },
+  "philosophers": [
+    {
+      "id": "socrates",
+      "seedName": "苏格拉底",
+      "qid": "Q913",
+      "labelZh": "苏格拉底",
+      "labelEn": "Socrates",
+      "descriptionZh": "古希腊哲学家",
+      "descriptionEn": "5th-century BCE Greek philosopher",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E8%8B%8F%E6%A0%BC%E6%8B%89%E5%BA%95",
+        "en": "https://en.wikipedia.org/wiki/Socrates"
+      },
+      "birthDate": "-0470-00-00T00:00:00Z",
+      "deathDate": "-0399-02-15T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q4964182",
+          "labelZh": "哲學家",
+          "labelEn": "philosopher"
+        },
+        {
+          "qid": "Q37226",
+          "labelZh": "教师",
+          "labelEn": "teacher"
+        },
+        {
+          "qid": "Q36180",
+          "labelZh": "作家",
+          "labelEn": "writer"
+        },
+        {
+          "qid": "Q5403434",
+          "labelZh": "伦理学家",
+          "labelEn": "ethicist"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        },
+        {
+          "qid": "Q9471",
+          "labelZh": "知识论",
+          "labelEn": "epistemology"
+        },
+        {
+          "qid": "Q9465",
+          "labelZh": "伦理学",
+          "labelEn": "ethics"
+        }
+      ],
+      "movement": [],
+      "influencedBy": [
+        {
+          "qid": "Q83041",
+          "labelZh": "阿那克萨哥拉",
+          "labelEn": "Anaxagoras"
+        },
+        {
+          "qid": "Q178540",
+          "labelZh": "前苏格拉底哲学",
+          "labelEn": "Pre-Socratic philosophy"
+        },
+        {
+          "qid": "Q3750514",
+          "labelZh": "詭辯家",
+          "labelEn": "sophist"
+        }
+      ],
+      "notableWork": [],
+      "country": [
+        {
+          "qid": "Q844930",
+          "labelZh": "古雅典",
+          "labelEn": "Classical Athens"
+        }
+      ],
+      "languages": [
+        {
+          "qid": "Q35497",
+          "labelZh": "古希臘語",
+          "labelEn": "Ancient Greek"
+        }
+      ]
+    },
+    {
+      "id": "plato",
+      "seedName": "柏拉图",
+      "qid": "Q859",
+      "labelZh": "柏拉图",
+      "labelEn": "Plato",
+      "descriptionZh": "古希腊哲学家",
+      "descriptionEn": "4th-century BCE Greek philosopher",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E6%9F%8F%E6%8B%89%E5%9B%BE",
+        "en": "https://en.wikipedia.org/wiki/Plato"
+      },
+      "birthDate": "-0427-05-07T00:00:00Z",
+      "deathDate": "-0347-00-00T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q4964182",
+          "labelZh": "哲學家",
+          "labelEn": "philosopher"
+        },
+        {
+          "qid": "Q26237228",
+          "labelZh": "",
+          "labelEn": "epigrammatist"
+        },
+        {
+          "qid": "Q49757",
+          "labelZh": "诗人",
+          "labelEn": "poet"
+        },
+        {
+          "qid": "Q36180",
+          "labelZh": "作家",
+          "labelEn": "writer"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        },
+        {
+          "qid": "Q8242",
+          "labelZh": "文學",
+          "labelEn": "literature"
+        },
+        {
+          "qid": "Q9471",
+          "labelZh": "知识论",
+          "labelEn": "epistemology"
+        },
+        {
+          "qid": "Q7748",
+          "labelZh": "法律",
+          "labelEn": "law"
+        }
+      ],
+      "movement": [
+        {
+          "qid": "Q193589",
+          "labelZh": "柏拉图主义",
+          "labelEn": "Platonism"
+        }
+      ],
+      "influencedBy": [
+        {
+          "qid": "Q913",
+          "labelZh": "苏格拉底",
+          "labelEn": "Socrates"
+        },
+        {
+          "qid": "Q41155",
+          "labelZh": "赫拉克利特",
+          "labelEn": "Heraclitus"
+        },
+        {
+          "qid": "Q125551",
+          "labelZh": "巴门尼德",
+          "labelEn": "Parmenides"
+        },
+        {
+          "qid": "Q6691",
+          "labelZh": "荷馬",
+          "labelEn": "Homer"
+        }
+      ],
+      "notableWork": [
+        {
+          "qid": "Q267634",
+          "labelZh": "克力同篇",
+          "labelEn": "Crito"
+        },
+        {
+          "qid": "Q648889",
+          "labelZh": "游叙弗伦篇",
+          "labelEn": "Euthyphro"
+        },
+        {
+          "qid": "Q244161",
+          "labelZh": "斐多篇",
+          "labelEn": "Phaedo"
+        },
+        {
+          "qid": "Q6499786",
+          "labelZh": "歐緒德謨篇",
+          "labelEn": "Euthydemus"
+        }
+      ],
+      "country": [
+        {
+          "qid": "Q844930",
+          "labelZh": "古雅典",
+          "labelEn": "Classical Athens"
+        }
+      ],
+      "languages": [
+        {
+          "qid": "Q35497",
+          "labelZh": "古希臘語",
+          "labelEn": "Ancient Greek"
+        }
+      ]
+    },
+    {
+      "id": "aristotle",
+      "seedName": "亚里士多德",
+      "qid": "Q868",
+      "labelZh": "亞里士多德",
+      "labelEn": "Aristotle",
+      "descriptionZh": "古典希臘哲學家，柏拉圖學生和西方哲學的創始人",
+      "descriptionEn": "4th-century BCE Classical Greek philosopher and polymath",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E4%BA%9A%E9%87%8C%E5%A3%AB%E5%A4%9A%E5%BE%B7",
+        "en": "https://en.wikipedia.org/wiki/Aristotle"
+      },
+      "birthDate": "-0384-00-00T00:00:00Z",
+      "deathDate": "-0322-00-00T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q864503",
+          "labelZh": "生物学家",
+          "labelEn": "biologist"
+        },
+        {
+          "qid": "Q2998308",
+          "labelZh": "宇宙学家",
+          "labelEn": "cosmologist"
+        },
+        {
+          "qid": "Q14565331",
+          "labelZh": "邏輯學家",
+          "labelEn": "logician"
+        },
+        {
+          "qid": "Q350979",
+          "labelZh": "動物學家",
+          "labelEn": "zoologist"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        },
+        {
+          "qid": "Q269323",
+          "labelZh": "自然哲学",
+          "labelEn": "natural philosophy"
+        }
+      ],
+      "movement": [
+        {
+          "qid": "Q194414",
+          "labelZh": "逍遙學派",
+          "labelEn": "peripatetic school"
+        }
+      ],
+      "influencedBy": [
+        {
+          "qid": "Q859",
+          "labelZh": "柏拉图",
+          "labelEn": "Plato"
+        },
+        {
+          "qid": "Q913",
+          "labelZh": "苏格拉底",
+          "labelEn": "Socrates"
+        },
+        {
+          "qid": "Q41155",
+          "labelZh": "赫拉克利特",
+          "labelEn": "Heraclitus"
+        },
+        {
+          "qid": "Q125551",
+          "labelZh": "巴门尼德",
+          "labelEn": "Parmenides"
+        }
+      ],
+      "notableWork": [
+        {
+          "qid": "Q69539",
+          "labelZh": "政治學",
+          "labelEn": "Politics"
+        },
+        {
+          "qid": "Q474537",
+          "labelZh": "尼各马可伦理学",
+          "labelEn": "Nicomachean Ethics"
+        },
+        {
+          "qid": "Q661655",
+          "labelZh": "形而上學",
+          "labelEn": "Metaphysics"
+        },
+        {
+          "qid": "Q1051198",
+          "labelZh": "物理学 (亚里士多德)",
+          "labelEn": "Physics"
+        }
+      ],
+      "country": [],
+      "languages": [
+        {
+          "qid": "Q35497",
+          "labelZh": "古希臘語",
+          "labelEn": "Ancient Greek"
+        }
+      ]
+    },
+    {
+      "id": "zhuangzi",
+      "seedName": "庄子",
+      "qid": "Q47739",
+      "labelZh": "庄子",
+      "labelEn": "Zhuang Zhou",
+      "descriptionZh": "战国思想家",
+      "descriptionEn": "Chinese Taoist philosopher (c. 369–286 BC)",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E5%BA%84%E5%AD%90",
+        "en": "https://en.wikipedia.org/wiki/Zhuang_Zhou"
+      },
+      "birthDate": "-0369-00-00T00:00:00Z",
+      "deathDate": "-0288-00-00T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q4964182",
+          "labelZh": "哲學家",
+          "labelEn": "philosopher"
+        },
+        {
+          "qid": "Q36180",
+          "labelZh": "作家",
+          "labelEn": "writer"
+        },
+        {
+          "qid": "Q49757",
+          "labelZh": "诗人",
+          "labelEn": "poet"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        }
+      ],
+      "movement": [],
+      "influencedBy": [
+        {
+          "qid": "Q9333",
+          "labelZh": "老子",
+          "labelEn": "Laozi"
+        }
+      ],
+      "notableWork": [
+        {
+          "qid": "Q1074987",
+          "labelZh": "莊子",
+          "labelEn": "Zhuangzi"
+        }
+      ],
+      "country": [
+        {
+          "qid": "Q1065073",
+          "labelZh": "宋國",
+          "labelEn": "Song"
+        }
+      ],
+      "languages": [
+        {
+          "qid": "Q35137",
+          "labelZh": "上古汉语",
+          "labelEn": "Old Chinese"
+        },
+        {
+          "qid": "Q7850",
+          "labelZh": "中文",
+          "labelEn": "Chinese"
+        }
+      ]
+    },
+    {
+      "id": "confucius",
+      "seedName": "孔子",
+      "qid": "Q4604",
+      "labelZh": "孔子",
+      "labelEn": "Confucius",
+      "descriptionZh": "中国古代思想家，儒家学派创始人",
+      "descriptionEn": "5th-century BCE Chinese philosopher and politician",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E5%AD%94%E5%AD%90",
+        "en": "https://en.wikipedia.org/wiki/Confucius"
+      },
+      "birthDate": "-0552-10-09T00:00:00Z",
+      "deathDate": "-0479-03-09T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q4964182",
+          "labelZh": "哲學家",
+          "labelEn": "philosopher"
+        },
+        {
+          "qid": "Q37226",
+          "labelZh": "教师",
+          "labelEn": "teacher"
+        },
+        {
+          "qid": "Q36180",
+          "labelZh": "作家",
+          "labelEn": "writer"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        },
+        {
+          "qid": "Q180592",
+          "labelZh": "社会哲学",
+          "labelEn": "social philosophy"
+        },
+        {
+          "qid": "Q9465",
+          "labelZh": "伦理学",
+          "labelEn": "ethics"
+        }
+      ],
+      "movement": [
+        {
+          "qid": "Q9581",
+          "labelZh": "儒家",
+          "labelEn": "Confucianism"
+        }
+      ],
+      "influencedBy": [],
+      "notableWork": [
+        {
+          "qid": "Q276015",
+          "labelZh": "論語",
+          "labelEn": "Analects"
+        }
+      ],
+      "country": [
+        {
+          "qid": "Q736936",
+          "labelZh": "魯國",
+          "labelEn": "Lu"
+        }
+      ],
+      "languages": [
+        {
+          "qid": "Q35137",
+          "labelZh": "上古汉语",
+          "labelEn": "Old Chinese"
+        },
+        {
+          "qid": "Q7850",
+          "labelZh": "中文",
+          "labelEn": "Chinese"
+        }
+      ]
+    },
+    {
+      "id": "buddha",
+      "seedName": "佛陀",
+      "qid": "Q9441",
+      "labelZh": "释迦牟尼佛",
+      "labelEn": "The Buddha",
+      "descriptionZh": "佛教創始人，娑婆三聖之主",
+      "descriptionEn": "Indian philosopher and the founder of Buddhism (623 or 563 BCE – 543 or 483 BCE)",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E9%87%8A%E8%BF%A6%E7%89%9F%E5%B0%BC",
+        "en": "https://en.wikipedia.org/wiki/The_Buddha"
+      },
+      "birthDate": "-0563-04-08T00:00:00Z",
+      "deathDate": "-0483-00-00T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q854997",
+          "labelZh": "比丘",
+          "labelEn": "Buddhist monk"
+        },
+        {
+          "qid": "Q4964182",
+          "labelZh": "哲學家",
+          "labelEn": "philosopher"
+        },
+        {
+          "qid": "Q2142783",
+          "labelZh": "教主",
+          "labelEn": "founder of religion"
+        },
+        {
+          "qid": "Q15995642",
+          "labelZh": "宗教领袖",
+          "labelEn": "religious leader"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        },
+        {
+          "qid": "Q9174",
+          "labelZh": "宗教",
+          "labelEn": "religion"
+        },
+        {
+          "qid": "Q26877677",
+          "labelZh": "",
+          "labelEn": "Social Reform or Revolution"
+        },
+        {
+          "qid": "Q454",
+          "labelZh": "和平",
+          "labelEn": "peace"
+        }
+      ],
+      "movement": [
+        {
+          "qid": "Q185514",
+          "labelZh": "八正道",
+          "labelEn": "Noble Eightfold Path"
+        },
+        {
+          "qid": "Q42927",
+          "labelZh": "涅槃",
+          "labelEn": "nirvana"
+        },
+        {
+          "qid": "Q134293",
+          "labelZh": "法",
+          "labelEn": "dharma"
+        }
+      ],
+      "influencedBy": [
+        {
+          "qid": "Q1227131",
+          "labelZh": "燃灯佛",
+          "labelEn": "Dīpankara Buddha"
+        }
+      ],
+      "notableWork": [],
+      "country": [],
+      "languages": [
+        {
+          "qid": "Q2652214",
+          "labelZh": "摩揭陀俗語",
+          "labelEn": "Magadhi Prakrit"
+        },
+        {
+          "qid": "Q36727",
+          "labelZh": "巴利语",
+          "labelEn": "Pali"
+        },
+        {
+          "qid": "Q11059",
+          "labelZh": "梵语",
+          "labelEn": "Sanskrit"
+        }
+      ]
+    },
+    {
+      "id": "hume",
+      "seedName": "休谟",
+      "qid": "Q37160",
+      "labelZh": "大卫·休谟",
+      "labelEn": "David Hume",
+      "descriptionZh": "苏格兰哲学家、经济学家、历史学家（1711－1776）",
+      "descriptionEn": "Scottish philosopher, economist, and historian (1711-1776)",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%8D%AB%C2%B7%E4%BC%91%E8%B0%9F",
+        "en": "https://en.wikipedia.org/wiki/David_Hume"
+      },
+      "birthDate": "+1711-04-26T00:00:00Z",
+      "deathDate": "+1776-08-25T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q4964182",
+          "labelZh": "哲學家",
+          "labelEn": "philosopher"
+        },
+        {
+          "qid": "Q188094",
+          "labelZh": "经济学家",
+          "labelEn": "economist"
+        },
+        {
+          "qid": "Q182436",
+          "labelZh": "圖書館員",
+          "labelEn": "librarian"
+        },
+        {
+          "qid": "Q201788",
+          "labelZh": "歷史學家",
+          "labelEn": "historian"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        },
+        {
+          "qid": "Q35277",
+          "labelZh": "形而上学",
+          "labelEn": "metaphysics"
+        },
+        {
+          "qid": "Q9471",
+          "labelZh": "知识论",
+          "labelEn": "epistemology"
+        },
+        {
+          "qid": "Q23407",
+          "labelZh": "精神哲學",
+          "labelEn": "philosophy of mind"
+        }
+      ],
+      "movement": [
+        {
+          "qid": "Q83368",
+          "labelZh": "经验主义",
+          "labelEn": "empiricism"
+        },
+        {
+          "qid": "Q56000",
+          "labelZh": "自然主义",
+          "labelEn": "naturalism"
+        },
+        {
+          "qid": "Q1998646",
+          "labelZh": "哲學懷疑論",
+          "labelEn": "philosophical skepticism"
+        },
+        {
+          "qid": "Q12539",
+          "labelZh": "啟蒙時代",
+          "labelEn": "Age of Enlightenment"
+        }
+      ],
+      "influencedBy": [
+        {
+          "qid": "Q82049",
+          "labelZh": "喬治·伯克利",
+          "labelEn": "George Berkeley"
+        },
+        {
+          "qid": "Q9353",
+          "labelZh": "约翰·洛克",
+          "labelEn": "John Locke"
+        },
+        {
+          "qid": "Q316367",
+          "labelZh": "弗朗西斯·哈奇森",
+          "labelEn": "Francis Hutcheson"
+        },
+        {
+          "qid": "Q935",
+          "labelZh": "艾薩克·牛頓",
+          "labelEn": "Isaac Newton"
+        }
+      ],
+      "notableWork": [
+        {
+          "qid": "Q1306656",
+          "labelZh": "人類理解研究",
+          "labelEn": "Philosophical Essays Concerning Human Understanding"
+        },
+        {
+          "qid": "Q1306663",
+          "labelZh": "道德原則研究",
+          "labelEn": "An Enquiry Concerning the Principles of Morals"
+        },
+        {
+          "qid": "Q7739783",
+          "labelZh": "英格蘭史 (休謨)",
+          "labelEn": "The History of England"
+        },
+        {
+          "qid": "Q2451675",
+          "labelZh": "人性論",
+          "labelEn": "A Treatise of Human Nature"
+        }
+      ],
+      "country": [
+        {
+          "qid": "Q161885",
+          "labelZh": "大不列顛王國",
+          "labelEn": "Kingdom of Great Britain"
+        }
+      ],
+      "languages": [
+        {
+          "qid": "Q1860",
+          "labelZh": "英語",
+          "labelEn": "English"
+        }
+      ]
+    },
+    {
+      "id": "kant",
+      "seedName": "康德",
+      "qid": "Q9312",
+      "labelZh": "伊曼努爾·康德",
+      "labelEn": "Immanuel Kant",
+      "descriptionZh": "德國哲學家（1724—1804）",
+      "descriptionEn": "German philosopher (1724-1804)",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E4%BC%8A%E6%9B%BC%E5%8A%AA%E5%B0%94%C2%B7%E5%BA%B7%E5%BE%B7",
+        "en": "https://en.wikipedia.org/wiki/Immanuel_Kant"
+      },
+      "birthDate": "+1724-04-22T00:00:00Z",
+      "deathDate": "+1804-02-12T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q4964182",
+          "labelZh": "哲學家",
+          "labelEn": "philosopher"
+        },
+        {
+          "qid": "Q4773904",
+          "labelZh": "人类学家",
+          "labelEn": "anthropologist"
+        },
+        {
+          "qid": "Q169470",
+          "labelZh": "物理学家",
+          "labelEn": "physicist"
+        },
+        {
+          "qid": "Q182436",
+          "labelZh": "圖書館員",
+          "labelEn": "librarian"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q9471",
+          "labelZh": "知识论",
+          "labelEn": "epistemology"
+        },
+        {
+          "qid": "Q35277",
+          "labelZh": "形而上学",
+          "labelEn": "metaphysics"
+        },
+        {
+          "qid": "Q9465",
+          "labelZh": "伦理学",
+          "labelEn": "ethics"
+        }
+      ],
+      "movement": [
+        {
+          "qid": "Q679842",
+          "labelZh": "德国唯心主义",
+          "labelEn": "German idealism"
+        },
+        {
+          "qid": "Q12539",
+          "labelZh": "啟蒙時代",
+          "labelEn": "Age of Enlightenment"
+        }
+      ],
+      "influencedBy": [
+        {
+          "qid": "Q37160",
+          "labelZh": "大卫·休谟",
+          "labelEn": "David Hume"
+        },
+        {
+          "qid": "Q82049",
+          "labelZh": "喬治·伯克利",
+          "labelEn": "George Berkeley"
+        },
+        {
+          "qid": "Q76510",
+          "labelZh": "克里斯蒂安·沃爾夫",
+          "labelEn": "Christian Wolff"
+        },
+        {
+          "qid": "Q6527",
+          "labelZh": "让-雅克·卢梭",
+          "labelEn": "Jean-Jacques Rousseau"
+        }
+      ],
+      "notableWork": [
+        {
+          "qid": "Q220002",
+          "labelZh": "纯粹理性批判",
+          "labelEn": "Critique of Pure Reason"
+        },
+        {
+          "qid": "Q870851",
+          "labelZh": "实践理性批判",
+          "labelEn": "Critique of Practical Reason"
+        },
+        {
+          "qid": "Q1056332",
+          "labelZh": "判断力批判",
+          "labelEn": "Critique of Judgment"
+        },
+        {
+          "qid": "Q1761342",
+          "labelZh": "任何一種能夠作為科學出現的未來形而上學導論",
+          "labelEn": "Prolegomena to Any Future Metaphysics"
+        }
+      ],
+      "country": [
+        {
+          "qid": "Q27306",
+          "labelZh": "普魯士王國",
+          "labelEn": "Kingdom of Prussia"
+        }
+      ],
+      "languages": [
+        {
+          "qid": "Q188",
+          "labelZh": "德语",
+          "labelEn": "German"
+        },
+        {
+          "qid": "Q9288",
+          "labelZh": "希伯来语",
+          "labelEn": "Hebrew"
+        },
+        {
+          "qid": "Q397",
+          "labelZh": "拉丁語",
+          "labelEn": "Latin"
+        },
+        {
+          "qid": "Q35497",
+          "labelZh": "古希臘語",
+          "labelEn": "Ancient Greek"
+        }
+      ]
+    },
+    {
+      "id": "hegel",
+      "seedName": "黑格尔",
+      "qid": "Q9235",
+      "labelZh": "格奥尔格·威廉·弗里德里希·黑格尔",
+      "labelEn": "Georg Wilhelm Friedrich Hegel",
+      "descriptionZh": "德國古典哲學家（1770－1831）",
+      "descriptionEn": "German philosopher and theologian (1770–1831)",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E6%A0%BC%E5%A5%A5%E5%B0%94%E6%A0%BC%C2%B7%E5%A8%81%E5%BB%89%C2%B7%E5%BC%97%E9%87%8C%E5%BE%B7%E9%87%8C%E5%B8%8C%C2%B7%E9%BB%91%E6%A0%BC%E5%B0%94",
+        "en": "https://en.wikipedia.org/wiki/Georg_Wilhelm_Friedrich_Hegel"
+      },
+      "birthDate": "+1770-08-27T00:00:00Z",
+      "deathDate": "+1831-11-14T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q4964182",
+          "labelZh": "哲學家",
+          "labelEn": "philosopher"
+        },
+        {
+          "qid": "Q1622272",
+          "labelZh": "大學教師",
+          "labelEn": "university teacher"
+        },
+        {
+          "qid": "Q24265174",
+          "labelZh": "哲学史家",
+          "labelEn": "philosophy historian"
+        },
+        {
+          "qid": "Q36180",
+          "labelZh": "作家",
+          "labelEn": "writer"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        },
+        {
+          "qid": "Q8078",
+          "labelZh": "邏輯學",
+          "labelEn": "logic"
+        },
+        {
+          "qid": "Q190721",
+          "labelZh": "历史哲学",
+          "labelEn": "philosophy of history"
+        },
+        {
+          "qid": "Q35986",
+          "labelZh": "美学",
+          "labelEn": "aesthetics"
+        }
+      ],
+      "movement": [
+        {
+          "qid": "Q679842",
+          "labelZh": "德国唯心主义",
+          "labelEn": "German idealism"
+        },
+        {
+          "qid": "Q460501",
+          "labelZh": "歷史主義",
+          "labelEn": "Historicism"
+        },
+        {
+          "qid": "Q906313",
+          "labelZh": "黑格尔主义",
+          "labelEn": "Hegelianism"
+        }
+      ],
+      "influencedBy": [
+        {
+          "qid": "Q60070",
+          "labelZh": "弗里德里希·谢林",
+          "labelEn": "Friedrich Wilhelm Joseph Schelling"
+        },
+        {
+          "qid": "Q9312",
+          "labelZh": "伊曼努爾·康德",
+          "labelEn": "Immanuel Kant"
+        },
+        {
+          "qid": "Q41155",
+          "labelZh": "赫拉克利特",
+          "labelEn": "Heraclitus"
+        },
+        {
+          "qid": "Q35802",
+          "labelZh": "巴魯赫·斯賓諾莎",
+          "labelEn": "Benedictus de Spinoza"
+        }
+      ],
+      "notableWork": [
+        {
+          "qid": "Q1210941",
+          "labelZh": "哲学史讲演录",
+          "labelEn": "Lectures on the Philosophy of History"
+        },
+        {
+          "qid": "Q919699",
+          "labelZh": "哲学科学百科全书纲要",
+          "labelEn": "Encyclopedia of the Philosophical Sciences"
+        },
+        {
+          "qid": "Q374811",
+          "labelZh": "大逻辑",
+          "labelEn": "Science of Logic"
+        },
+        {
+          "qid": "Q877510",
+          "labelZh": "精神现象学",
+          "labelEn": "The Phenomenology of Spirit"
+        }
+      ],
+      "country": [
+        {
+          "qid": "Q159631",
+          "labelZh": "符腾堡王国",
+          "labelEn": "Kingdom of Württemberg"
+        }
+      ],
+      "languages": [
+        {
+          "qid": "Q397",
+          "labelZh": "拉丁語",
+          "labelEn": "Latin"
+        },
+        {
+          "qid": "Q188",
+          "labelZh": "德语",
+          "labelEn": "German"
+        }
+      ]
+    },
+    {
+      "id": "nietzsche",
+      "seedName": "尼采",
+      "qid": "Q9358",
+      "labelZh": "弗里德里希·尼采",
+      "labelEn": "Friedrich Nietzsche",
+      "descriptionZh": "德國哲學家（1844－1900）",
+      "descriptionEn": "German philosopher (1844-1900)",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E5%BC%97%E9%87%8C%E5%BE%B7%E9%87%8C%E5%B8%8C%C2%B7%E5%B0%BC%E9%87%87",
+        "en": "https://en.wikipedia.org/wiki/Friedrich_Nietzsche"
+      },
+      "birthDate": "+1844-10-15T00:00:00Z",
+      "deathDate": "+1900-08-25T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q4964182",
+          "labelZh": "哲學家",
+          "labelEn": "philosopher"
+        },
+        {
+          "qid": "Q49757",
+          "labelZh": "诗人",
+          "labelEn": "poet"
+        },
+        {
+          "qid": "Q36180",
+          "labelZh": "作家",
+          "labelEn": "writer"
+        },
+        {
+          "qid": "Q36834",
+          "labelZh": "作曲家",
+          "labelEn": "composer"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q495527",
+          "labelZh": "古典语言学",
+          "labelEn": "classical philology"
+        },
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        }
+      ],
+      "movement": [],
+      "influencedBy": [
+        {
+          "qid": "Q38193",
+          "labelZh": "亚瑟·叔本华",
+          "labelEn": "Arthur Schopenhauer"
+        },
+        {
+          "qid": "Q41155",
+          "labelZh": "赫拉克利特",
+          "labelEn": "Heraclitus"
+        },
+        {
+          "qid": "Q48226",
+          "labelZh": "拉尔夫·沃尔多·爱默生",
+          "labelEn": "Ralph Waldo Emerson"
+        },
+        {
+          "qid": "Q1035",
+          "labelZh": "查尔斯·达尔文",
+          "labelEn": "Charles Darwin"
+        }
+      ],
+      "notableWork": [
+        {
+          "qid": "Q199774",
+          "labelZh": "查拉图斯特拉如是说",
+          "labelEn": "Thus Spoke Zarathustra"
+        },
+        {
+          "qid": "Q1053359",
+          "labelZh": "悲剧的诞生",
+          "labelEn": "The Birth of Tragedy"
+        },
+        {
+          "qid": "Q120609061",
+          "labelZh": "",
+          "labelEn": ""
+        },
+        {
+          "qid": "Q1605652",
+          "labelZh": "",
+          "labelEn": "Untimely Meditations"
+        }
+      ],
+      "country": [
+        {
+          "qid": "Q27306",
+          "labelZh": "普魯士王國",
+          "labelEn": "Kingdom of Prussia"
+        },
+        {
+          "qid": "Q183",
+          "labelZh": "德國",
+          "labelEn": "Germany"
+        }
+      ],
+      "languages": [
+        {
+          "qid": "Q188",
+          "labelZh": "德语",
+          "labelEn": "German"
+        },
+        {
+          "qid": "Q652",
+          "labelZh": "意大利語",
+          "labelEn": "Italian"
+        },
+        {
+          "qid": "Q150",
+          "labelZh": "法语",
+          "labelEn": "French"
+        }
+      ]
+    },
+    {
+      "id": "sartre",
+      "seedName": "萨特",
+      "qid": "Q9364",
+      "labelZh": "让-保罗·萨特",
+      "labelEn": "Jean-Paul Sartre",
+      "descriptionZh": "法國哲學家（1905－1980）",
+      "descriptionEn": "French existentialist philosopher (1905–1980)",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E8%AE%A9-%E4%BF%9D%E7%BD%97%C2%B7%E8%90%A8%E7%89%B9",
+        "en": "https://en.wikipedia.org/wiki/Jean-Paul_Sartre"
+      },
+      "birthDate": "+1905-06-21T00:00:00Z",
+      "deathDate": "+1980-04-15T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q214917",
+          "labelZh": "剧作家",
+          "labelEn": "playwright"
+        },
+        {
+          "qid": "Q15632482",
+          "labelZh": "知識論者",
+          "labelEn": "epistemologist"
+        },
+        {
+          "qid": "Q6625963",
+          "labelZh": "小说家",
+          "labelEn": "novelist"
+        },
+        {
+          "qid": "Q28389",
+          "labelZh": "編劇",
+          "labelEn": "screenwriter"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        },
+        {
+          "qid": "Q9471",
+          "labelZh": "知识论",
+          "labelEn": "epistemology"
+        },
+        {
+          "qid": "Q9465",
+          "labelZh": "伦理学",
+          "labelEn": "ethics"
+        },
+        {
+          "qid": "Q7163",
+          "labelZh": "政治",
+          "labelEn": "politics"
+        }
+      ],
+      "movement": [
+        {
+          "qid": "Q38066",
+          "labelZh": "存在主義",
+          "labelEn": "existentialism"
+        },
+        {
+          "qid": "Q7066",
+          "labelZh": "无神论",
+          "labelEn": "atheism"
+        },
+        {
+          "qid": "Q179235",
+          "labelZh": "現象學",
+          "labelEn": "phenomenology"
+        },
+        {
+          "qid": "Q1450620",
+          "labelZh": "法国哲学",
+          "labelEn": "French philosophy"
+        }
+      ],
+      "influencedBy": [
+        {
+          "qid": "Q48301",
+          "labelZh": "马丁·海德格尔",
+          "labelEn": "Martin Heidegger"
+        },
+        {
+          "qid": "Q151820",
+          "labelZh": "路易-费迪南·塞利纳",
+          "labelEn": "Louis-Ferdinand Céline"
+        },
+        {
+          "qid": "Q153034",
+          "labelZh": "伊曼紐爾·列維納斯",
+          "labelEn": "Emmanuel Levinas"
+        },
+        {
+          "qid": "Q9235",
+          "labelZh": "格奥尔格·威廉·弗里德里希·黑格尔",
+          "labelEn": "Georg Wilhelm Friedrich Hegel"
+        }
+      ],
+      "notableWork": [],
+      "country": [
+        {
+          "qid": "Q142",
+          "labelZh": "法國",
+          "labelEn": "France"
+        }
+      ],
+      "languages": [
+        {
+          "qid": "Q150",
+          "labelZh": "法语",
+          "labelEn": "French"
+        }
+      ]
+    },
+    {
+      "id": "wittgenstein",
+      "seedName": "维特根斯坦",
+      "qid": "Q9391",
+      "labelZh": "路德维希·维特根斯坦",
+      "labelEn": "Ludwig Wittgenstein",
+      "descriptionZh": "英國-奧地利哲學家（1889—1951）",
+      "descriptionEn": "Austrian philosopher and logician (1889–1951)",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E8%B7%AF%E5%BE%B7%E7%BB%B4%E5%B8%8C%C2%B7%E7%BB%B4%E7%89%B9%E6%A0%B9%E6%96%AF%E5%9D%A6",
+        "en": "https://en.wikipedia.org/wiki/Ludwig_Wittgenstein"
+      },
+      "birthDate": "+1889-04-26T00:00:00Z",
+      "deathDate": "+1951-04-29T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q18930236",
+          "labelZh": "语言哲学家",
+          "labelEn": "philosopher of language"
+        },
+        {
+          "qid": "Q17391659",
+          "labelZh": "",
+          "labelEn": "architectural theoretician"
+        },
+        {
+          "qid": "Q14565331",
+          "labelZh": "邏輯學家",
+          "labelEn": "logician"
+        },
+        {
+          "qid": "Q170790",
+          "labelZh": "數學家",
+          "labelEn": "mathematician"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        }
+      ],
+      "movement": [
+        {
+          "qid": "Q183216",
+          "labelZh": "分析哲學",
+          "labelEn": "analytic philosophy"
+        }
+      ],
+      "influencedBy": [
+        {
+          "qid": "Q33760",
+          "labelZh": "伯特兰·罗素",
+          "labelEn": "Bertrand Russell"
+        },
+        {
+          "qid": "Q6512",
+          "labelZh": "索倫·克爾凱郭爾",
+          "labelEn": "Søren Kierkegaard"
+        },
+        {
+          "qid": "Q60028",
+          "labelZh": "戈特洛布·弗雷格",
+          "labelEn": "Gottlob Frege"
+        },
+        {
+          "qid": "Q38193",
+          "labelZh": "亚瑟·叔本华",
+          "labelEn": "Arthur Schopenhauer"
+        }
+      ],
+      "notableWork": [
+        {
+          "qid": "Q655717",
+          "labelZh": "邏輯哲學論",
+          "labelEn": "Tractatus Logico-Philosophicus"
+        },
+        {
+          "qid": "Q772496",
+          "labelZh": "哲學研究",
+          "labelEn": "Philosophical Investigations"
+        }
+      ],
+      "country": [
+        {
+          "qid": "Q145",
+          "labelZh": "英国",
+          "labelEn": "United Kingdom"
+        },
+        {
+          "qid": "Q40",
+          "labelZh": "奧地利",
+          "labelEn": "Austria"
+        }
+      ],
+      "languages": [
+        {
+          "qid": "Q188",
+          "labelZh": "德语",
+          "labelEn": "German"
+        },
+        {
+          "qid": "Q1860",
+          "labelZh": "英語",
+          "labelEn": "English"
+        }
+      ]
+    },
+    {
+      "id": "wang-yangming",
+      "seedName": "王阳明",
+      "qid": "Q378462",
+      "labelZh": "王陽明",
+      "labelEn": "Wang Yangming",
+      "descriptionZh": "中國明代哲学家、軍事家 (1472–1529)",
+      "descriptionEn": "Chinese philosopher and general (1472–1529)",
+      "wikipedia": {
+        "zh": "https://zh.wikipedia.org/wiki/%E7%8E%8B%E9%99%BD%E6%98%8E",
+        "en": "https://en.wikipedia.org/wiki/Wang_Yangming"
+      },
+      "birthDate": "+1472-10-31T00:00:00Z",
+      "deathDate": "+1529-01-09T00:00:00Z",
+      "occupation": [
+        {
+          "qid": "Q4964182",
+          "labelZh": "哲學家",
+          "labelEn": "philosopher"
+        },
+        {
+          "qid": "Q36180",
+          "labelZh": "作家",
+          "labelEn": "writer"
+        }
+      ],
+      "field": [
+        {
+          "qid": "Q5891",
+          "labelZh": "哲學",
+          "labelEn": "philosophy"
+        }
+      ],
+      "movement": [
+        {
+          "qid": "Q825754",
+          "labelZh": "宋明理學",
+          "labelEn": "Neo-Confucianism"
+        },
+        {
+          "qid": "Q697205",
+          "labelZh": "阳明学",
+          "labelEn": "Yangmingism"
+        }
+      ],
+      "influencedBy": [],
+      "notableWork": [],
+      "country": [
+        {
+          "qid": "Q9903",
+          "labelZh": "明朝",
+          "labelEn": "Ming dynasty"
+        }
+      ],
+      "languages": [
+        {
+          "qid": "Q7850",
+          "labelZh": "中文",
+          "labelEn": "Chinese"
+        }
+      ]
+    }
+  ],
+  "externalNodes": [
+    {
+      "id": "wd:Q26877677",
+      "qid": "Q26877677",
+      "type": "field",
+      "labelZh": "",
+      "labelEn": "Social Reform or Revolution"
+    },
+    {
+      "id": "wd:Q35986",
+      "qid": "Q35986",
+      "type": "field",
+      "labelZh": "美学",
+      "labelEn": "aesthetics"
+    },
+    {
+      "id": "wd:Q495527",
+      "qid": "Q495527",
+      "type": "field",
+      "labelZh": "古典语言学",
+      "labelEn": "classical philology"
+    },
+    {
+      "id": "wd:Q9471",
+      "qid": "Q9471",
+      "type": "field",
+      "labelZh": "知识论",
+      "labelEn": "epistemology"
+    },
+    {
+      "id": "wd:Q9465",
+      "qid": "Q9465",
+      "type": "field",
+      "labelZh": "伦理学",
+      "labelEn": "ethics"
+    },
+    {
+      "id": "wd:Q7748",
+      "qid": "Q7748",
+      "type": "field",
+      "labelZh": "法律",
+      "labelEn": "law"
+    },
+    {
+      "id": "wd:Q8242",
+      "qid": "Q8242",
+      "type": "field",
+      "labelZh": "文學",
+      "labelEn": "literature"
+    },
+    {
+      "id": "wd:Q8078",
+      "qid": "Q8078",
+      "type": "field",
+      "labelZh": "邏輯學",
+      "labelEn": "logic"
+    },
+    {
+      "id": "wd:Q35277",
+      "qid": "Q35277",
+      "type": "field",
+      "labelZh": "形而上学",
+      "labelEn": "metaphysics"
+    },
+    {
+      "id": "wd:Q269323",
+      "qid": "Q269323",
+      "type": "field",
+      "labelZh": "自然哲学",
+      "labelEn": "natural philosophy"
+    },
+    {
+      "id": "wd:Q454",
+      "qid": "Q454",
+      "type": "field",
+      "labelZh": "和平",
+      "labelEn": "peace"
+    },
+    {
+      "id": "wd:Q5891",
+      "qid": "Q5891",
+      "type": "field",
+      "labelZh": "哲學",
+      "labelEn": "philosophy"
+    },
+    {
+      "id": "wd:Q190721",
+      "qid": "Q190721",
+      "type": "field",
+      "labelZh": "历史哲学",
+      "labelEn": "philosophy of history"
+    },
+    {
+      "id": "wd:Q23407",
+      "qid": "Q23407",
+      "type": "field",
+      "labelZh": "精神哲學",
+      "labelEn": "philosophy of mind"
+    },
+    {
+      "id": "wd:Q7163",
+      "qid": "Q7163",
+      "type": "field",
+      "labelZh": "政治",
+      "labelEn": "politics"
+    },
+    {
+      "id": "wd:Q9174",
+      "qid": "Q9174",
+      "type": "field",
+      "labelZh": "宗教",
+      "labelEn": "religion"
+    },
+    {
+      "id": "wd:Q180592",
+      "qid": "Q180592",
+      "type": "field",
+      "labelZh": "社会哲学",
+      "labelEn": "social philosophy"
+    },
+    {
+      "id": "wd:Q12539",
+      "qid": "Q12539",
+      "type": "movement",
+      "labelZh": "啟蒙時代",
+      "labelEn": "Age of Enlightenment"
+    },
+    {
+      "id": "wd:Q9581",
+      "qid": "Q9581",
+      "type": "movement",
+      "labelZh": "儒家",
+      "labelEn": "Confucianism"
+    },
+    {
+      "id": "wd:Q1450620",
+      "qid": "Q1450620",
+      "type": "movement",
+      "labelZh": "法国哲学",
+      "labelEn": "French philosophy"
+    },
+    {
+      "id": "wd:Q679842",
+      "qid": "Q679842",
+      "type": "movement",
+      "labelZh": "德国唯心主义",
+      "labelEn": "German idealism"
+    },
+    {
+      "id": "wd:Q906313",
+      "qid": "Q906313",
+      "type": "movement",
+      "labelZh": "黑格尔主义",
+      "labelEn": "Hegelianism"
+    },
+    {
+      "id": "wd:Q460501",
+      "qid": "Q460501",
+      "type": "movement",
+      "labelZh": "歷史主義",
+      "labelEn": "Historicism"
+    },
+    {
+      "id": "wd:Q825754",
+      "qid": "Q825754",
+      "type": "movement",
+      "labelZh": "宋明理學",
+      "labelEn": "Neo-Confucianism"
+    },
+    {
+      "id": "wd:Q185514",
+      "qid": "Q185514",
+      "type": "movement",
+      "labelZh": "八正道",
+      "labelEn": "Noble Eightfold Path"
+    },
+    {
+      "id": "wd:Q193589",
+      "qid": "Q193589",
+      "type": "movement",
+      "labelZh": "柏拉图主义",
+      "labelEn": "Platonism"
+    },
+    {
+      "id": "wd:Q697205",
+      "qid": "Q697205",
+      "type": "movement",
+      "labelZh": "阳明学",
+      "labelEn": "Yangmingism"
+    },
+    {
+      "id": "wd:Q183216",
+      "qid": "Q183216",
+      "type": "movement",
+      "labelZh": "分析哲學",
+      "labelEn": "analytic philosophy"
+    },
+    {
+      "id": "wd:Q7066",
+      "qid": "Q7066",
+      "type": "movement",
+      "labelZh": "无神论",
+      "labelEn": "atheism"
+    },
+    {
+      "id": "wd:Q134293",
+      "qid": "Q134293",
+      "type": "movement",
+      "labelZh": "法",
+      "labelEn": "dharma"
+    },
+    {
+      "id": "wd:Q83368",
+      "qid": "Q83368",
+      "type": "movement",
+      "labelZh": "经验主义",
+      "labelEn": "empiricism"
+    },
+    {
+      "id": "wd:Q38066",
+      "qid": "Q38066",
+      "type": "movement",
+      "labelZh": "存在主義",
+      "labelEn": "existentialism"
+    },
+    {
+      "id": "wd:Q56000",
+      "qid": "Q56000",
+      "type": "movement",
+      "labelZh": "自然主义",
+      "labelEn": "naturalism"
+    },
+    {
+      "id": "wd:Q42927",
+      "qid": "Q42927",
+      "type": "movement",
+      "labelZh": "涅槃",
+      "labelEn": "nirvana"
+    },
+    {
+      "id": "wd:Q194414",
+      "qid": "Q194414",
+      "type": "movement",
+      "labelZh": "逍遙學派",
+      "labelEn": "peripatetic school"
+    },
+    {
+      "id": "wd:Q179235",
+      "qid": "Q179235",
+      "type": "movement",
+      "labelZh": "現象學",
+      "labelEn": "phenomenology"
+    },
+    {
+      "id": "wd:Q1998646",
+      "qid": "Q1998646",
+      "type": "movement",
+      "labelZh": "哲學懷疑論",
+      "labelEn": "philosophical skepticism"
+    },
+    {
+      "id": "wd:Q83041",
+      "qid": "Q83041",
+      "type": "philosopher",
+      "labelZh": "阿那克萨哥拉",
+      "labelEn": "Anaxagoras"
+    },
+    {
+      "id": "wd:Q38193",
+      "qid": "Q38193",
+      "type": "philosopher",
+      "labelZh": "亚瑟·叔本华",
+      "labelEn": "Arthur Schopenhauer"
+    },
+    {
+      "id": "wd:Q35802",
+      "qid": "Q35802",
+      "type": "philosopher",
+      "labelZh": "巴魯赫·斯賓諾莎",
+      "labelEn": "Benedictus de Spinoza"
+    },
+    {
+      "id": "wd:Q33760",
+      "qid": "Q33760",
+      "type": "philosopher",
+      "labelZh": "伯特兰·罗素",
+      "labelEn": "Bertrand Russell"
+    },
+    {
+      "id": "wd:Q1035",
+      "qid": "Q1035",
+      "type": "philosopher",
+      "labelZh": "查尔斯·达尔文",
+      "labelEn": "Charles Darwin"
+    },
+    {
+      "id": "wd:Q76510",
+      "qid": "Q76510",
+      "type": "philosopher",
+      "labelZh": "克里斯蒂安·沃爾夫",
+      "labelEn": "Christian Wolff"
+    },
+    {
+      "id": "wd:Q1227131",
+      "qid": "Q1227131",
+      "type": "philosopher",
+      "labelZh": "燃灯佛",
+      "labelEn": "Dīpankara Buddha"
+    },
+    {
+      "id": "wd:Q153034",
+      "qid": "Q153034",
+      "type": "philosopher",
+      "labelZh": "伊曼紐爾·列維納斯",
+      "labelEn": "Emmanuel Levinas"
+    },
+    {
+      "id": "wd:Q316367",
+      "qid": "Q316367",
+      "type": "philosopher",
+      "labelZh": "弗朗西斯·哈奇森",
+      "labelEn": "Francis Hutcheson"
+    },
+    {
+      "id": "wd:Q60070",
+      "qid": "Q60070",
+      "type": "philosopher",
+      "labelZh": "弗里德里希·谢林",
+      "labelEn": "Friedrich Wilhelm Joseph Schelling"
+    },
+    {
+      "id": "wd:Q82049",
+      "qid": "Q82049",
+      "type": "philosopher",
+      "labelZh": "喬治·伯克利",
+      "labelEn": "George Berkeley"
+    },
+    {
+      "id": "wd:Q60028",
+      "qid": "Q60028",
+      "type": "philosopher",
+      "labelZh": "戈特洛布·弗雷格",
+      "labelEn": "Gottlob Frege"
+    },
+    {
+      "id": "wd:Q41155",
+      "qid": "Q41155",
+      "type": "philosopher",
+      "labelZh": "赫拉克利特",
+      "labelEn": "Heraclitus"
+    },
+    {
+      "id": "wd:Q6691",
+      "qid": "Q6691",
+      "type": "philosopher",
+      "labelZh": "荷馬",
+      "labelEn": "Homer"
+    },
+    {
+      "id": "wd:Q935",
+      "qid": "Q935",
+      "type": "philosopher",
+      "labelZh": "艾薩克·牛頓",
+      "labelEn": "Isaac Newton"
+    },
+    {
+      "id": "wd:Q6527",
+      "qid": "Q6527",
+      "type": "philosopher",
+      "labelZh": "让-雅克·卢梭",
+      "labelEn": "Jean-Jacques Rousseau"
+    },
+    {
+      "id": "wd:Q9353",
+      "qid": "Q9353",
+      "type": "philosopher",
+      "labelZh": "约翰·洛克",
+      "labelEn": "John Locke"
+    },
+    {
+      "id": "wd:Q9333",
+      "qid": "Q9333",
+      "type": "philosopher",
+      "labelZh": "老子",
+      "labelEn": "Laozi"
+    },
+    {
+      "id": "wd:Q151820",
+      "qid": "Q151820",
+      "type": "philosopher",
+      "labelZh": "路易-费迪南·塞利纳",
+      "labelEn": "Louis-Ferdinand Céline"
+    },
+    {
+      "id": "wd:Q48301",
+      "qid": "Q48301",
+      "type": "philosopher",
+      "labelZh": "马丁·海德格尔",
+      "labelEn": "Martin Heidegger"
+    },
+    {
+      "id": "wd:Q125551",
+      "qid": "Q125551",
+      "type": "philosopher",
+      "labelZh": "巴门尼德",
+      "labelEn": "Parmenides"
+    },
+    {
+      "id": "wd:Q178540",
+      "qid": "Q178540",
+      "type": "philosopher",
+      "labelZh": "前苏格拉底哲学",
+      "labelEn": "Pre-Socratic philosophy"
+    },
+    {
+      "id": "wd:Q48226",
+      "qid": "Q48226",
+      "type": "philosopher",
+      "labelZh": "拉尔夫·沃尔多·爱默生",
+      "labelEn": "Ralph Waldo Emerson"
+    },
+    {
+      "id": "wd:Q6512",
+      "qid": "Q6512",
+      "type": "philosopher",
+      "labelZh": "索倫·克爾凱郭爾",
+      "labelEn": "Søren Kierkegaard"
+    },
+    {
+      "id": "wd:Q3750514",
+      "qid": "Q3750514",
+      "type": "philosopher",
+      "labelZh": "詭辯家",
+      "labelEn": "sophist"
+    },
+    {
+      "id": "wd:Q120609061",
+      "qid": "Q120609061",
+      "type": "work",
+      "labelZh": "",
+      "labelEn": ""
+    },
+    {
+      "id": "wd:Q2451675",
+      "qid": "Q2451675",
+      "type": "work",
+      "labelZh": "人性論",
+      "labelEn": "A Treatise of Human Nature"
+    },
+    {
+      "id": "wd:Q1306663",
+      "qid": "Q1306663",
+      "type": "work",
+      "labelZh": "道德原則研究",
+      "labelEn": "An Enquiry Concerning the Principles of Morals"
+    },
+    {
+      "id": "wd:Q276015",
+      "qid": "Q276015",
+      "type": "work",
+      "labelZh": "論語",
+      "labelEn": "Analects"
+    },
+    {
+      "id": "wd:Q1056332",
+      "qid": "Q1056332",
+      "type": "work",
+      "labelZh": "判断力批判",
+      "labelEn": "Critique of Judgment"
+    },
+    {
+      "id": "wd:Q870851",
+      "qid": "Q870851",
+      "type": "work",
+      "labelZh": "实践理性批判",
+      "labelEn": "Critique of Practical Reason"
+    },
+    {
+      "id": "wd:Q220002",
+      "qid": "Q220002",
+      "type": "work",
+      "labelZh": "纯粹理性批判",
+      "labelEn": "Critique of Pure Reason"
+    },
+    {
+      "id": "wd:Q267634",
+      "qid": "Q267634",
+      "type": "work",
+      "labelZh": "克力同篇",
+      "labelEn": "Crito"
+    },
+    {
+      "id": "wd:Q919699",
+      "qid": "Q919699",
+      "type": "work",
+      "labelZh": "哲学科学百科全书纲要",
+      "labelEn": "Encyclopedia of the Philosophical Sciences"
+    },
+    {
+      "id": "wd:Q6499786",
+      "qid": "Q6499786",
+      "type": "work",
+      "labelZh": "歐緒德謨篇",
+      "labelEn": "Euthydemus"
+    },
+    {
+      "id": "wd:Q648889",
+      "qid": "Q648889",
+      "type": "work",
+      "labelZh": "游叙弗伦篇",
+      "labelEn": "Euthyphro"
+    },
+    {
+      "id": "wd:Q1210941",
+      "qid": "Q1210941",
+      "type": "work",
+      "labelZh": "哲学史讲演录",
+      "labelEn": "Lectures on the Philosophy of History"
+    },
+    {
+      "id": "wd:Q661655",
+      "qid": "Q661655",
+      "type": "work",
+      "labelZh": "形而上學",
+      "labelEn": "Metaphysics"
+    },
+    {
+      "id": "wd:Q474537",
+      "qid": "Q474537",
+      "type": "work",
+      "labelZh": "尼各马可伦理学",
+      "labelEn": "Nicomachean Ethics"
+    },
+    {
+      "id": "wd:Q244161",
+      "qid": "Q244161",
+      "type": "work",
+      "labelZh": "斐多篇",
+      "labelEn": "Phaedo"
+    },
+    {
+      "id": "wd:Q1306656",
+      "qid": "Q1306656",
+      "type": "work",
+      "labelZh": "人類理解研究",
+      "labelEn": "Philosophical Essays Concerning Human Understanding"
+    },
+    {
+      "id": "wd:Q772496",
+      "qid": "Q772496",
+      "type": "work",
+      "labelZh": "哲學研究",
+      "labelEn": "Philosophical Investigations"
+    },
+    {
+      "id": "wd:Q1051198",
+      "qid": "Q1051198",
+      "type": "work",
+      "labelZh": "物理学 (亚里士多德)",
+      "labelEn": "Physics"
+    },
+    {
+      "id": "wd:Q69539",
+      "qid": "Q69539",
+      "type": "work",
+      "labelZh": "政治學",
+      "labelEn": "Politics"
+    },
+    {
+      "id": "wd:Q1761342",
+      "qid": "Q1761342",
+      "type": "work",
+      "labelZh": "任何一種能夠作為科學出現的未來形而上學導論",
+      "labelEn": "Prolegomena to Any Future Metaphysics"
+    },
+    {
+      "id": "wd:Q374811",
+      "qid": "Q374811",
+      "type": "work",
+      "labelZh": "大逻辑",
+      "labelEn": "Science of Logic"
+    },
+    {
+      "id": "wd:Q1053359",
+      "qid": "Q1053359",
+      "type": "work",
+      "labelZh": "悲剧的诞生",
+      "labelEn": "The Birth of Tragedy"
+    },
+    {
+      "id": "wd:Q7739783",
+      "qid": "Q7739783",
+      "type": "work",
+      "labelZh": "英格蘭史 (休謨)",
+      "labelEn": "The History of England"
+    },
+    {
+      "id": "wd:Q877510",
+      "qid": "Q877510",
+      "type": "work",
+      "labelZh": "精神现象学",
+      "labelEn": "The Phenomenology of Spirit"
+    },
+    {
+      "id": "wd:Q199774",
+      "qid": "Q199774",
+      "type": "work",
+      "labelZh": "查拉图斯特拉如是说",
+      "labelEn": "Thus Spoke Zarathustra"
+    },
+    {
+      "id": "wd:Q655717",
+      "qid": "Q655717",
+      "type": "work",
+      "labelZh": "邏輯哲學論",
+      "labelEn": "Tractatus Logico-Philosophicus"
+    },
+    {
+      "id": "wd:Q1605652",
+      "qid": "Q1605652",
+      "type": "work",
+      "labelZh": "",
+      "labelEn": "Untimely Meditations"
+    },
+    {
+      "id": "wd:Q1074987",
+      "qid": "Q1074987",
+      "type": "work",
+      "labelZh": "莊子",
+      "labelEn": "Zhuangzi"
+    }
+  ],
+  "relations": [
+    {
+      "source": "socrates",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q913",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "socrates",
+      "target": "wd:Q9471",
+      "type": "works_in_field",
+      "sourceWikidata": "Q913",
+      "targetWikidata": "Q9471",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "socrates",
+      "target": "wd:Q9465",
+      "type": "works_in_field",
+      "sourceWikidata": "Q913",
+      "targetWikidata": "Q9465",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "socrates",
+      "target": "wd:Q83041",
+      "type": "influenced_by",
+      "sourceWikidata": "Q913",
+      "targetWikidata": "Q83041",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "socrates",
+      "target": "wd:Q178540",
+      "type": "influenced_by",
+      "sourceWikidata": "Q913",
+      "targetWikidata": "Q178540",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "socrates",
+      "target": "wd:Q3750514",
+      "type": "influenced_by",
+      "sourceWikidata": "Q913",
+      "targetWikidata": "Q3750514",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q193589",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q193589",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q8242",
+      "type": "works_in_field",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q8242",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q9471",
+      "type": "works_in_field",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q9471",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q7748",
+      "type": "works_in_field",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q7748",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q267634",
+      "type": "created_work",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q267634",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q648889",
+      "type": "created_work",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q648889",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q244161",
+      "type": "created_work",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q244161",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q6499786",
+      "type": "created_work",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q6499786",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "plato",
+      "target": "socrates",
+      "type": "influenced_by",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q913",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q41155",
+      "type": "influenced_by",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q41155",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q125551",
+      "type": "influenced_by",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q125551",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "plato",
+      "target": "wd:Q6691",
+      "type": "influenced_by",
+      "sourceWikidata": "Q859",
+      "targetWikidata": "Q6691",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "aristotle",
+      "target": "wd:Q194414",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q868",
+      "targetWikidata": "Q194414",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "aristotle",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q868",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "aristotle",
+      "target": "wd:Q269323",
+      "type": "works_in_field",
+      "sourceWikidata": "Q868",
+      "targetWikidata": "Q269323",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "aristotle",
+      "target": "wd:Q69539",
+      "type": "created_work",
+      "sourceWikidata": "Q868",
+      "targetWikidata": "Q69539",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "aristotle",
+      "target": "wd:Q474537",
+      "type": "created_work",
+      "sourceWikidata": "Q868",
+      "targetWikidata": "Q474537",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "aristotle",
+      "target": "wd:Q661655",
+      "type": "created_work",
+      "sourceWikidata": "Q868",
+      "targetWikidata": "Q661655",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "aristotle",
+      "target": "wd:Q1051198",
+      "type": "created_work",
+      "sourceWikidata": "Q868",
+      "targetWikidata": "Q1051198",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "aristotle",
+      "target": "plato",
+      "type": "influenced_by",
+      "sourceWikidata": "Q868",
+      "targetWikidata": "Q859",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "aristotle",
+      "target": "socrates",
+      "type": "influenced_by",
+      "sourceWikidata": "Q868",
+      "targetWikidata": "Q913",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "aristotle",
+      "target": "wd:Q41155",
+      "type": "influenced_by",
+      "sourceWikidata": "Q868",
+      "targetWikidata": "Q41155",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "aristotle",
+      "target": "wd:Q125551",
+      "type": "influenced_by",
+      "sourceWikidata": "Q868",
+      "targetWikidata": "Q125551",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "zhuangzi",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q47739",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "zhuangzi",
+      "target": "wd:Q1074987",
+      "type": "created_work",
+      "sourceWikidata": "Q47739",
+      "targetWikidata": "Q1074987",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "zhuangzi",
+      "target": "wd:Q9333",
+      "type": "influenced_by",
+      "sourceWikidata": "Q47739",
+      "targetWikidata": "Q9333",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "confucius",
+      "target": "wd:Q9581",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q4604",
+      "targetWikidata": "Q9581",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "confucius",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q4604",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "confucius",
+      "target": "wd:Q180592",
+      "type": "works_in_field",
+      "sourceWikidata": "Q4604",
+      "targetWikidata": "Q180592",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "confucius",
+      "target": "wd:Q9465",
+      "type": "works_in_field",
+      "sourceWikidata": "Q4604",
+      "targetWikidata": "Q9465",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "confucius",
+      "target": "wd:Q276015",
+      "type": "created_work",
+      "sourceWikidata": "Q4604",
+      "targetWikidata": "Q276015",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "buddha",
+      "target": "wd:Q185514",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9441",
+      "targetWikidata": "Q185514",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "buddha",
+      "target": "wd:Q42927",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9441",
+      "targetWikidata": "Q42927",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "buddha",
+      "target": "wd:Q134293",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9441",
+      "targetWikidata": "Q134293",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "buddha",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9441",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "buddha",
+      "target": "wd:Q9174",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9441",
+      "targetWikidata": "Q9174",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "buddha",
+      "target": "wd:Q26877677",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9441",
+      "targetWikidata": "Q26877677",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "buddha",
+      "target": "wd:Q454",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9441",
+      "targetWikidata": "Q454",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "buddha",
+      "target": "wd:Q1227131",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9441",
+      "targetWikidata": "Q1227131",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q83368",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q83368",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q56000",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q56000",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q1998646",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q1998646",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q12539",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q12539",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q35277",
+      "type": "works_in_field",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q35277",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q9471",
+      "type": "works_in_field",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q9471",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q23407",
+      "type": "works_in_field",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q23407",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q1306656",
+      "type": "created_work",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q1306656",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q1306663",
+      "type": "created_work",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q1306663",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q7739783",
+      "type": "created_work",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q7739783",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q2451675",
+      "type": "created_work",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q2451675",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q82049",
+      "type": "influenced_by",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q82049",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q9353",
+      "type": "influenced_by",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q9353",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q316367",
+      "type": "influenced_by",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q316367",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "hume",
+      "target": "wd:Q935",
+      "type": "influenced_by",
+      "sourceWikidata": "Q37160",
+      "targetWikidata": "Q935",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q679842",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q679842",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q12539",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q12539",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q9471",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q9471",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q35277",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q35277",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q9465",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q9465",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q220002",
+      "type": "created_work",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q220002",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q870851",
+      "type": "created_work",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q870851",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q1056332",
+      "type": "created_work",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q1056332",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q1761342",
+      "type": "created_work",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q1761342",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "kant",
+      "target": "hume",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q37160",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q82049",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q82049",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q76510",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q76510",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "kant",
+      "target": "wd:Q6527",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9312",
+      "targetWikidata": "Q6527",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q679842",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q679842",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q460501",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q460501",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q906313",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q906313",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q8078",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q8078",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q190721",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q190721",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q35986",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q35986",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q1210941",
+      "type": "created_work",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q1210941",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q919699",
+      "type": "created_work",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q919699",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q374811",
+      "type": "created_work",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q374811",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q877510",
+      "type": "created_work",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q877510",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q60070",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q60070",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "hegel",
+      "target": "kant",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q9312",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q41155",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q41155",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "hegel",
+      "target": "wd:Q35802",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9235",
+      "targetWikidata": "Q35802",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "nietzsche",
+      "target": "wd:Q495527",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9358",
+      "targetWikidata": "Q495527",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "nietzsche",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9358",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "nietzsche",
+      "target": "wd:Q199774",
+      "type": "created_work",
+      "sourceWikidata": "Q9358",
+      "targetWikidata": "Q199774",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "nietzsche",
+      "target": "wd:Q1053359",
+      "type": "created_work",
+      "sourceWikidata": "Q9358",
+      "targetWikidata": "Q1053359",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "nietzsche",
+      "target": "wd:Q120609061",
+      "type": "created_work",
+      "sourceWikidata": "Q9358",
+      "targetWikidata": "Q120609061",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "nietzsche",
+      "target": "wd:Q1605652",
+      "type": "created_work",
+      "sourceWikidata": "Q9358",
+      "targetWikidata": "Q1605652",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "nietzsche",
+      "target": "wd:Q38193",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9358",
+      "targetWikidata": "Q38193",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "nietzsche",
+      "target": "wd:Q41155",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9358",
+      "targetWikidata": "Q41155",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "nietzsche",
+      "target": "wd:Q48226",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9358",
+      "targetWikidata": "Q48226",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "nietzsche",
+      "target": "wd:Q1035",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9358",
+      "targetWikidata": "Q1035",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "sartre",
+      "target": "wd:Q38066",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q38066",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "sartre",
+      "target": "wd:Q7066",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q7066",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "sartre",
+      "target": "wd:Q179235",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q179235",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "sartre",
+      "target": "wd:Q1450620",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q1450620",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "sartre",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "sartre",
+      "target": "wd:Q9471",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q9471",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "sartre",
+      "target": "wd:Q9465",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q9465",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "sartre",
+      "target": "wd:Q7163",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q7163",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "sartre",
+      "target": "wd:Q48301",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q48301",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "sartre",
+      "target": "wd:Q151820",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q151820",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "sartre",
+      "target": "wd:Q153034",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q153034",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "sartre",
+      "target": "hegel",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9364",
+      "targetWikidata": "Q9235",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "wittgenstein",
+      "target": "wd:Q183216",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q9391",
+      "targetWikidata": "Q183216",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "wittgenstein",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q9391",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "wittgenstein",
+      "target": "wd:Q655717",
+      "type": "created_work",
+      "sourceWikidata": "Q9391",
+      "targetWikidata": "Q655717",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "wittgenstein",
+      "target": "wd:Q772496",
+      "type": "created_work",
+      "sourceWikidata": "Q9391",
+      "targetWikidata": "Q772496",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "wittgenstein",
+      "target": "wd:Q33760",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9391",
+      "targetWikidata": "Q33760",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "wittgenstein",
+      "target": "wd:Q6512",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9391",
+      "targetWikidata": "Q6512",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "wittgenstein",
+      "target": "wd:Q60028",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9391",
+      "targetWikidata": "Q60028",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "wittgenstein",
+      "target": "wd:Q38193",
+      "type": "influenced_by",
+      "sourceWikidata": "Q9391",
+      "targetWikidata": "Q38193",
+      "evidence": "Wikidata P737"
+    },
+    {
+      "source": "wang-yangming",
+      "target": "wd:Q825754",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q378462",
+      "targetWikidata": "Q825754",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "wang-yangming",
+      "target": "wd:Q697205",
+      "type": "belongs_to_movement",
+      "sourceWikidata": "Q378462",
+      "targetWikidata": "Q697205",
+      "evidence": "Wikidata claim"
+    },
+    {
+      "source": "wang-yangming",
+      "target": "wd:Q5891",
+      "type": "works_in_field",
+      "sourceWikidata": "Q378462",
+      "targetWikidata": "Q5891",
+      "evidence": "Wikidata claim"
+    }
+  ]
+}

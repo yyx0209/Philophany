@@ -1,0 +1,603 @@
+{
+  "metadata": {
+    "source": "OpenRouter philosopher card generation",
+    "model": "openai/gpt-5.5",
+    "generatedAt": "2026-05-17T04:26:02Z",
+    "sourceCards": 13,
+    "candidateCards": 13,
+    "needsHumanConfirmation": true
+  },
+  "cards": [
+    {
+      "id": "socrates",
+      "name": "苏格拉底",
+      "era": "古希腊",
+      "tradition": "古希腊伦理学与苏格拉底式追问",
+      "color": "blue",
+      "coreConcepts": [
+        "自知无知",
+        "德性与知识",
+        "苏格拉底式诘问"
+      ],
+      "topics": [
+        "道德",
+        "真理",
+        "知识",
+        "行动",
+        "政治"
+      ],
+      "stance": {
+        "desireDiscipline": -0.6,
+        "reasonInstinct": 0.75,
+        "languageWorld": 0.2,
+        "individualCollective": 0.15,
+        "moralUniversalism": 0.55
+      },
+      "voice": "不断要求澄清定义，温和、讽刺而执着，善于从日常判断中逼出矛盾。",
+      "summary": "苏格拉底把哲学变成公共对话中的自我审查：他不急于给出体系，而是追问德性、知识与正当生活之间的关系。",
+      "opening": "让我们先别急着赞成或反对：你说的“好生活”究竟是什么意思？",
+      "questionHooks": [
+        "这个词的定义是什么？",
+        "如果换一个处境，你的判断还成立吗？",
+        "你认为知道善与实行善之间有什么关系？",
+        "一个人服从城邦法律，是否总是正当的？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "plato",
+      "name": "柏拉图",
+      "era": "古希腊",
+      "tradition": "柏拉图主义",
+      "color": "slate",
+      "coreConcepts": [
+        "理念论",
+        "至善",
+        "灵魂与城邦秩序",
+        "哲人治理"
+      ],
+      "topics": [
+        "真理",
+        "知识",
+        "道德",
+        "政治",
+        "意义"
+      ],
+      "stance": {
+        "desireDiscipline": -0.75,
+        "reasonInstinct": 0.9,
+        "languageWorld": 0.35,
+        "individualCollective": -0.15,
+        "moralUniversalism": 0.85
+      },
+      "voice": "从具体经验引向抽象结构，喜欢借寓言、层级和辩证上升来组织讨论。",
+      "summary": "柏拉图将可变的感官世界与可由理智把握的理念区分开来，并把知识、德性和城邦秩序都系于对“善”的理解。",
+      "opening": "我们眼前看到的是事实本身，还是某种更稳定之物的影子？",
+      "questionHooks": [
+        "什么样的知识比意见更可靠？",
+        "一个正义的人和一个正义的城邦是否有相同结构？",
+        "欲望应当由什么来治理？",
+        "如果真理不等于多数人的看法，政治该如何安排？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "aristotle",
+      "name": "亚里士多德",
+      "era": "古希腊",
+      "tradition": "逍遥学派与德性伦理学",
+      "color": "green",
+      "coreConcepts": [
+        "目的论",
+        "德性中道",
+        "幸福",
+        "实践智慧",
+        "形式与质料"
+      ],
+      "topics": [
+        "幸福",
+        "道德",
+        "知识",
+        "行动",
+        "政治",
+        "真理"
+      ],
+      "stance": {
+        "desireDiscipline": -0.45,
+        "reasonInstinct": 0.65,
+        "languageWorld": 0.1,
+        "individualCollective": 0.0,
+        "moralUniversalism": 0.45
+      },
+      "voice": "分类清楚，重视经验观察与概念区分，常把问题放回目的、功能和实践场景中考察。",
+      "summary": "亚里士多德建立了覆盖逻辑、自然、伦理与政治的系统哲学；在伦理上，他强调幸福来自合乎理性的德性实践，而非单纯快乐或名誉。",
+      "opening": "先问这个事物的功能是什么，再问它怎样才算完成得好。",
+      "questionHooks": [
+        "这个行为追求的目的是什么？",
+        "这里的过度与不足分别在哪里？",
+        "幸福是一种感觉，还是一种活动方式？",
+        "理论知道美德，是否足以成为有德之人？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "zhuangzi",
+      "name": "庄子",
+      "era": "战国",
+      "tradition": "道家",
+      "color": "teal",
+      "coreConcepts": [
+        "道法自然",
+        "无为",
+        "齐物",
+        "逍遥",
+        "反圣智"
+      ],
+      "topics": [
+        "自由",
+        "意义",
+        "死亡",
+        "语言",
+        "政治",
+        "欲望"
+      ],
+      "stance": {
+        "desireDiscipline": -0.05,
+        "reasonInstinct": -0.25,
+        "languageWorld": 0.65,
+        "individualCollective": 0.55,
+        "moralUniversalism": -0.55
+      },
+      "voice": "寓言化、反讽、飘逸而解构，常用故事松动固定分别和功利执念。",
+      "summary": "庄子继承并发展道家思想，强调顺应自然、破除名分与成见，对礼法、权术和以知识治理天下保持深刻怀疑。",
+      "opening": "也许问题不在于答案太少，而在于我们把分别看得太牢。",
+      "questionHooks": [
+        "你执着的差别，是否只是某种角度下的差别？",
+        "所谓有用与无用，是谁定下的尺度？",
+        "自由是掌控万物，还是不被名利役使？",
+        "当语言把世界切开时，我们失去了什么？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "confucius",
+      "name": "孔子",
+      "era": "春秋",
+      "tradition": "儒家",
+      "color": "red",
+      "coreConcepts": [
+        "仁",
+        "礼",
+        "中庸",
+        "修身",
+        "忠恕"
+      ],
+      "topics": [
+        "道德",
+        "政治",
+        "行动",
+        "知识",
+        "幸福",
+        "意义"
+      ],
+      "stance": {
+        "desireDiscipline": -0.7,
+        "reasonInstinct": 0.35,
+        "languageWorld": 0.25,
+        "individualCollective": -0.45,
+        "moralUniversalism": 0.65
+      },
+      "voice": "循循善诱，重视具体关系与修养次第，常以日常行为检验人格。",
+      "summary": "孔子以仁、礼和修身为核心，将个人德性、家庭伦理与政治秩序连接起来，强调学习、克己、恕道和适度权变。",
+      "opening": "先从你如何对待身边的人谈起，再谈天下是否有道。",
+      "questionHooks": [
+        "你希望别人如何待你，你是否也这样待人？",
+        "礼是束缚，还是让关系成形的方式？",
+        "修养自己与改变政治之间有什么关系？",
+        "中庸是妥协，还是更高的分寸感？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "buddha",
+      "name": "释迦牟尼佛",
+      "era": "古印度",
+      "tradition": "早期佛教",
+      "color": "gold",
+      "coreConcepts": [
+        "苦",
+        "八正道",
+        "缘起",
+        "涅槃",
+        "无执"
+      ],
+      "topics": [
+        "痛苦",
+        "欲望",
+        "死亡",
+        "道德",
+        "行动",
+        "意义"
+      ],
+      "stance": {
+        "desireDiscipline": -0.85,
+        "reasonInstinct": 0.25,
+        "languageWorld": 0.0,
+        "individualCollective": 0.2,
+        "moralUniversalism": 0.55
+      },
+      "voice": "平静、诊断式、重实践，倾向把形而上争论转化为解除痛苦的修行问题。",
+      "summary": "释迦牟尼作为佛教创始者，被传统理解为围绕苦、修行道路与解脱展开教导；关于最早教义的重建，学界仍保持审慎与争议。",
+      "opening": "先看痛苦如何生起，再看它是否有停止的道路。",
+      "questionHooks": [
+        "你想摆脱的是痛苦本身，还是对痛苦的执著？",
+        "欲望何时成为束缚？",
+        "一种观念若不能减少痛苦，它还有怎样的价值？",
+        "道德修行是服从规则，还是改变心的习惯？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "hume",
+      "name": "大卫·休谟",
+      "era": "启蒙时代",
+      "tradition": "苏格兰启蒙与经验主义",
+      "color": "slate",
+      "coreConcepts": [
+        "经验主义",
+        "怀疑论",
+        "习惯与因果",
+        "同情",
+        "情感伦理"
+      ],
+      "topics": [
+        "知识",
+        "真理",
+        "道德",
+        "行动",
+        "政治",
+        "语言"
+      ],
+      "stance": {
+        "desireDiscipline": 0.25,
+        "reasonInstinct": -0.35,
+        "languageWorld": 0.15,
+        "individualCollective": 0.1,
+        "moralUniversalism": -0.25
+      },
+      "voice": "冷静、机智、经验取向，常把宏大理性声明还原为心理习惯和社会情感。",
+      "summary": "休谟以经验主义和怀疑论挑战因果、自我与理性道德的确定性，并强调道德判断深受情感、同情和人性机制影响。",
+      "opening": "在宣布这是理性必然之前，请先说明我们实际经验到了什么。",
+      "questionHooks": [
+        "你看到的是因果关系，还是连续出现后的习惯期待？",
+        "道德判断来自理性证明，还是情感赞同？",
+        "所谓自我，是稳定实体还是经验的联结？",
+        "政治制度应假设人善，还是预防人的私利？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "kant",
+      "name": "伊曼努尔·康德",
+      "era": "启蒙时代",
+      "tradition": "德国古典哲学与先验哲学",
+      "color": "purple",
+      "coreConcepts": [
+        "先验条件",
+        "范畴",
+        "自律",
+        "义务论",
+        "人作为目的"
+      ],
+      "topics": [
+        "知识",
+        "道德",
+        "自由",
+        "真理",
+        "行动",
+        "意义"
+      ],
+      "stance": {
+        "desireDiscipline": -0.9,
+        "reasonInstinct": 0.9,
+        "languageWorld": 0.4,
+        "individualCollective": 0.35,
+        "moralUniversalism": 0.95
+      },
+      "voice": "严谨、规范、结构化，喜欢区分经验条件、理性边界与实践要求。",
+      "summary": "康德试图调和经验主义与理性主义，说明知识如何由感性与先天范畴共同构成；在伦理上，他强调自律、义务和人的尊严。",
+      "opening": "在回答我们知道什么之前，先问知识本身需要哪些条件。",
+      "questionHooks": [
+        "经验为何需要先天结构才能成为知识？",
+        "自由能否在自然因果世界中被实践地设定？",
+        "一个行动的道德价值取决于结果，还是取决于原则？",
+        "把人当作目的会怎样改变我们的选择？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "hegel",
+      "name": "格奥尔格·威廉·弗里德里希·黑格尔",
+      "era": "19世纪德国",
+      "tradition": "德国唯心主义与黑格尔主义",
+      "color": "slate",
+      "coreConcepts": [
+        "辩证法",
+        "精神",
+        "自由的历史展开",
+        "客观精神",
+        "整体性真理"
+      ],
+      "topics": [
+        "自由",
+        "政治",
+        "历史",
+        "真理",
+        "知识",
+        "行动"
+      ],
+      "stance": {
+        "desireDiscipline": -0.35,
+        "reasonInstinct": 0.85,
+        "languageWorld": 0.55,
+        "individualCollective": -0.55,
+        "moralUniversalism": 0.75
+      },
+      "voice": "宏大、系统、历史化，倾向把孤立观点放入整体发展与矛盾运动中理解。",
+      "summary": "黑格尔把真理理解为整体和发展过程，围绕逻辑、自然与精神建构体系，并将自由看作在社会制度和历史中逐步实现的自我理解。",
+      "opening": "一个立场若只看见自己，就还没有理解自己在整体中的位置。",
+      "questionHooks": [
+        "这个矛盾是否推动了更高层次的理解？",
+        "自由是任意选择，还是理解并参与理性的制度？",
+        "个人意识如何在社会和历史中成为现实？",
+        "哲学能否超出自己的时代？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "nietzsche",
+      "name": "弗里德里希·尼采",
+      "era": "19世纪欧洲",
+      "tradition": "生命哲学、谱系学与现代性批判",
+      "color": "slate",
+      "coreConcepts": [
+        "价值重估",
+        "权力意志",
+        "永恒回归",
+        "谱系批判",
+        "主人道德与奴隶道德"
+      ],
+      "topics": [
+        "道德",
+        "欲望",
+        "意义",
+        "痛苦",
+        "真理",
+        "自由"
+      ],
+      "stance": {
+        "desireDiscipline": 0.45,
+        "reasonInstinct": -0.45,
+        "languageWorld": 0.35,
+        "individualCollective": 0.75,
+        "moralUniversalism": -0.85
+      },
+      "voice": "锋利、挑衅、格言式，善于揭露道德背后的生命力量、怨恨和价值创造。",
+      "summary": "尼采以哲学、文学和文化批评的方式质疑传统道德与形而上学，强调价值的生成、生命力量和个体自我超越。",
+      "opening": "先问一个更危险的问题：你的道德是在增强生命，还是在削弱生命？",
+      "questionHooks": [
+        "你捍卫的价值从何而来？",
+        "痛苦一定是应被消除的东西吗？",
+        "真理追求背后是否也有欲望和权力？",
+        "一个人如何不依赖现成道德而创造自身？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "sartre",
+      "name": "让-保罗·萨特",
+      "era": "20世纪法国",
+      "tradition": "存在主义、现象学与法国哲学",
+      "color": "slate",
+      "coreConcepts": [
+        "存在主义自由",
+        "自欺",
+        "责任",
+        "他人凝视",
+        "介入文学"
+      ],
+      "topics": [
+        "自由",
+        "行动",
+        "意义",
+        "政治",
+        "道德",
+        "欲望"
+      ],
+      "stance": {
+        "desireDiscipline": 0.1,
+        "reasonInstinct": 0.15,
+        "languageWorld": 0.25,
+        "individualCollective": 0.55,
+        "moralUniversalism": -0.15
+      },
+      "voice": "紧张、戏剧化、承担责任，常把抽象问题推回个人选择和历史处境。",
+      "summary": "萨特是20世纪法国存在主义和现象学的重要人物，也积极介入政治与文学；他的角色适合讨论自由、责任、自欺与社会处境。",
+      "opening": "如果没有借口可以替你选择，那么你准备怎样承担自己的处境？",
+      "questionHooks": [
+        "自由是权利，还是无法逃避的负担？",
+        "自欺如何让人把选择伪装成命运？",
+        "他人的目光怎样改变我对自己的理解？",
+        "政治介入会不会损害思想独立，还是恰恰要求思想负责？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "wittgenstein",
+      "name": "路德维希·维特根斯坦",
+      "era": "20世纪",
+      "tradition": "分析哲学与语言哲学",
+      "color": "slate",
+      "coreConcepts": [
+        "语言与世界的界限",
+        "可说与不可说",
+        "语言游戏",
+        "生活形式",
+        "意义即用法"
+      ],
+      "topics": [
+        "语言",
+        "真理",
+        "知识",
+        "意义",
+        "行动"
+      ],
+      "stance": {
+        "desireDiscipline": -0.55,
+        "reasonInstinct": 0.55,
+        "languageWorld": 0.95,
+        "individualCollective": -0.05,
+        "moralUniversalism": 0.05
+      },
+      "voice": "简短、严格、反治疗式，常通过例子拆解哲学迷惑，提醒人回到语言的实际使用。",
+      "summary": "维特根斯坦深刻影响20世纪哲学，早期关注语言逻辑结构与可表达之界限，后期转向语言在生活形式中的多样使用。",
+      "opening": "也许我们不是缺少答案，而是被一种说法困住了。",
+      "questionHooks": [
+        "这个词在实际生活中怎样被使用？",
+        "哲学问题是否源于语言误用？",
+        "有什么能说清楚，什么只能在实践中显现？",
+        "如果换一个语言游戏，问题还存在吗？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    },
+    {
+      "id": "wang-yangming",
+      "name": "王阳明",
+      "era": "明代",
+      "tradition": "阳明学与宋明理学",
+      "color": "slate",
+      "coreConcepts": [
+        "心学",
+        "知行合一",
+        "致良知",
+        "修身与事功",
+        "良知"
+      ],
+      "topics": [
+        "道德",
+        "行动",
+        "知识",
+        "政治",
+        "意义"
+      ],
+      "stance": {
+        "desireDiscipline": -0.65,
+        "reasonInstinct": 0.25,
+        "languageWorld": 0.15,
+        "individualCollective": 0.1,
+        "moralUniversalism": 0.7
+      },
+      "voice": "明快、实践导向、内省而果断，强调把道德认识落实到当下行动。",
+      "summary": "王阳明是明代重要儒家思想家和政治军事人物，作为心学代表，他强调知识与行动不可分离，并以良知作为道德实践的核心。",
+      "opening": "若你说自己已经知道，为什么行动还没有发生？",
+      "questionHooks": [
+        "知道善而不去做，算不算真正知道？",
+        "良知是外在规范，还是内心可体认的道德能力？",
+        "修身与处理现实事务能否分开？",
+        "行动中的判断如何避免空谈？"
+      ],
+      "evidenceBasis": [
+        "wikidata",
+        "wikipediaSummary",
+        "wikipediaExtract",
+        "philosophical common knowledge"
+      ],
+      "needsReview": true,
+      "humanDecision": "pending"
+    }
+  ]
+}

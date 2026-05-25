@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Philophany 遇见哲学家</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="Philophany 遇见哲学家工作台">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Philophany</p>
+            <h1>遇见哲学家</h1>
+          </div>
+          <div class="mode-tabs" role="tablist" aria-label="视图">
+            <button class="tab is-active" data-view="graph" type="button">图谱</button>
+            <button class="tab" data-view="roundtable" type="button">圆桌</button>
+          </div>
+        </header>
+
+        <section class="graph-layout view is-active" id="graphView" aria-label="知识图谱">
+          <div class="graph-stage">
+            <svg id="knowledgeGraph" viewBox="0 0 960 620" role="img" aria-label="哲学家知识图谱"></svg>
+          </div>
+          <aside class="graph-side">
+            <div class="panel-heading">
+              <h2>关系</h2>
+            </div>
+            <div class="relation-legend">
+              <span><b class="legend-dot influence"></b>影响</span>
+              <span><b class="legend-dot tension"></b>张力</span>
+              <span><b class="legend-dot affinity"></b>相近</span>
+            </div>
+            <div id="graphInspector"></div>
+          </aside>
+        </section>
+
+        <section class="roundtable-layout view" id="roundtableView" aria-label="圆桌讨论">
+          <section class="prompt-panel" aria-label="问题输入">
+            <label for="questionInput">你想让哲学家们讨论什么？</label>
+            <div class="prompt-row">
+              <textarea id="questionInput" rows="3">努力真的有意义吗，还是我们只是在说服自己？</textarea>
+              <button class="primary-action" id="recommendButton" type="button">
+                <span aria-hidden="true">⌁</span>
+                召集圆桌
+              </button>
+            </div>
+            <div class="topic-chips" id="topicChips" aria-label="快捷主题"></div>
+          </section>
+
+          <section class="roster-panel" aria-label="圆桌阵容">
+            <div class="roster-row roster-row--lineup">
+              <div class="panel-heading">
+                <h2>当前阵容</h2>
+                <button class="icon-button" id="resetLineupButton" type="button" title="重新推荐" aria-label="重新推荐">
+                  ↻
+                </button>
+              </div>
+              <div class="lineup-list" id="lineupList"></div>
+            </div>
+            <div class="roster-row roster-row--pool">
+              <div class="panel-heading panel-heading--compact">
+                <h2>候选哲学家</h2>
+              </div>
+              <div class="philosopher-pool" id="philosopherPool"></div>
+            </div>
+          </section>
+
+          <section class="conversation-panel" aria-label="圆桌讨论">
+            <div class="conversation-toolbar">
+              <div>
+                <h2>讨论记录</h2>
+                <p id="roundtableMeta">等待召集圆桌</p>
+              </div>
+              <div class="toolbar-actions">
+                <button class="tool-button" id="startDebateButton" type="button" title="下一位发言">
+                  <span aria-hidden="true">▶</span>
+                  下一位
+                </button>
+                <button class="tool-button" id="returnToMainButton" type="button" title="回到原问题" hidden>
+                  <span aria-hidden="true">↩</span>
+                  回到原问题
+                </button>
+                <button class="tool-button" id="summaryButton" type="button" title="总结分歧">
+                  <span aria-hidden="true">☰</span>
+                  总结
+                </button>
+              </div>
+            </div>
+            <div class="conversation" id="conversation"></div>
+            <form class="intervention-box" id="interventionForm">
+              <input id="interventionInput" type="text" autocomplete="off" placeholder="@庄子 什么是逍遥，或 @庄子@康德 你们怎么看" />
+              <button class="primary-action primary-action--small" type="submit">
+                <span aria-hidden="true">↵</span>
+                追问
+              </button>
+            </form>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="profileModal" hidden>
+      <section class="profile-modal" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+        <div class="modal-toolbar">
+          <h2 id="profileModalTitle">哲学家简介</h2>
+          <button class="icon-button" id="closeProfileModal" type="button" title="关闭" aria-label="关闭简介">×</button>
+        </div>
+        <div id="detailCard"></div>
+      </section>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

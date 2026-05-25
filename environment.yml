@@ -1,0 +1,8 @@
+name: philophany
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - networkx
+  - scikit-learn
+  - sentence-transformers

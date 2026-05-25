@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "source": "curated philosophical relation priors",
+    "note": "These priors force canonical pairs into LLM review; they do not directly enter data.js."
+  },
+  "relations": [
+    {
+      "source": "confucius",
+      "target": "zhuangzi",
+      "suggestedType": "tension",
+      "confidence": 0.9,
+      "retrievalFloor": 0.78,
+      "reason": "孔子的礼法修身与庄子的自然逍遥、反圣智形成儒道之间的核心张力。"
+    },
+    {
+      "source": "confucius",
+      "target": "wang-yangming",
+      "suggestedType": "influence",
+      "confidence": 0.9,
+      "retrievalFloor": 0.82,
+      "reason": "孔子作为儒家经典传统的源头之一，对王阳明心学关于修身、良知、知行与道德实践的问题框架构成历史思想影响；这里不是直接师承，而是传统谱系中的深层影响。"
+    },
+    {
+      "source": "buddha",
+      "target": "confucius",
+      "suggestedType": "tension",
+      "confidence": 0.82,
+      "retrievalFloor": 0.74,
+      "reason": "佛陀关于苦、无我、出离与解脱的取向，和孔子关于仁礼、家庭伦理、政治秩序与入世修身的取向形成跨传统张力。"
+    },
+    {
+      "source": "zhuangzi",
+      "target": "wang-yangming",
+      "suggestedType": "tension",
+      "confidence": 0.78,
+      "retrievalFloor": 0.72,
+      "reason": "庄子的齐物逍遥与王阳明的良知道德实践可形成自然解放与道德担当之间的张力。"
+    },
+    {
+      "source": "hume",
+      "target": "kant",
+      "suggestedType": "influence",
+      "confidence": 0.94,
+      "retrievalFloor": 0.84,
+      "reason": "休谟的经验主义和因果怀疑是康德重构知识与理性限度的重要刺激。"
+    },
+    {
+      "source": "socrates",
+      "target": "plato",
+      "suggestedType": "influence",
+      "confidence": 0.96,
+      "retrievalFloor": 0.86,
+      "reason": "苏格拉底的诘问法和德性问题构成柏拉图哲学写作和理念论展开的重要出发点。"
+    },
+    {
+      "source": "plato",
+      "target": "aristotle",
+      "suggestedType": "influence",
+      "confidence": 0.94,
+      "retrievalFloor": 0.84,
+      "reason": "亚里士多德在柏拉图学院传统中形成思想，并在形式、实体和目的论上继承又反驳柏拉图。"
+    },
+    {
+      "source": "kant",
+      "target": "hegel",
+      "suggestedType": "influence",
+      "confidence": 0.9,
+      "retrievalFloor": 0.82,
+      "reason": "康德的先验哲学和自由自律问题构成黑格尔德国唯心主义体系的关键背景。"
+    },
+    {
+      "source": "kant",
+      "target": "nietzsche",
+      "suggestedType": "tension",
+      "confidence": 0.86,
+      "retrievalFloor": 0.78,
+      "reason": "康德的普遍义务论与尼采对普遍道德的谱系式怀疑形成现代道德哲学中的强张力。"
+    },
+    {
+      "source": "plato",
+      "target": "nietzsche",
+      "suggestedType": "tension",
+      "confidence": 0.88,
+      "retrievalFloor": 0.78,
+      "reason": "柏拉图以理念和至善奠定真理与德性，尼采则批判超感性真理和普遍道德。"
+    },
+    {
+      "source": "kant",
+      "target": "sartre",
+      "suggestedType": "tension",
+      "confidence": 0.82,
+      "retrievalFloor": 0.74,
+      "reason": "康德把自由系于普遍自律法则，萨特强调无预设本质中的处境化选择与责任。"
+    },
+    {
+      "source": "hegel",
+      "target": "nietzsche",
+      "suggestedType": "tension",
+      "confidence": 0.84,
+      "retrievalFloor": 0.76,
+      "reason": "黑格尔的理性历史和客观精神与尼采的谱系批判、价值重估形成关于历史理性的张力。"
+    }
+  ]
+}
