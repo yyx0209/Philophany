@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate exampleStyle proposals for philosopher cards with OpenRouter.
+Generate exampleStyle proposals for philosopher cards with DeepSeek.
 
 This script creates a review workspace only. Proposed example styles default to
 humanDecision=pending and must be approved before they can be merged into cards.
@@ -24,8 +24,8 @@ from graph_data_io import load_card_bundle, normalize_example_style, safe_id, sa
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CARDS = ROOT / "data" / "generated" / "reviewed_philosopher_cards.json"
 DEFAULT_OUTPUT = ROOT / "data" / "generated" / "reviewed_example_styles.json"
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-DEFAULT_MODEL = "deepseek/deepseek-v4-pro"
+DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
+DEFAULT_MODEL = "deepseek-v4-pro"
 ALLOWED_MODES = [
     "dialogue_situation",
     "practical_scene",
@@ -45,7 +45,7 @@ ALLOWED_FREQUENCIES = ["high", "medium", "low"]
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate reviewed exampleStyle proposals with OpenRouter.")
+    parser = argparse.ArgumentParser(description="Generate reviewed exampleStyle proposals with DeepSeek.")
     parser.add_argument("--cards", type=Path, default=DEFAULT_CARDS)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--model", default=DEFAULT_MODEL)
@@ -63,11 +63,11 @@ def main() -> None:
         print("Human confirmation required before merge.")
         return
 
-    api_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if not api_key:
-        raise SystemExit("OPENROUTER_API_KEY is missing. Add it to .env or the environment.")
+        raise SystemExit("DEEPSEEK_API_KEY is missing. Add it to .env or the environment.")
 
-    raw = call_openrouter(api_key=api_key, model=args.model, messages=build_prompt(cards))
+    raw = call_deepseek(api_key=api_key, model=args.model, messages=build_prompt(cards))
     parsed = parse_model_json(raw)
     output = build_review_output(
         cards=cards,
@@ -196,7 +196,7 @@ def build_review_output(
 
     return {
         "metadata": {
-            "source": "openrouter_example_style_generation",
+            "source": "deepseek_example_style_generation",
             "model": model,
             "generatedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             "inputFile": input_file,
@@ -208,23 +208,22 @@ def build_review_output(
     }
 
 
-def call_openrouter(api_key: str, model: str, messages: list[dict[str, str]]) -> str:
+def call_deepseek(api_key: str, model: str, messages: list[dict[str, str]]) -> str:
     body = json.dumps(
         {
             "model": model,
             "temperature": 0.35,
             "max_tokens": 6000,
             "messages": messages,
+            "response_format": {"type": "json_object"},
         }
     ).encode("utf-8")
     request = urllib.request.Request(
-        OPENROUTER_URL,
+        DEEPSEEK_URL,
         data=body,
         headers={
             "Content-Type": "application/json",
             "Authorization": f"Bearer {api_key}",
-            "HTTP-Referer": "http://127.0.0.1:5173",
-            "X-Title": "Philophany",
         },
         method="POST",
     )
@@ -233,10 +232,10 @@ def call_openrouter(api_key: str, model: str, messages: list[dict[str, str]]) ->
             payload = json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as error:
         details = error.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"OpenRouter HTTP {error.code}: {details}") from error
+        raise RuntimeError(f"DeepSeek HTTP {error.code}: {details}") from error
     content = payload.get("choices", [{}])[0].get("message", {}).get("content")
     if not content:
-        raise RuntimeError(f"OpenRouter returned empty content for model {model}.")
+        raise RuntimeError(f"DeepSeek returned empty content for model {model}.")
     return content
 
 

@@ -69,6 +69,8 @@ reviewed_graph_relations.json
         ↓
 人工确认
         ↓
+product_graph_relations.json
+        ↓
 data.js
 ```
 
@@ -377,7 +379,7 @@ data.js
 
 ```txt
 reviewed_philosopher_cards.json
-+ reviewed_graph_relations.json
++ product_graph_relations.json
         ↓
 assemble_data_js.py
         ↓
@@ -389,8 +391,8 @@ data.js
 命令：
 
 ```bash
-conda run -n philophany python scripts/assemble_data_js.py --cards data/generated/reviewed_philosopher_cards.json --relations data/generated/reviewed_graph_relations.json
-conda run -n philophany python scripts/assemble_data_js.py --cards data/generated/reviewed_philosopher_cards.json --relations data/generated/reviewed_graph_relations.json --apply
+conda run -n philophany python scripts/assemble_data_js.py --cards data/generated/reviewed_philosopher_cards.json --relations data/generated/product_graph_relations.json
+conda run -n philophany python scripts/assemble_data_js.py --cards data/generated/reviewed_philosopher_cards.json --relations data/generated/product_graph_relations.json --apply
 ```
 
 ## 质量控制
@@ -422,7 +424,8 @@ conda run -n philophany python -m unittest scripts/test_graph_data_io.py scripts
 - `generate_philosopher_cards.py` 从 Wikidata 和 Wikipedia extracts 生成角色卡候选。
 - `generate_local_graph_candidates.py` 默认读取 `reviewed_philosopher_cards.json`，不再默认依赖 `data.js`。
 - `review_local_graph_candidates.py` 默认读取 `reviewed_philosopher_cards.json`，并用 GPT-5.5 审稿。
-- `assemble_data_js.py` 从已确认角色卡和已确认关系生成最终 `data.js`。
+- `reviewed_graph_relations.json` 是 LLM 审稿工作台；`product_graph_relations.json` 是人工确认后的产品图谱输入。
+- `assemble_data_js.py` 从已确认角色卡、产品图谱关系和每日引文生成最终 `data.js`。
 - `BAAI/bge-m3` 已成为正式 sentence-transformers 默认模型。
 
 历史 MVP 的 `data.js` 仍保留为前端可运行的产品数据，也可以通过隐藏 legacy 参数作为兼容输入，但它不再是推荐生成链路的起点。

@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "source": "confirmed product graph relations",
+    "restoredFrom": "HEAD:data.js",
+    "relationCount": 23,
+    "note": "This is the product graph source used by assemble_data_js.py. LLM review artifacts remain separate audit/workbench files."
+  },
+  "relations": [
+    {
+      "source": "socrates",
+      "target": "plato",
+      "type": "influence",
+      "weight": 0.96,
+      "reason": "苏格拉底的诘问法、德性即知识问题和公共对话形式直接塑造了柏拉图的哲学写作与理念论展开。"
+    },
+    {
+      "source": "plato",
+      "target": "aristotle",
+      "type": "influence",
+      "weight": 0.94,
+      "reason": "柏拉图的学院传统和理念论问题构成亚里士多德讨论形式、实体、知识与目的论时继承和反驳的直接背景。"
+    },
+    {
+      "source": "hume",
+      "target": "kant",
+      "type": "influence",
+      "weight": 0.94,
+      "reason": "休谟对因果性和理性确定性的怀疑直接刺激康德重构经验、范畴与知识限度的问题。"
+    },
+    {
+      "source": "confucius",
+      "target": "wang-yangming",
+      "type": "influence",
+      "weight": 0.9,
+      "reason": "孔子作为儒家经典传统的源头之一，对王阳明心学关于修身、良知、知行合一与道德实践的问题框架构成传统谱系中的深层思想影响。"
+    },
+    {
+      "source": "kant",
+      "target": "hegel",
+      "type": "influence",
+      "weight": 0.9,
+      "reason": "康德的先验条件、自由自律和理性限度问题构成黑格尔德国唯心主义体系化回应的关键出发点。"
+    },
+    {
+      "source": "socrates",
+      "target": "aristotle",
+      "type": "affinity",
+      "weight": 0.78,
+      "reason": "苏格拉底关于德性、知识与正当生活的追问和亚里士多德的德性伦理与实践智慧共享伦理实践的核心问题。"
+    },
+    {
+      "source": "confucius",
+      "target": "zhuangzi",
+      "type": "tension",
+      "weight": 0.9,
+      "reason": "孔子以仁礼修身连接伦理与政治秩序，而庄子以自然逍遥和反圣智质疑礼法治理，形成儒道核心张力。"
+    },
+    {
+      "source": "hegel",
+      "target": "sartre",
+      "type": "influence",
+      "weight": 0.84,
+      "reason": "黑格尔关于自由在社会历史中展开的框架为萨特讨论处境中的自由、责任与他人关系提供了重要背景。"
+    },
+    {
+      "source": "kant",
+      "target": "nietzsche",
+      "type": "tension",
+      "weight": 0.86,
+      "reason": "康德的普遍义务、自律法则与尼采对普遍道德的谱系式怀疑形成清晰张力，能直接引出道德是否需要普遍根基的圆桌争论。"
+    },
+    {
+      "source": "nietzsche",
+      "target": "plato",
+      "type": "tension",
+      "weight": 0.88,
+      "reason": "柏拉图以理念、至善和理性秩序奠定真理与德性，尼采则质疑超感性真理和普遍道德，能推动关于真理是否超越生命生成的圆桌辩论。"
+    },
+    {
+      "source": "hegel",
+      "target": "nietzsche",
+      "type": "tension",
+      "weight": 0.83,
+      "reason": "黑格尔把自由和真理理解为理性历史中的整体展开，尼采则以谱系批判和价值重估瓦解这种历史理性叙事，能激发关于历史是否有理性方向的圆桌冲突。"
+    },
+    {
+      "source": "buddha",
+      "target": "confucius",
+      "type": "tension",
+      "weight": 0.74,
+      "reason": "佛陀的解脱取向强调从苦、欲望和执著中出离，孔子的仁礼修身则把德性落实在家庭与政治秩序中，能形成出世解脱与入世伦理之间的圆桌张力。"
+    },
+    {
+      "source": "kant",
+      "target": "sartre",
+      "type": "tension",
+      "weight": 0.8,
+      "reason": "康德将自由理解为服从普遍理性法则的自律，萨特则强调无预设本质中的处境化选择与责任，能推动自由是否需要普遍规范的圆桌争论。"
+    },
+    {
+      "source": "wang-yangming",
+      "target": "zhuangzi",
+      "type": "tension",
+      "weight": 0.78,
+      "reason": "王阳明以良知和知行合一强调道德实践，庄子则以齐物逍遥和反圣智松动礼法与名分，能引出道德担当与自然解放之间的圆桌争论。"
+    },
+    {
+      "source": "nietzsche",
+      "target": "socrates",
+      "type": "tension",
+      "weight": 0.82,
+      "reason": "苏格拉底把德性、知识和理性审查紧密相连，尼采则质疑理性主义对生命本能的压制，能形成关于理性是否拯救或削弱生命的圆桌冲突。"
+    },
+    {
+      "source": "confucius",
+      "target": "nietzsche",
+      "type": "tension",
+      "weight": 0.76,
+      "reason": "孔子以仁礼修身维系德性与秩序，尼采则质疑普遍道德并强调价值重估与个体自我超越，二者能围绕道德是否应驯化生命展开尖锐辩论。"
+    },
+    {
+      "source": "hegel",
+      "target": "zhuangzi",
+      "type": "tension",
+      "weight": 0.73,
+      "reason": "黑格尔把自由理解为理性精神在历史制度中的实现，庄子则以逍遥、齐物和无为怀疑名分治理与圣智秩序，二者能争论自由是否需要制度化理性。"
+    },
+    {
+      "source": "confucius",
+      "target": "sartre",
+      "type": "tension",
+      "weight": 0.7,
+      "reason": "孔子强调通过礼、仁与角色伦理成就自我，萨特则强调个体自由、责任与自欺问题，二者能围绕人是否先由关系规范塑成展开辩论。"
+    },
+    {
+      "source": "kant",
+      "target": "socrates",
+      "type": "affinity",
+      "weight": 0.78,
+      "reason": "康德的理性自律与义务伦理同苏格拉底的德性追问和自我审查相互呼应，能推动关于理性如何奠定正当生活的讨论。"
+    },
+    {
+      "source": "plato",
+      "target": "zhuangzi",
+      "type": "tension",
+      "weight": 0.77,
+      "reason": "柏拉图诉诸理念、至善和哲人治理来安顿知识与城邦，庄子则以齐物和反圣智怀疑固定名分与治理理性，二者能围绕真理是否应成为政治秩序基础展开辩论。"
+    },
+    {
+      "source": "kant",
+      "target": "plato",
+      "type": "affinity",
+      "weight": 0.76,
+      "reason": "康德的先验条件与道德自律同柏拉图对理智世界、至善和德性知识的重视形成亲和，二者能共同讨论理性如何超越经验并规范生活。"
+    },
+    {
+      "source": "confucius",
+      "target": "socrates",
+      "type": "affinity",
+      "weight": 0.66,
+      "reason": "孔子的修身成德与苏格拉底的自我审查都把伦理生活建立在对自身欲望、知识与德性的反省上，能促成关于“好生活如何被学习”的圆桌讨论。"
+    },
+    {
+      "source": "hegel",
+      "target": "plato",
+      "type": "tension",
+      "weight": 0.7,
+      "reason": "柏拉图把真理锚定于超历史的理念与至善，黑格尔则把真理理解为整体性的历史展开，二者围绕理性真理是否永恒静态形成清晰圆桌张力。"
+    }
+  ]
+}

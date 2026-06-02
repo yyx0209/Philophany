@@ -43,7 +43,7 @@
 
 当用户点击“召集圆桌”时，系统先分析问题。
 
-如果后端可用，会调用 OpenRouter，让模型输出：
+如果后端可用，会调用 DeepSeek 官方 API，让模型输出：
 
 - `themes`：问题涉及的主题。
 - `implicitConcepts`：隐含哲学概念。
@@ -161,7 +161,7 @@ while selected.length < 5:
 
 ### 实验性 LLM 动态调度
 
-当前试验版默认开启 `LLM 动态调度`。它不再把第一轮固定理解成“阵容中每个人按顺序说一遍”，而是在用户每次点击“下一位/继续讨论”时，先调用 `/api/next-speaker` 让 OpenRouter 判断谁最有理由接着说话，然后再调用 `/api/chat` 生成这位哲学家的具体发言。
+当前试验版默认开启 `LLM 动态调度`。它不再把第一轮固定理解成“阵容中每个人按顺序说一遍”，而是在用户每次点击“下一位/继续讨论”时，先调用 `/api/next-speaker` 让 DeepSeek 官方 API 判断谁最有理由接着说话，然后再调用 `/api/chat` 生成这位哲学家的具体发言。
 
 调度器只决定下一位是谁，不生成发言内容。它参考：
 
@@ -235,7 +235,7 @@ localStorage.removeItem("philophany.roundScheduler")
 - 可以拒绝问题，但必须给出更好的问法。
 - 可以打断别人，但不能歪曲别人。
 
-`speechPersona` 可以由 OpenRouter DeepSeek 生成候选稿，但必须经过人工审核。流程是：
+`speechPersona` 可以由 DeepSeek 官方 API 生成候选稿，但必须经过人工审核。流程是：
 
 ```txt
 reviewed_philosopher_cards.json
@@ -269,7 +269,7 @@ reviewed_philosopher_cards.json
 - 后续发言可以用同一个例子给出不同结论，也可以提出反例、指出例子预设，或说明这个例子为什么误导。
 - 例子不能替代论证，不能编造具体历史轶事、真实人物故事或名言，也不能把讨论从用户原问题带走。
 
-`exampleStyle` 由 OpenRouter DeepSeek 生成候选稿，但和 `speechPersona` 一样必须经过人工审核。流程是：
+`exampleStyle` 由 DeepSeek 官方 API 生成候选稿，但和 `speechPersona` 一样必须经过人工审核。流程是：
 
 ```txt
 reviewed_philosopher_cards.json
@@ -387,7 +387,7 @@ reviewed_philosopher_cards.json
 
 ## 本地 fallback
 
-如果 OpenRouter 调用失败，系统会用本地演示逻辑生成内容。
+如果 DeepSeek 官方 API 调用失败，系统会用本地演示逻辑生成内容。
 
 本地逻辑较简单：
 

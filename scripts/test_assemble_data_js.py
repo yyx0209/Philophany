@@ -6,7 +6,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from assemble_data_js import build_data_js, collect_topics
+from assemble_data_js import DEFAULT_RELATIONS, build_data_js, collect_topics
+from graph_data_io import load_existing_relations
 
 
 class AssembleDataJsTest(unittest.TestCase):
@@ -80,6 +81,38 @@ class AssembleDataJsTest(unittest.TestCase):
 
         payload = json.loads(output.removeprefix("window.PHILOSOPHANY_DATA = ").removesuffix(";\n"))
         self.assertEqual("挑衅。", payload["philosophers"][0]["speechPersona"]["temperament"])
+
+    def test_build_data_js_includes_daily_quotes(self):
+        output = build_data_js(
+            [{"id": "socrates", "name": "苏格拉底", "topics": []}],
+            [],
+            daily_quotes=[
+                {
+                    "philosopherId": "socrates",
+                    "displayQuote": "未经省察的人生不值得过。",
+                    "sourceText": "The unexamined life is not worth living.",
+                    "originalQuote": "",
+                    "originalLanguage": "grc",
+                    "showOriginal": False,
+                    "source": "Plato, Apology 38a",
+                    "sourceUrl": "https://en.wikiquote.org/wiki/Socrates",
+                }
+            ],
+        )
+
+        payload = json.loads(output.removeprefix("window.PHILOSOPHANY_DATA = ").removesuffix(";\n"))
+        self.assertEqual("socrates", payload["dailyQuotes"][0]["philosopherId"])
+        self.assertIn("省察", payload["dailyQuotes"][0]["displayQuote"])
+
+    def test_default_relations_use_confirmed_product_graph(self):
+        self.assertEqual("product_graph_relations.json", DEFAULT_RELATIONS.name)
+        relations = load_existing_relations(DEFAULT_RELATIONS)
+        relation_keys = {(item["source"], item["target"], item["type"]) for item in relations}
+
+        self.assertIn(("socrates", "plato", "influence"), relation_keys)
+        self.assertIn(("confucius", "wang-yangming", "influence"), relation_keys)
+        self.assertIn(("buddha", "confucius", "tension"), relation_keys)
+        self.assertGreaterEqual(len(relations), 20)
 
 
 if __name__ == "__main__":

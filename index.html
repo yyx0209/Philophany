@@ -17,10 +17,13 @@
           <div class="mode-tabs" role="tablist" aria-label="视图">
             <button class="tab is-active" data-view="graph" type="button">图谱</button>
             <button class="tab" data-view="roundtable" type="button">圆桌</button>
+            <button class="tab" data-view="duel" type="button">辩论</button>
+            <button class="tab" data-view="socratic" type="button">产婆术</button>
           </div>
         </header>
 
         <section class="graph-layout view is-active" id="graphView" aria-label="知识图谱">
+          <section class="daily-inspiration" id="dailyInspiration" aria-label="每日哲学灵感"></section>
           <div class="graph-stage">
             <svg id="knowledgeGraph" viewBox="0 0 960 620" role="img" aria-label="哲学家知识图谱"></svg>
           </div>
@@ -98,6 +101,121 @@
               </button>
             </form>
           </section>
+        </section>
+
+        <section class="duel-layout view" id="duelView" aria-label="二人辩论">
+          <section class="duel-setup-panel" aria-label="选择两位哲学家">
+            <div class="panel-heading">
+              <div>
+                <h2>选择辩手</h2>
+                <p id="duelSelectionMeta">先在图谱上选择第一位哲学家。</p>
+              </div>
+              <button class="tool-button" id="clearDuelSelectionButton" type="button" title="重选两位哲学家">
+                <span aria-hidden="true">↻</span>
+                重选
+              </button>
+            </div>
+            <div class="duel-picker-row">
+              <label>
+                第一位
+                <select id="duelFirstSelect"></select>
+              </label>
+              <label>
+                第二位
+                <select id="duelSecondSelect"></select>
+              </label>
+              <button class="primary-action primary-action--small" id="generateDebateAnglesButton" type="button">
+                <span aria-hidden="true">◇</span>
+                生成张力角度
+              </button>
+            </div>
+            <div class="duel-mini-graph" aria-label="辩论选择图谱">
+              <svg id="duelMiniGraph" viewBox="0 0 720 380" role="img" aria-label="点击选择两位哲学家进行辩论"></svg>
+            </div>
+            <div class="duelist-strip" id="duelistCards"></div>
+          </section>
+
+          <section class="duel-angle-panel" aria-label="张力角度">
+            <div class="panel-heading">
+              <div>
+                <h2>张力角度</h2>
+                <p id="duelAngleMeta">选择两位哲学家后生成。</p>
+              </div>
+            </div>
+            <div class="debate-angle-list" id="debateAngleList"></div>
+          </section>
+
+          <section class="conversation-panel duel-conversation-panel" aria-label="二人辩论">
+            <div class="conversation-toolbar">
+              <div>
+                <h2>二人辩论</h2>
+                <p id="duelMeta">等待选择辩手和张力角度。</p>
+              </div>
+              <div class="toolbar-actions">
+                <button class="tool-button" id="startDuelButton" type="button" title="开始或继续辩论">
+                  <span aria-hidden="true">▶</span>
+                  开始辩论
+                </button>
+              </div>
+            </div>
+            <div class="conversation duel-conversation" id="duelConversation"></div>
+            <form class="intervention-box" id="duelForm">
+              <input id="duelInput" type="text" autocomplete="off" placeholder="@康德 直接回应尼采，或输入你想插入的问题" />
+              <button class="primary-action primary-action--small" type="submit">
+                <span aria-hidden="true">↵</span>
+                插入
+              </button>
+            </form>
+          </section>
+        </section>
+
+        <section class="socratic-layout view" id="socraticView" aria-label="苏格拉底产婆术">
+          <section class="socratic-main">
+            <section class="prompt-panel" aria-label="产婆术问题输入">
+              <label for="socraticQuestionInput">你想请苏格拉底帮你澄清什么困惑？</label>
+              <div class="prompt-row">
+                <textarea id="socraticQuestionInput" rows="3">努力真的有意义吗，还是我们只是在说服自己？</textarea>
+                <button class="primary-action" id="socraticStartButton" type="button">
+                  <span aria-hidden="true">?</span>
+                  开始追问
+                </button>
+              </div>
+            </section>
+
+            <section class="conversation-panel socratic-chat-panel" aria-label="产婆术对话">
+              <div class="conversation-toolbar">
+                <div>
+                  <h2>苏格拉底产婆术</h2>
+                  <p id="socraticMeta">提出一个困惑，苏格拉底会先帮你澄清关键词。</p>
+                </div>
+                <div class="toolbar-actions">
+                  <button class="tool-button" id="socraticSynthesisButton" type="button" title="生成目前为止更清楚的自我理解">
+                    <span aria-hidden="true">◇</span>
+                    生成自我理解
+                  </button>
+                  <button class="tool-button" id="socraticResetButton" type="button" title="清空当前产婆术对话">
+                    <span aria-hidden="true">↻</span>
+                    重来
+                  </button>
+                </div>
+              </div>
+              <div class="conversation socratic-conversation" id="socraticConversation"></div>
+              <form class="intervention-box" id="socraticForm">
+                <input id="socraticReplyInput" type="text" autocomplete="off" placeholder="回答苏格拉底刚才的问题" />
+                <button class="primary-action primary-action--small" type="submit">
+                  <span aria-hidden="true">↵</span>
+                  回答
+                </button>
+              </form>
+            </section>
+          </section>
+
+          <aside class="socratic-state-panel" aria-label="思路板">
+            <div class="panel-heading">
+              <h2>思路板</h2>
+            </div>
+            <div id="socraticStateBoard"></div>
+          </aside>
         </section>
       </section>
     </main>

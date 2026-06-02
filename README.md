@@ -1,12 +1,15 @@
 # Philophany 遇见哲学家
 
-Philophany 是一个哲学家图谱 + 思想圆桌 MVP。它把 13 位哲学家组织成可视化知识图谱，并根据用户的问题召集最多 5 位哲学家进行动态圆桌讨论。
+Philophany 是一个哲学家图谱 + 思想圆桌 + 二人辩论 + 苏格拉底产婆术 MVP。它把 13 位哲学家组织成可视化知识图谱，并根据用户的问题召集最多 5 位哲学家进行动态圆桌讨论；也可以让两位哲学家围绕特定张力交锋，或让苏格拉底通过连续追问帮助用户澄清自己的困惑。
 
 当前产品重点：
 
 - 图谱页：D3 力导向哲学家关系图谱，节点大小按加权连接度计算，点击节点查看角色卡和关系。
+- 每日哲学灵感：图谱上方按日期轮换展示一条经过人工审核的哲学家引文。
 - 圆桌页：用户输入问题后召集阵容，候选哲学家默认全部可见，当前阵容初始为空且最多 5 位。
 - 思想圆桌：逐位发言、动态调度、点名追问、多人 `@` 追问、后台讨论状态追踪和“回到原问题”控制。
+- 辩论页：用户通过小型选择图谱或下拉框指定两位哲学家，系统推荐 3 个张力角度，再围绕选定角度逐位生成二人辩论。
+- 产婆术页：用户提出困惑，苏格拉底一次只追问一个问题，并用 `socraticState` 记录关键词、前提、张力和待追问点。
 - 数据管线：从 Wikidata / Wikipedia 起步，经过本地候选召回、LLM 审稿、人工确认，最终 assemble 成 `data.js`。
 
 ## 运行
@@ -20,7 +23,7 @@ cp .env.example .env
 在 `.env` 中填写：
 
 ```txt
-OPENROUTER_API_KEY=...
+DEEPSEEK_API_KEY=...
 ```
 
 启动本地服务：
@@ -51,15 +54,54 @@ POST /api/analyze-question
 POST /api/chat
 POST /api/discussion-state
 POST /api/next-speaker
+POST /api/debate-angles
+POST /api/debate-turn
+POST /api/socratic-chat
 ```
 
 当前默认模型分流：
 
-- 问题解析、选人适配分、后台讨论状态、下一位发言调度：`OPENROUTER_MODEL=deepseek/deepseek-v4-pro`
-- 圆桌发言、追问回应、总结：`OPENROUTER_ROUNDTABLE_MODEL=deepseek/deepseek-v4-pro`
-- 离线图谱生成和关系审稿脚本：默认 `openai/gpt-5.5`
+- 问题解析、选人适配分、后台讨论状态、下一位发言调度：DeepSeek 官方 API，默认 `DEEPSEEK_MODEL=deepseek-v4-pro`
+- 圆桌发言、追问回应、总结：DeepSeek 官方 API，默认 `DEEPSEEK_ROUNDTABLE_MODEL=deepseek-v4-pro`
+- 二人辩论角度生成：DeepSeek 官方 API，默认 `DEEPSEEK_MODEL`
+- 二人辩论发言：DeepSeek 官方 API，默认 `DEEPSEEK_ROUNDTABLE_MODEL`
+- 产婆术追问：默认复用 `DEEPSEEK_ROUNDTABLE_MODEL`
+- 离线 `speechPersona` / `exampleStyle` 生成：DeepSeek 官方 API，读取 `DEEPSEEK_API_KEY`
+- 离线图谱生成和关系审稿脚本：默认 `openai/gpt-5.5`，仍读取 `OPENROUTER_API_KEY`
 
 后端未配置 key 或请求失败时，前端会回落到本地演示逻辑。
+
+## 二人辩论
+
+辩论页不是圆桌缩小版，而是把两位哲学家之间的一条张力放大。用户可以在小型图谱上点击选择两位哲学家，也可以用下拉框直接选择。
+
+流程：
+
+- 选择第一位哲学家后，小图谱高亮适合交锋的对手。
+- 选择第二位哲学家后，`/api/debate-angles` 根据角色卡、关系图谱和立场差异生成 3 个张力角度。
+- 用户选定一个角度后，`/api/debate-turn` 每次只生成一位哲学家的发言。
+- 用户可以中途插入追问，支持 `@哲学家` 点名。
+- 模型失败时使用本地角度和本地发言 fallback。
+
+## 苏格拉底产婆术
+
+产婆术页不是“让苏格拉底回答问题”，而是让他帮助用户把自己的问题想清楚。
+
+工作方式：
+
+- 用户先输入一个困惑。
+- `/api/socratic-chat` 生成苏格拉底的一条短追问。
+- 每轮只推进一个问题，优先澄清关键词、判断标准、隐藏前提、例外和内部张力。
+- 用户可以点击“生成自我理解”，由苏格拉底把目前对话整理成一段第二人称的阶段性理解。
+- 前端维护一份 `socraticState`，在思路板中显示当前理解、关键词、已澄清概念、用户判断、可能前提、内部张力和待追问问题。
+- 模型失败时使用本地追问 fallback，避免页面中断。
+
+产婆术 prompt 的边界：
+
+- 不直接替用户给答案。
+- 不把对话变成哲学史讲解或心理咨询。
+- 不伪造苏格拉底、柏拉图或任何文本中的具体引文。
+- 每 4 到 6 轮可以短小结，但小结后仍回到一个新的追问。
 
 ## 产品数据
 
@@ -75,12 +117,47 @@ data.js
 
 ```txt
 data/generated/reviewed_philosopher_cards.json
-data/generated/reviewed_graph_relations.json
+data/generated/product_graph_relations.json
+data/generated/reviewed_daily_quotes.json
         ↓
 scripts/assemble_data_js.py
         ↓
 data.js
 ```
+
+### 每日哲学灵感
+
+图谱页的每日引文来自 `dailyQuotes`。每位哲学家可以有 1 到 5 条已审核名句；页面从整个引文池里按日期做稳定的随机式抽样，因此拥有更多名句的哲学家会自然出现得更频繁。
+
+当前流程是：
+
+```txt
+Wikiquote / primary text candidates
+        ↓
+data/generated/wikiquote_quote_candidates.json
+        ↓
+人工复核 humanDecision
+        ↓
+data/generated/reviewed_daily_quotes.json
+        ↓
+scripts/assemble_data_js.py
+        ↓
+data.js
+```
+
+`scripts/generate_daily_quote_candidates.py` 会从 Wikiquote 抽取候选，并跳过明显的 `Misattributed`、`Disputed`、`Unsourced` 和 `Quotes about` 段落。它只生成候选，不自动进入产品。
+
+`scripts/merge_daily_quotes.py` 只放行 `humanDecision: "approve"` 且没有误归、存疑、无来源标记的候选，并限制每位哲学家最多 5 条。已审核过的 `reviewed_daily_quotes.json` 可以直接由 `assemble_data_js.py` 合并进 `data.js`。
+
+每日引文使用 v2 字段：
+
+- `displayQuote`：给用户看的中文表达。
+- `sourceText`：Wikiquote 或其他来源文本；它可能是英译或来源页转写，不在前端当“原文”展示。
+- `originalQuote`：只有确认拿到原作语言文本时才填写，例如中文古籍原文、希腊文、巴利文、德文或法文原文。
+- `originalLanguage`：原作语言代码，例如 `grc`、`pli`、`de`、`fr`、`en`、`zh`。
+- `showOriginal`：唯一控制前端是否展示“原文”的开关。当前 Wikiquote 英文来源默认 `false`。
+
+这部分默认不需要 LLM。若未来要批量生成中文译意、短解释或复核说明，使用 `openai/gpt-5.5`，并保留人工审核步骤；模型不能作为原始引文事实来源。
 
 ## 思想圆桌方法
 
@@ -262,6 +339,8 @@ reviewed_graph_relations.json
         ↓
 人工确认 approve
         ↓
+product_graph_relations.json
+        ↓
 assemble_data_js.py
         ↓
 data.js
@@ -361,6 +440,12 @@ conda run -n philophany python scripts/review_local_graph_candidates.py --cards 
 data/generated/reviewed_graph_relations.json
 ```
 
+`reviewed_graph_relations.json` 是关系审稿工作台，不直接作为产品图谱默认输入。人工确认后的稳定产品图谱写入：
+
+```txt
+data/generated/product_graph_relations.json
+```
+
 允许的 LLM `decision`：
 
 - `accept`
@@ -390,13 +475,13 @@ data/generated/reviewed_graph_relations.json
 Dry-run：
 
 ```bash
-conda run -n philophany python scripts/assemble_data_js.py --cards data/generated/reviewed_philosopher_cards.json --relations data/generated/reviewed_graph_relations.json
+conda run -n philophany python scripts/assemble_data_js.py --cards data/generated/reviewed_philosopher_cards.json --relations data/generated/product_graph_relations.json
 ```
 
 写入 `data.js`：
 
 ```bash
-conda run -n philophany python scripts/assemble_data_js.py --cards data/generated/reviewed_philosopher_cards.json --relations data/generated/reviewed_graph_relations.json --apply
+conda run -n philophany python scripts/assemble_data_js.py --cards data/generated/reviewed_philosopher_cards.json --relations data/generated/product_graph_relations.json --apply
 ```
 
 ## 发言人格和例子风格
@@ -431,7 +516,7 @@ conda run -n philophany python scripts/merge_example_styles.py --apply
 合并后重新 assemble：
 
 ```bash
-conda run -n philophany python scripts/assemble_data_js.py --cards data/generated/reviewed_philosopher_cards.json --relations data/generated/reviewed_graph_relations.json --apply
+conda run -n philophany python scripts/assemble_data_js.py --cards data/generated/reviewed_philosopher_cards.json --relations data/generated/product_graph_relations.json --apply
 ```
 
 ## 测试

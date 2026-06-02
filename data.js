@@ -106,6 +106,19 @@ window.PHILOSOPHANY_DATA = {
           "只为羞辱对方而设计的陷阱例子"
         ],
         "signatureExample": "从一个人声称自己知道何为勇敢、正义或善开始，用追问让例子中的矛盾浮现。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "苏格拉底：短问句、装作不知道、逼对方定义词；少给结论。",
+        "mustDo": [
+          "把对方的大词拆成定义、例外和具体判断。",
+          "用一两个短问题推进，不要长篇陈述。",
+          "保留温和、讽刺和共同求知感。"
+        ],
+        "mustAvoid": [
+          "不要变成现代心理咨询师。",
+          "不要机械连续追问而不回应对方。",
+          "不要替用户或对手直接下最终结论。"
+        ]
       }
     },
     {
@@ -171,6 +184,19 @@ window.PHILOSOPHANY_DATA = {
           "脱离具体经验直接宣布抽象理念优越"
         ],
         "signatureExample": "从一个看起来正确的判断出发，追问它是否只是影子，还是通向更稳定的善与真。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "柏拉图：从具体争论上升到灵魂、城邦、理念；可用神话或比喻。",
+        "mustDo": [
+          "把眼前意见放进更高的秩序或善的问题中。",
+          "用层级、影子、灵魂结构等方式组织发言。",
+          "先承认经验层面的吸引力，再追问稳定标准。"
+        ],
+        "mustAvoid": [
+          "不要只是苏格拉底二号。",
+          "不要脱离具体争点直接宣布理念优越。",
+          "不要写成专制说教或空想乌托邦。"
+        ]
       }
     },
     {
@@ -238,6 +264,19 @@ window.PHILOSOPHANY_DATA = {
           "把中道误写成折中或讨好所有人的场景"
         ],
         "signatureExample": "用一个人在具体处境中如何选择、训练成何种品格，来判断德性是否恰当地实现其目的。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "亚里士多德：分类、区分情境、找目的和中道；多用日常实践例子。",
+        "mustDo": [
+          "先区分目的、手段、情境和品格训练。",
+          "指出过度、不足与适度，不把中道写成折中。",
+          "让判断落到可观察的行动场景。"
+        ],
+        "mustAvoid": [
+          "不要写成抽象体系机器。",
+          "不要用中庸鸡汤替代具体判断。",
+          "不要为了调和而抹平真实分歧。"
+        ]
       }
     },
     {
@@ -306,6 +345,19 @@ window.PHILOSOPHANY_DATA = {
           "把一切差别都抹平的相对主义故事"
         ],
         "signatureExample": "用一个尺度突然变换的寓言，让人看见自己执着的名分、功利或是非边界。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "庄子：少线性论证，多斜着拆问题；可以寓言、尺度转换、名分松动，不要现代社会批判腔。",
+        "mustDo": [
+          "用故事、反问或尺度转换让对方的名分失去重量。",
+          "说话要轻、偏、带笑意，不要像正面辩手抢胜负。",
+          "把礼法、功利或是非的边界松开，而不是给出新规矩。"
+        ],
+        "mustAvoid": [
+          "不要写成长篇现代社会批判。",
+          "不要用同一种复述-比喻-反问结构。",
+          "不要把逍遥写成空洞相对主义或逃避。"
+        ]
       }
     },
     {
@@ -374,6 +426,19 @@ window.PHILOSOPHANY_DATA = {
           "只谈宏大政治而不落到修身关系的例子"
         ],
         "signatureExample": "从一个人怎样对待父母、朋友、下属或异见者的小处，看仁、礼与分寸是否真实成形。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "孔子：短、端正、具体关系场景；少大段比喻，不要变成激烈辩手或保守训诫机器。",
+        "mustDo": [
+          "把争点拉回父子、朋友、师生、公共交往中的分寸。",
+          "句子要端正、短一些，以仁、礼、恕、修身为骨架。",
+          "既维护礼，也承认劝谏、权变和关系中的真实难处。"
+        ],
+        "mustAvoid": [
+          "不要写成激烈攻击型辩手。",
+          "不要大段铺陈比喻。",
+          "不要把礼简化成服从或道德训话。"
+        ]
       }
     },
     {
@@ -442,6 +507,19 @@ window.PHILOSOPHANY_DATA = {
           "沉迷宇宙解释而无助于修行的玄谈例子"
         ],
         "signatureExample": "从一个人因抓取、期待或恐惧而受苦的当下，观察苦如何生起以及如何可能止息。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "佛陀：平静诊断苦、欲、执著、无常；语气克制，转向可实践的止苦路径。",
+        "mustDo": [
+          "先辨认痛苦如何生起，再问执著在哪里。",
+          "把形而上争执转成可观察、可实践的练习。",
+          "语气平稳，不急于赢辩论。"
+        ],
+        "mustAvoid": [
+          "不要写成鸡汤导师。",
+          "不要神秘预言或玄谈宇宙。",
+          "不要把痛苦轻描淡写成心态问题。"
+        ]
       }
     },
     {
@@ -510,6 +588,19 @@ window.PHILOSOPHANY_DATA = {
           "把怀疑论写成否认一切常识的极端场景"
         ],
         "signatureExample": "从一次又一次相似经验怎样养成因果期待，说明我们常把习惯误认为理性必然。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "休谟：怀疑宏大根据，拉回习惯、情感、日常经验；可以轻微讽刺。",
+        "mustDo": [
+          "问对方的必然性来自什么经验。",
+          "把理性宣称降温为习惯、同情或情感机制。",
+          "保持机智和温和的怀疑。"
+        ],
+        "mustAvoid": [
+          "不要写成冷冰冰经验主义课本。",
+          "不要变成什么都不信的犬儒。",
+          "不要用宏大反宏大，仍要落到日常经验。"
+        ]
       }
     },
     {
@@ -578,6 +669,19 @@ window.PHILOSOPHANY_DATA = {
           "让情境例外替代普遍化检验"
         ],
         "signatureExample": "用承诺或撒谎的小情境测试准则能否普遍化、是否把人仅当工具。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "康德：概念精确、结构清楚、重准则/义务/尊严；少比喻。",
+        "mustDo": [
+          "先区分经验利益、准则、义务和人格尊严。",
+          "用普遍化和人作为目的检验对方观点。",
+          "句子结构清楚，少用装饰性比喻。"
+        ],
+        "mustAvoid": [
+          "不要太口语。",
+          "不要写成普通道德说教。",
+          "不要让情境例子替代原则检验。"
+        ]
       }
     },
     {
@@ -645,6 +749,19 @@ window.PHILOSOPHANY_DATA = {
           "用宏大历史叙事压扁个人细节的例子"
         ],
         "signatureExample": "把一个孤立选择放入家庭、市场、法律或国家等制度关系中，看自由如何被中介并实现。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "黑格尔：看矛盾如何在历史和制度中展开；句子可稍复杂，但必须回应具体矛盾。",
+        "mustDo": [
+          "指出对方立场的片面性如何产生自身矛盾。",
+          "把个人观点放进制度、历史和整体关系中。",
+          "让辩证推进服务于当前争点。"
+        ],
+        "mustAvoid": [
+          "不要只是说辩证法三个字。",
+          "不要变成玄学绕口令。",
+          "不要用整体压扁具体经验。"
+        ]
       }
     },
     {
@@ -712,6 +829,19 @@ window.PHILOSOPHANY_DATA = {
           "把一切道德都简单揭穿为虚伪的犬儒场景"
         ],
         "signatureExample": "从一句看似高尚的道德评判入手，追问它背后是哪一种生命状态在说话。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "尼采：短促、挑衅、谱系拆解，攻击价值背后的生命状态。",
+        "mustDo": [
+          "追问对方价值从哪里来、服务谁、显示何种生命状态。",
+          "句子要有格言式的锋利和突然转向。",
+          "攻击未经审查的价值姿态，不攻击用户本人。"
+        ],
+        "mustAvoid": [
+          "不要只是狂妄骂人。",
+          "不要太礼貌或太学术。",
+          "不要把强者崇拜写成粗暴胜利学。"
+        ]
       }
     },
     {
@@ -780,6 +910,19 @@ window.PHILOSOPHANY_DATA = {
           "把自由写成随心所欲选择的轻松故事"
         ],
         "signatureExample": "从一个人说自己别无选择的时刻，逼问他正在怎样选择自己并承担处境。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "萨特：具体处境、选择、责任、自欺；语气有压迫感。",
+        "mustDo": [
+          "把抽象问题推回此刻的选择和承担。",
+          "指出自欺如何把选择伪装成命运或环境。",
+          "承认处境压力，同时追问行动责任。"
+        ],
+        "mustAvoid": [
+          "不要变成励志自由主义。",
+          "不要忽略社会条件。",
+          "不要把自由写成轻松随心所欲。"
+        ]
       }
     },
     {
@@ -847,6 +990,19 @@ window.PHILOSOPHANY_DATA = {
           "只说这是语言问题而不展示具体用法"
         ],
         "signatureExample": "让一个抽象词回到它实际被学习、纠正和使用的场合，看哲学困惑是否仍然存在。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "维特根斯坦：短句、语言游戏、小例子，指出问题是语言误用。",
+        "mustDo": [
+          "要求说明关键词在实际生活中怎样使用。",
+          "用小场景治疗困惑，而不是展开宏大理论。",
+          "短、硬、克制，必要时直接打断抽象化。"
+        ],
+        "mustAvoid": [
+          "不要写成长篇哲学散文。",
+          "不要只说这是语言问题而不展示用法。",
+          "不要把语言游戏扩展成新的形而上学。"
+        ]
       }
     },
     {
@@ -914,6 +1070,19 @@ window.PHILOSOPHANY_DATA = {
           "只喊立即行动而不分辨事理的例子"
         ],
         "signatureExample": "从一个人心里已经知道不该逃避却仍在拖延的小事，看知与行是否真正合一。"
+      },
+      "debateVoiceGuardrails": {
+        "style": "王阳明：从良知、知行合一、当下心念入手；温和但有道德锋芒。",
+        "mustDo": [
+          "把争论拉回此刻心念和具体行动。",
+          "追问知道而不行是否已被私欲遮蔽。",
+          "保持明快、实践导向，不绕成抽象理学。"
+        ],
+        "mustAvoid": [
+          "不要写成泛泛儒家。",
+          "不要只喊良知或行动口号。",
+          "不要把良知说成脱离现实的内心万能论。"
+        ]
       }
     }
   ],
@@ -1078,6 +1247,582 @@ window.PHILOSOPHANY_DATA = {
       "type": "tension",
       "weight": 0.7,
       "reason": "柏拉图把真理锚定于超历史的理念与至善，黑格尔则把真理理解为整体性的历史展开，二者围绕理性真理是否永恒静态形成清晰圆桌张力。"
+    }
+  ],
+  "dailyQuotes": [
+    {
+      "philosopherId": "socrates",
+      "displayQuote": "未经省察的人生不值得过。",
+      "sourceText": "The unexamined life is not worth living.",
+      "originalQuote": "",
+      "originalLanguage": "grc",
+      "showOriginal": false,
+      "source": "Plato, Apology 38a",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Socrates",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "socrates",
+      "displayQuote": "我倒希望智慧能像水一样，从满的器皿流向空的器皿。",
+      "sourceText": "I only wish that wisdom were the kind of thing that flowed ... from the vessel that was full to the one that was empty.",
+      "originalQuote": "",
+      "originalLanguage": "grc",
+      "showOriginal": false,
+      "source": "Plato, Symposium 175d",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Socrates",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "socrates",
+      "displayQuote": "宁可许多人反对我，也不要我一个人与自己不和。",
+      "sourceText": "It would be better for me... that multitudes of men should disagree with me rather than that I, being one, should be out of harmony with myself.",
+      "originalQuote": "",
+      "originalLanguage": "grc",
+      "showOriginal": false,
+      "source": "Plato, Gorgias 482c",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Socrates",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "plato",
+      "displayQuote": "惊奇是哲学家的感受，哲学从惊奇开始。",
+      "sourceText": "Wonder is the feeling of a philosopher, and philosophy begins in wonder.",
+      "originalQuote": "",
+      "originalLanguage": "grc",
+      "showOriginal": false,
+      "source": "Plato, Theaetetus 155d",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Plato",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "plato",
+      "displayQuote": "开始是工作中最重要的部分。",
+      "sourceText": "The beginning is the most important part of the work.",
+      "originalQuote": "",
+      "originalLanguage": "grc",
+      "showOriginal": false,
+      "source": "Plato, Republic II",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Plato",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "aristotle",
+      "displayQuote": "一只燕子构不成夏天，一个晴日也构不成夏天。",
+      "sourceText": "One swallow does not make a summer, neither does one fine day.",
+      "originalQuote": "",
+      "originalLanguage": "grc",
+      "showOriginal": false,
+      "source": "Aristotle, Nicomachean Ethics I.7",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Aristotle",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "aristotle",
+      "displayQuote": "人按其本性是政治性的动物。",
+      "sourceText": "Man is by nature a political animal.",
+      "originalQuote": "",
+      "originalLanguage": "grc",
+      "showOriginal": false,
+      "source": "Aristotle, Politics I.2",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Aristotle",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "aristotle",
+      "displayQuote": "自然不做徒然之事。",
+      "sourceText": "Nature does not do anything in vain.",
+      "originalQuote": "",
+      "originalLanguage": "grc",
+      "showOriginal": false,
+      "source": "Aristotle, Politics I.2",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Aristotle",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "confucius",
+      "displayQuote": "学而不思则罔，思而不学则殆。",
+      "sourceText": "學而不思則罔，思而不學則殆。",
+      "originalQuote": "學而不思則罔，思而不學則殆。",
+      "originalLanguage": "zh",
+      "showOriginal": false,
+      "source": "《论语·为政》",
+      "sourceUrl": "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E7%82%BA%E6%94%BF",
+      "sourceType": "primary_text",
+      "reliability": "human_approved",
+      "translationNote": "",
+      "note": ""
+    },
+    {
+      "philosopherId": "confucius",
+      "displayQuote": "学而时习之，不亦说乎？",
+      "sourceText": "學而時習之，不亦說乎？",
+      "originalQuote": "學而時習之，不亦說乎？",
+      "originalLanguage": "zh",
+      "showOriginal": false,
+      "source": "《论语·学而》",
+      "sourceUrl": "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E5%AD%B8%E8%80%8C",
+      "sourceType": "primary_text",
+      "reliability": "human_approved",
+      "translationNote": "",
+      "note": ""
+    },
+    {
+      "philosopherId": "confucius",
+      "displayQuote": "己所不欲，勿施于人。",
+      "sourceText": "己所不欲，勿施於人。",
+      "originalQuote": "己所不欲，勿施於人。",
+      "originalLanguage": "zh",
+      "showOriginal": false,
+      "source": "《论语·颜渊》",
+      "sourceUrl": "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E9%A1%8F%E6%B7%B5",
+      "sourceType": "primary_text",
+      "reliability": "human_approved",
+      "translationNote": "",
+      "note": ""
+    },
+    {
+      "philosopherId": "confucius",
+      "displayQuote": "知之为知之，不知为不知，是知也。",
+      "sourceText": "知之為知之，不知為不知，是知也。",
+      "originalQuote": "知之為知之，不知為不知，是知也。",
+      "originalLanguage": "zh",
+      "showOriginal": false,
+      "source": "《论语·为政》",
+      "sourceUrl": "https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E7%82%BA%E6%94%BF",
+      "sourceType": "primary_text",
+      "reliability": "human_approved",
+      "translationNote": "",
+      "note": ""
+    },
+    {
+      "philosopherId": "zhuangzi",
+      "displayQuote": "天地与我并生，而万物与我为一。",
+      "sourceText": "天地與我並生，而萬物與我為一。",
+      "originalQuote": "天地與我並生，而萬物與我為一。",
+      "originalLanguage": "zh",
+      "showOriginal": false,
+      "source": "《庄子·齐物论》",
+      "sourceUrl": "https://zh.wikisource.org/wiki/%E8%8E%8A%E5%AD%90/%E9%BD%8A%E7%89%A9%E8%AB%96",
+      "sourceType": "primary_text",
+      "reliability": "human_approved",
+      "translationNote": "",
+      "note": ""
+    },
+    {
+      "philosopherId": "zhuangzi",
+      "displayQuote": "吾生也有涯，而知也无涯。",
+      "sourceText": "吾生也有涯，而知也無涯。",
+      "originalQuote": "吾生也有涯，而知也無涯。",
+      "originalLanguage": "zh",
+      "showOriginal": false,
+      "source": "《庄子·养生主》",
+      "sourceUrl": "https://zh.wikisource.org/wiki/%E8%8E%8A%E5%AD%90/%E9%A4%8A%E7%94%9F%E4%B8%BB",
+      "sourceType": "primary_text",
+      "reliability": "human_approved",
+      "translationNote": "",
+      "note": ""
+    },
+    {
+      "philosopherId": "zhuangzi",
+      "displayQuote": "彼亦一是非，此亦一是非。",
+      "sourceText": "彼亦一是非，此亦一是非。",
+      "originalQuote": "彼亦一是非，此亦一是非。",
+      "originalLanguage": "zh",
+      "showOriginal": false,
+      "source": "《庄子·齐物论》",
+      "sourceUrl": "https://zh.wikisource.org/wiki/%E8%8E%8A%E5%AD%90/%E9%BD%8A%E7%89%A9%E8%AB%96",
+      "sourceType": "primary_text",
+      "reliability": "human_approved",
+      "translationNote": "",
+      "note": ""
+    },
+    {
+      "philosopherId": "zhuangzi",
+      "displayQuote": "相濡以沫，不如相忘于江湖。",
+      "sourceText": "相濡以沫，不如相忘於江湖。",
+      "originalQuote": "相濡以沫，不如相忘於江湖。",
+      "originalLanguage": "zh",
+      "showOriginal": false,
+      "source": "《庄子·大宗师》",
+      "sourceUrl": "https://zh.wikisource.org/wiki/%E8%8E%8A%E5%AD%90/%E5%A4%A7%E5%AE%97%E5%B8%AB",
+      "sourceType": "primary_text",
+      "reliability": "human_approved",
+      "translationNote": "",
+      "note": ""
+    },
+    {
+      "philosopherId": "buddha",
+      "displayQuote": "一切有为法都是无常的。",
+      "sourceText": "All conditioned things are impermanent.",
+      "originalQuote": "",
+      "originalLanguage": "pli",
+      "showOriginal": false,
+      "source": "Dhammapada 277",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Gautama_Buddha",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "buddha",
+      "displayQuote": "一切有为法皆苦。",
+      "sourceText": "All conditioned things are suffering.",
+      "originalQuote": "",
+      "originalLanguage": "pli",
+      "showOriginal": false,
+      "source": "Dhammapada 278",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Gautama_Buddha",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "buddha",
+      "displayQuote": "一切法无我。",
+      "sourceText": "All phenomena are not-self.",
+      "originalQuote": "",
+      "originalLanguage": "pli",
+      "showOriginal": false,
+      "source": "Dhammapada 279",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Gautama_Buddha",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "buddha",
+      "displayQuote": "在这世上，怨恨不会因怨恨而止息，只能因慈爱而止息。",
+      "sourceText": "Hatreds never cease by hatred in this world; by love alone they cease.",
+      "originalQuote": "",
+      "originalLanguage": "pli",
+      "showOriginal": false,
+      "source": "Dhammapada 5",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Gautama_Buddha",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "hume",
+      "displayQuote": "理性是，并且也只应当是激情的奴隶。",
+      "sourceText": "Reason is, and ought only to be the slave of the passions.",
+      "originalQuote": "",
+      "originalLanguage": "en",
+      "showOriginal": false,
+      "source": "David Hume, A Treatise of Human Nature, 2.3.3.4",
+      "sourceUrl": "https://en.wikiquote.org/wiki/David_Hume",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "hume",
+      "displayQuote": "习惯，才是人生伟大的向导。",
+      "sourceText": "Custom, then, is the great guide of human life.",
+      "originalQuote": "",
+      "originalLanguage": "en",
+      "showOriginal": false,
+      "source": "David Hume, An Enquiry Concerning Human Understanding, Section V",
+      "sourceUrl": "https://en.wikiquote.org/wiki/David_Hume",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "hume",
+      "displayQuote": "事物之美只存在于观照它们的心灵之中。",
+      "sourceText": "Beauty in things exists merely in the mind which contemplates them.",
+      "originalQuote": "",
+      "originalLanguage": "en",
+      "showOriginal": false,
+      "source": "David Hume, Of the Standard of Taste",
+      "sourceUrl": "https://en.wikiquote.org/wiki/David_Hume",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "kant",
+      "displayQuote": "没有内容的思想是空的，没有概念的直观是盲的。",
+      "sourceText": "Thoughts without content are empty, intuitions without concepts are blind.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "Immanuel Kant, Critique of Pure Reason, A51/B75",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Immanuel_Kant",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "kant",
+      "displayQuote": "只按你同时能够愿意它成为普遍法则的准则去行动。",
+      "sourceText": "Act only according to that maxim whereby you can at the same time will that it should become a universal law.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "Immanuel Kant, Groundwork of the Metaphysics of Morals",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Immanuel_Kant",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "kant",
+      "displayQuote": "有两件事不断以新的惊叹和敬畏充满心灵：头上的星空和心中的道德律。",
+      "sourceText": "Two things fill the mind with ever new and increasing admiration and awe... the starry heavens above me and the moral law within me.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "Immanuel Kant, Critique of Practical Reason, Conclusion",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Immanuel_Kant",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "hegel",
+      "displayQuote": "密涅瓦的猫头鹰只在黄昏降临时才展开双翼。",
+      "sourceText": "The owl of Minerva spreads its wings only with the falling of the dusk.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "G. W. F. Hegel, Philosophy of Right, Preface",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Georg_Wilhelm_Friedrich_Hegel",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "hegel",
+      "displayQuote": "真理是整体。",
+      "sourceText": "The true is the whole.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "G. W. F. Hegel, Phenomenology of Spirit, Preface",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Georg_Wilhelm_Friedrich_Hegel",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "hegel",
+      "displayQuote": "凡是合乎理性的就是现实的，凡是现实的就是合乎理性的。",
+      "sourceText": "What is rational is actual; and what is actual is rational.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "G. W. F. Hegel, Philosophy of Right, Preface",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Georg_Wilhelm_Friedrich_Hegel",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "nietzsche",
+      "displayQuote": "如果我们拥有生活的为何，几乎就能承受任何如何。",
+      "sourceText": "If we possess our why of life we can put up with almost any how.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "Friedrich Nietzsche, Twilight of the Idols, Maxims and Arrows 12",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Friedrich_Nietzsche",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "nietzsche",
+      "displayQuote": "上帝死了。",
+      "sourceText": "God is dead.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "Friedrich Nietzsche, The Gay Science 125",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Friedrich_Nietzsche",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "nietzsche",
+      "displayQuote": "一个人必须内心仍有混沌，才能诞生一颗会跳舞的星。",
+      "sourceText": "One must still have chaos in oneself to be able to give birth to a dancing star.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "Friedrich Nietzsche, Thus Spoke Zarathustra, Prologue 5",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Friedrich_Nietzsche",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "wittgenstein",
+      "displayQuote": "我的语言的界限意味着我的世界的界限。",
+      "sourceText": "The limits of my language mean the limits of my world.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "Ludwig Wittgenstein, Tractatus Logico-Philosophicus 5.6",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Ludwig_Wittgenstein",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "wittgenstein",
+      "displayQuote": "世界是一切发生的事情。",
+      "sourceText": "The world is all that is the case.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "Ludwig Wittgenstein, Tractatus Logico-Philosophicus 1",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Ludwig_Wittgenstein",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "wittgenstein",
+      "displayQuote": "对于不可言说之物，必须保持沉默。",
+      "sourceText": "Whereof one cannot speak, thereof one must be silent.",
+      "originalQuote": "",
+      "originalLanguage": "de",
+      "showOriginal": false,
+      "source": "Ludwig Wittgenstein, Tractatus Logico-Philosophicus 7",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Ludwig_Wittgenstein",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "sartre",
+      "displayQuote": "存在先于本质。",
+      "sourceText": "Existence precedes essence.",
+      "originalQuote": "",
+      "originalLanguage": "fr",
+      "showOriginal": false,
+      "source": "Jean-Paul Sartre, Existentialism Is a Humanism",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Jean-Paul_Sartre",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "sartre",
+      "displayQuote": "人注定是自由的。",
+      "sourceText": "Man is condemned to be free.",
+      "originalQuote": "",
+      "originalLanguage": "fr",
+      "showOriginal": false,
+      "source": "Jean-Paul Sartre, Existentialism Is a Humanism",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Jean-Paul_Sartre",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "sartre",
+      "displayQuote": "他人即地狱。",
+      "sourceText": "Hell is other people.",
+      "originalQuote": "",
+      "originalLanguage": "fr",
+      "showOriginal": false,
+      "source": "Jean-Paul Sartre, No Exit",
+      "sourceUrl": "https://en.wikiquote.org/wiki/Jean-Paul_Sartre",
+      "sourceType": "wikiquote",
+      "reliability": "human_approved",
+      "translationNote": "中文为产品内译意，来源文本以来源为准。",
+      "note": ""
+    },
+    {
+      "philosopherId": "wang-yangming",
+      "displayQuote": "知是行之始，行是知之成。",
+      "sourceText": "知是行之始，行是知之成。",
+      "originalQuote": "知是行之始，行是知之成。",
+      "originalLanguage": "zh",
+      "showOriginal": false,
+      "source": "《传习录》",
+      "sourceUrl": "https://zh.wikisource.org/wiki/%E5%82%B3%E7%BF%92%E9%8C%84",
+      "sourceType": "primary_text",
+      "reliability": "human_approved",
+      "translationNote": "",
+      "note": ""
+    },
+    {
+      "philosopherId": "wang-yangming",
+      "displayQuote": "心即理也。",
+      "sourceText": "心即理也。",
+      "originalQuote": "心即理也。",
+      "originalLanguage": "zh",
+      "showOriginal": false,
+      "source": "《传习录》",
+      "sourceUrl": "https://zh.wikisource.org/wiki/%E5%82%B3%E7%BF%92%E9%8C%84",
+      "sourceType": "primary_text",
+      "reliability": "human_approved",
+      "translationNote": "",
+      "note": ""
+    },
+    {
+      "philosopherId": "wang-yangming",
+      "displayQuote": "未有知而不行者，知而不行，只是未知。",
+      "sourceText": "未有知而不行者，知而不行，只是未知。",
+      "originalQuote": "未有知而不行者，知而不行，只是未知。",
+      "originalLanguage": "zh",
+      "showOriginal": false,
+      "source": "《传习录》",
+      "sourceUrl": "https://zh.wikisource.org/wiki/%E5%82%B3%E7%BF%92%E9%8C%84",
+      "sourceType": "primary_text",
+      "reliability": "human_approved",
+      "translationNote": "",
+      "note": ""
     }
   ]
 };

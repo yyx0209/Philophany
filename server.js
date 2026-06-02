@@ -6,9 +6,12 @@ const ROOT = __dirname;
 loadDotEnv(path.join(ROOT, ".env"));
 
 const PORT = Number(process.env.PORT || 5173);
-const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
-const DEFAULT_ANALYSIS_MODEL = process.env.OPENROUTER_MODEL || "deepseek/deepseek-v4-pro";
-const DEFAULT_ROUNDTABLE_MODEL = process.env.OPENROUTER_ROUNDTABLE_MODEL || "deepseek/deepseek-v4-pro";
+const DEEPSEEK_URL = process.env.DEEPSEEK_API_URL || "https://api.deepseek.com/chat/completions";
+const DEEPSEEK_TIMEOUT_MS = Number(process.env.DEEPSEEK_TIMEOUT_MS || 45_000);
+const DEFAULT_ANALYSIS_MODEL = normalizeDeepSeekModel(process.env.DEEPSEEK_MODEL || "deepseek-v4-pro");
+const DEFAULT_ROUNDTABLE_MODEL = normalizeDeepSeekModel(
+  process.env.DEEPSEEK_ROUNDTABLE_MODEL || "deepseek-v4-pro"
+);
 const SPEAKER_ALIAS_OVERRIDES = {
   buddha: ["佛陀", "释迦", "释迦牟尼"],
 };
@@ -33,7 +36,7 @@ const server = http.createServer(async (request, response) => {
     if (request.method === "GET" && url.pathname === "/api/health") {
       sendJson(response, 200, {
         ok: true,
-        openRouterConfigured: Boolean(getOpenRouterKey()),
+        deepSeekConfigured: Boolean(getDeepSeekKey()),
         defaultModel: DEFAULT_ANALYSIS_MODEL,
         defaultAnalysisModel: DEFAULT_ANALYSIS_MODEL,
         defaultRoundtableModel: DEFAULT_ROUNDTABLE_MODEL,
@@ -61,6 +64,21 @@ const server = http.createServer(async (request, response) => {
       return;
     }
 
+    if (request.method === "POST" && url.pathname === "/api/debate-angles") {
+      await handleDebateAngles(request, response);
+      return;
+    }
+
+    if (request.method === "POST" && url.pathname === "/api/debate-turn") {
+      await handleDebateTurn(request, response);
+      return;
+    }
+
+    if (request.method === "POST" && url.pathname === "/api/socratic-chat") {
+      await handleSocraticChat(request, response);
+      return;
+    }
+
     if (request.method === "GET" || request.method === "HEAD") {
       serveStatic(url.pathname, request, response);
       return;
@@ -73,13 +91,13 @@ const server = http.createServer(async (request, response) => {
 });
 
 server.listen(PORT, () => {
-  const configured = getOpenRouterKey() ? "configured" : "missing";
+  const configured = getDeepSeekKey() ? "configured" : "missing";
   console.log(`Philophany server running at http://127.0.0.1:${PORT}/`);
-  console.log(`Model provider key: ${configured}`);
+  console.log(`DeepSeek API key: ${configured}`);
 });
 
 async function handleChat(request, response) {
-  const apiKey = getOpenRouterKey();
+  const apiKey = getDeepSeekKey();
   if (!apiKey) {
     sendJson(response, 400, {
       error: "API key is not configured on the server.",
@@ -93,19 +111,19 @@ async function handleChat(request, response) {
   const responseSpeakerIds = getResponseSpeakerIds(context);
   const prompt = buildRoundtablePrompt(context);
 
-  const upstream = await fetch(OPENROUTER_URL, {
+  const upstream = await fetch(DEEPSEEK_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
-      "HTTP-Referer": body.referer || `http://127.0.0.1:${PORT}`,
-      "X-Title": "Philophany",
     },
     body: JSON.stringify({
       model,
       temperature: 0.72,
       max_tokens: context.action === "summary" ? 900 : 1500,
       messages: prompt,
+      response_format: { type: "json_object" },
+      thinking: { type: "disabled" },
     }),
   });
 
@@ -170,7 +188,7 @@ async function handleChat(request, response) {
 }
 
 async function handleAnalyzeQuestion(request, response) {
-  const apiKey = getOpenRouterKey();
+  const apiKey = getDeepSeekKey();
   if (!apiKey) {
     sendJson(response, 400, {
       error: "API key is not configured on the server.",
@@ -190,18 +208,18 @@ async function handleAnalyzeQuestion(request, response) {
   const philosophers = sanitizeAnalysisPhilosophers(body.philosophers);
   const model = sanitizeModel(body.model || DEFAULT_ANALYSIS_MODEL);
 
-  const upstream = await fetch(OPENROUTER_URL, {
+  const upstream = await fetch(DEEPSEEK_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
-      "HTTP-Referer": body.referer || `http://127.0.0.1:${PORT}`,
-      "X-Title": "Philophany",
     },
     body: JSON.stringify({
       model,
       temperature: 0.18,
       max_tokens: 3600,
+      response_format: { type: "json_object" },
+      thinking: { type: "disabled" },
       messages: buildQuestionAnalysisPrompt({
         question,
         knownTopics,
@@ -254,7 +272,7 @@ async function handleAnalyzeQuestion(request, response) {
 }
 
 async function handleDiscussionState(request, response) {
-  const apiKey = getOpenRouterKey();
+  const apiKey = getDeepSeekKey();
   if (!apiKey) {
     sendJson(response, 400, {
       error: "API key is not configured on the server.",
@@ -269,19 +287,19 @@ async function handleDiscussionState(request, response) {
   });
   const model = sanitizeModel(body.model || DEFAULT_ANALYSIS_MODEL);
 
-  const upstream = await fetch(OPENROUTER_URL, {
+  const upstream = await fetch(DEEPSEEK_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
-      "HTTP-Referer": body.referer || `http://127.0.0.1:${PORT}`,
-      "X-Title": "Philophany",
     },
     body: JSON.stringify({
       model,
       temperature: 0.12,
       max_tokens: 1200,
       messages: buildDiscussionStatePrompt(context),
+      response_format: { type: "json_object" },
+      thinking: { type: "disabled" },
     }),
   });
 
@@ -326,7 +344,7 @@ async function handleDiscussionState(request, response) {
 }
 
 async function handleNextSpeaker(request, response) {
-  const apiKey = getOpenRouterKey();
+  const apiKey = getDeepSeekKey();
   if (!apiKey) {
     sendJson(response, 400, {
       error: "API key is not configured on the server.",
@@ -337,19 +355,19 @@ async function handleNextSpeaker(request, response) {
   const body = await readJsonBody(request);
   const context = sanitizeContext(body);
   const model = sanitizeModel(body.model || DEFAULT_ANALYSIS_MODEL);
-  const upstream = await fetch(OPENROUTER_URL, {
+  const upstream = await fetch(DEEPSEEK_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
-      "HTTP-Referer": body.referer || `http://127.0.0.1:${PORT}`,
-      "X-Title": "Philophany",
     },
     body: JSON.stringify({
       model,
       temperature: 0.18,
       max_tokens: 900,
       messages: buildNextSpeakerPrompt(context),
+      response_format: { type: "json_object" },
+      thinking: { type: "disabled" },
     }),
   });
 
@@ -391,6 +409,541 @@ async function handleNextSpeaker(request, response) {
 
   const decision = sanitizeNextSpeakerDecision(parsed.decision || parsed, context.participants);
   sendJson(response, 200, { decision, model });
+}
+
+async function handleDebateAngles(request, response) {
+  const apiKey = getDeepSeekKey();
+  if (!apiKey) {
+    sendJson(response, 400, {
+      error: "API key is not configured on the server.",
+    });
+    return;
+  }
+
+  const body = await readJsonBody(request);
+  const context = sanitizeDebateContext(body);
+  const model = sanitizeModel(body.model || DEFAULT_ANALYSIS_MODEL);
+  const upstream = await fetch(DEEPSEEK_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model,
+      temperature: 0.2,
+      max_tokens: 1200,
+      messages: buildDebateAnglesPrompt(context),
+      response_format: { type: "json_object" },
+      thinking: { type: "disabled" },
+    }),
+  });
+
+  if (!upstream.ok) {
+    let details = "";
+    try {
+      const errorBody = await upstream.json();
+      details = errorBody?.error?.message || JSON.stringify(errorBody);
+    } catch {
+      details = await upstream.text();
+    }
+    sendJson(response, upstream.status, { error: details || upstream.statusText });
+    return;
+  }
+
+  const payload = await upstream.json();
+  const content = payload?.choices?.[0]?.message?.content;
+  if (!content) {
+    sendJson(response, 502, {
+      error: `Model provider returned empty debate angles for model ${model}.`,
+      finishReason: payload?.choices?.[0]?.finish_reason || null,
+    });
+    return;
+  }
+
+  let parsed;
+  try {
+    parsed = parseModelJson(content);
+  } catch (error) {
+    sendJson(response, 502, {
+      error: `Model did not return valid debate-angle JSON: ${error.message}`,
+      raw: content,
+    });
+    return;
+  }
+
+  const angles = sanitizeDebateAngles(parsed.angles || parsed.debateAngles || parsed);
+  if (angles.length === 0) {
+    sendJson(response, 502, { error: "Model JSON contained no usable debate angles." });
+    return;
+  }
+  sendJson(response, 200, { angles, model });
+}
+
+async function handleDebateTurn(request, response) {
+  const apiKey = getDeepSeekKey();
+  if (!apiKey) {
+    sendJson(response, 400, {
+      error: "API key is not configured on the server.",
+    });
+    return;
+  }
+
+  const body = await readJsonBody(request);
+  const context = sanitizeDebateContext(body);
+  const model = sanitizeModel(body.roundtableModel || DEFAULT_ROUNDTABLE_MODEL);
+  const upstream = await fetch(DEEPSEEK_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model,
+      temperature: 0.68,
+      max_tokens: 1100,
+      messages: buildDebateTurnPrompt(context),
+      response_format: { type: "json_object" },
+      thinking: { type: "disabled" },
+    }),
+  });
+
+  if (!upstream.ok) {
+    let details = "";
+    try {
+      const errorBody = await upstream.json();
+      details = errorBody?.error?.message || JSON.stringify(errorBody);
+    } catch {
+      details = await upstream.text();
+    }
+    sendJson(response, upstream.status, { error: details || upstream.statusText });
+    return;
+  }
+
+  const payload = await upstream.json();
+  const content = payload?.choices?.[0]?.message?.content;
+  if (!content) {
+    sendJson(response, 502, {
+      error: `Model provider returned empty debate turn for model ${model}.`,
+      finishReason: payload?.choices?.[0]?.finish_reason || null,
+    });
+    return;
+  }
+
+  let parsed;
+  try {
+    parsed = parseModelJson(content);
+  } catch (error) {
+    sendJson(response, 502, {
+      error: `Model did not return valid debate-turn JSON: ${error.message}`,
+      raw: content,
+    });
+    return;
+  }
+
+  const message = sanitizeDebateMessage(parsed.message || parsed, context);
+  if (!message.text) {
+    sendJson(response, 502, { error: "Model JSON contained no usable debate message." });
+    return;
+  }
+  sendJson(response, 200, { message, model });
+}
+
+async function handleSocraticChat(request, response) {
+  const apiKey = getDeepSeekKey();
+  if (!apiKey) {
+    sendJson(response, 400, {
+      error: "API key is not configured on the server.",
+    });
+    return;
+  }
+
+  const body = await readJsonBody(request);
+  const context = sanitizeSocraticContext(body);
+  const model = sanitizeModel(body.model || DEFAULT_ROUNDTABLE_MODEL);
+
+  let upstream;
+  try {
+    upstream = await fetchWithTimeout(
+      DEEPSEEK_URL,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model,
+          temperature: 0.5,
+          max_tokens: 1400,
+          messages: buildSocraticPrompt(context),
+          response_format: { type: "json_object" },
+          thinking: { type: "disabled" },
+        }),
+      },
+      DEEPSEEK_TIMEOUT_MS
+    );
+  } catch (error) {
+    if (isAbortError(error)) {
+      sendJson(response, 504, {
+        error: `Model provider timed out after ${DEEPSEEK_TIMEOUT_MS}ms for model ${model}.`,
+      });
+      return;
+    }
+    throw error;
+  }
+
+  if (!upstream.ok) {
+    let details = "";
+    try {
+      const errorBody = await upstream.json();
+      details = errorBody?.error?.message || JSON.stringify(errorBody);
+    } catch {
+      details = await upstream.text();
+    }
+
+    sendJson(response, upstream.status, {
+      error: details || upstream.statusText,
+    });
+    return;
+  }
+
+  const payload = await upstream.json();
+  const content = payload?.choices?.[0]?.message?.content;
+  if (!content) {
+    sendJson(response, 502, {
+      error: `Model provider returned empty Socratic response for model ${model}.`,
+      finishReason: payload?.choices?.[0]?.finish_reason || null,
+    });
+    return;
+  }
+
+  let parsed;
+  try {
+    parsed = parseModelJson(content);
+  } catch (error) {
+    sendJson(response, 502, {
+      error: `Model did not return valid Socratic JSON: ${error.message}`,
+      raw: content,
+    });
+    return;
+  }
+
+  const message = parsed.message && typeof parsed.message === "object" ? parsed.message : {};
+  let role = sanitizeSocraticRole(message.role || parsed.role);
+  const baseSocraticText = enforceSocraticSecondPersonText(safeString(message.text || parsed.text, 520), context, role);
+  let text =
+    context.userIntent === "ask_socrates_view" ? baseSocraticText : enforceSocraticDriftText(baseSocraticText, context);
+  if (context.socraticControl?.shouldRedirect && role !== "自我理解" && context.userIntent !== "ask_socrates_view") {
+    role = "追问";
+    text = enforceSocraticRedirectText(text, context);
+  } else if (
+    context.socraticControl?.shouldShiftTempo &&
+    role !== "自我理解" &&
+    context.userIntent !== "ask_socrates_view" &&
+    textLooksLikeDefinitionQuestion(text)
+  ) {
+    role = "例子追问";
+    text = buildSocraticTempoShiftQuestion(context);
+  }
+  if (!text) {
+    sendJson(response, 502, { error: "Model JSON contained no Socratic message text." });
+    return;
+  }
+
+  sendJson(response, 200, {
+    message: {
+      role,
+      text,
+    },
+    socraticState: sanitizeSocraticState(parsed.socraticState || parsed.state),
+    stage: sanitizeSocraticStage(parsed.stage),
+    model,
+  });
+}
+
+function buildDebateAnglesPrompt(context) {
+  return [
+    {
+      role: "system",
+      content: [
+        "你是 Philophany 的二人辩论策划器。",
+        "辩论不是圆桌缩小版；你的任务不是让两位哲学家泛泛对谈，而是找出二者最值得正面交锋的思想张力。",
+        "必须严格依据给定角色卡、pairRelations 和 stanceDifferences。",
+        "不要伪造具体名言、书名章节、页码或历史事实。",
+        "中文输出。必须只返回合法 JSON，不要 Markdown，不要代码块。",
+      ].join("\n"),
+    },
+    {
+      role: "user",
+      content: [
+        "角度生成规则：",
+        "1. 只推荐 3 个张力角度，不多不少。",
+        "2. 每个角度必须能让两位哲学家直接互相反驳，而不是并列介绍思想。",
+        "3. 优先使用已有 tension 关系、最大 stanceDifferences、核心概念冲突和影响/反影响关系。",
+        "4. title 要短，像一个可点击辩题；focus 说明具体争点；reason 说明为什么这两个人会在这里冲突。",
+        "5. openingQuestion 是开场时可以抛出的具体问题，不要写成口号。",
+        "",
+        "上下文 JSON：",
+        JSON.stringify(context, null, 2),
+        "",
+        "输出格式：",
+        JSON.stringify(
+          {
+            angles: [
+              {
+                id: "morality-life",
+                title: "普遍道德 vs 生命力量",
+                focus: "康德要求行动准则能够普遍化，尼采怀疑普遍道德会压低生命力量。",
+                reason: "这能让两人围绕道德根据而非性格标签直接交锋。",
+                openingQuestion: "当一个行动让生命更强，却不能被普遍化时，它应不应该被肯定？",
+              },
+            ],
+          },
+          null,
+          2
+        ),
+      ].join("\n"),
+    },
+  ];
+}
+
+function buildDebateTurnPrompt(context) {
+  const participantIds = context.participants.map((person) => person.id).join(", ");
+  return [
+    {
+      role: "system",
+      content: [
+        "你是 Philophany 的二人辩论导演。",
+        "你只生成当前这一位哲学家的发言，不替另一位说话。",
+        "必须严格依据给定角色卡、所选张力角度、pairRelations 和最近发言。",
+        "不要伪造具体名言、书名章节、页码或历史事实。可以概括思想，但不要假装引用原文。",
+        "中文输出。必须只返回合法 JSON，不要 Markdown，不要代码块。",
+      ].join("\n"),
+    },
+    {
+      role: "user",
+      content: [
+        "二人辩论协议：",
+        "1. 每次只生成一位哲学家的发言，speakerId 必须是 currentSpeakerId。",
+        "2. 发言必须围绕 angle，不要滑向通用圆桌发言。",
+        "3. 如果已有上一条哲学家发言，必须回应上一条中的一个具体主张；可以反驳、澄清、重框、追问或给例子。",
+        "4. 提及对方观点时，必须保留对方自己的核心概念和问题意识，不能把对方同化成自己的概念。",
+        "5. 可以锋利、有脾气，但不能辱骂或人身攻击用户。",
+        "6. 高频或中频 exampleStyle 的哲学家可以用短例子；低频者可以少用例子，但仍要把分歧讲清楚。",
+        "7. 如果用户插入 intervention，先回应用户插入，再接回所选张力角度。",
+        "8. role 用短标签，例如 开场、反驳、澄清、重框、追问、例子检验、回应插入。",
+        "",
+        "风格分离协议：",
+        "9. 如果当前哲学家有 debateVoiceGuardrails，必须优先服从其中的 style、mustDo 和 mustAvoid；这比通用辩论协议更具体。",
+        "10. 不要让所有哲学家共享“复述对方-提出比喻-反问”的同一种辩论腔；当前发言必须听起来明显属于 currentSpeakerId。",
+        "11. speechPersona.sampleLines 只用于模仿语气，绝不能当作已经发生的对话、对方观点、历史事实或可引用原文。",
+        "12. 开场发言只能回应 angle.openingQuestion、pairRelations、stanceDifferences 和用户插入；不能回应角色卡样例句。",
+        "",
+        `只允许 speakerId 为 currentSpeakerId；participants 为：${participantIds}`,
+        "",
+        "上下文 JSON：",
+        JSON.stringify(context, null, 2),
+        "",
+        "输出格式：",
+        JSON.stringify(
+          {
+            message: {
+              speakerId: "kant",
+              role: "反驳",
+              text: "中文发言",
+            },
+          },
+          null,
+          2
+        ),
+      ].join("\n"),
+    },
+  ];
+}
+
+function buildSocraticPrompt(context) {
+  const isSelfUnderstanding = context.userIntent === "synthesize_self_understanding";
+  const isViewRequest = context.userIntent === "ask_socrates_view";
+  const isRedirect = context.socraticControl?.shouldRedirect && !isSelfUnderstanding && !isViewRequest;
+  const isTempoShift = context.socraticControl?.shouldShiftTempo && !isSelfUnderstanding && !isViewRequest && !isRedirect;
+  const stanceRequestNote = isSelfUnderstanding
+    ? [
+        "本轮用户点击了“生成自我理解”。",
+        "不要继续追问，不要给人生建议，不要补充哲学史知识。",
+        "请根据当前对话生成一段阶段性的自我理解。你是苏格拉底在对用户说话，必须用第二人称称呼用户。",
+        "避免使用用户自述式主语；应该写成“你真正困惑”“你可能默认”。",
+        "必须包含：真正困惑的焦点、当前在乎的价值、可能前提、内部张力、还没想清楚的问题。",
+      ].join("\n")
+    : isViewRequest
+      ? [
+          "本轮用户不是在回答上一问，而是在问苏格拉底“你怎么看”。",
+          "这时必须先给一个简短的苏格拉底式判断或镜像，不要立刻继续原先那一个问题。",
+          "不要套用回题句式，例如“如果放回……”。",
+          "格式：先用 1 到 2 句说明你目前怎么看用户的说法，再用 1 个问题把主动权交还给用户。",
+        ].join("\n")
+    : isTempoShift
+      ? [
+          "连续定义追问已经够多，本轮不要再问“X 是什么 / X 是指什么”。",
+          "请换成例子、反例、判断标准或选择代价，让用户把已经澄清的概念用起来。",
+          "不把原问题的直接概念链误判为偏题；直接概念可以追问，但追问节奏要变化。",
+        ].join("\n")
+    : isRedirect
+      ? [
+          "本轮需要从派生局部回到原问题直接提问。",
+          "不要宣布停顿，不要做阶段小结，不要让用户先消化。",
+          "直接围绕 wholeQuestionReminder 提一个自然问题，把当前 focus 接回原问题的直接部分。",
+          "message.role 必须是“追问”，message.text 应以一个问题结束。",
+        ].join("\n")
+      : "本轮用户主要是在回答或补充自己的想法，继续按产婆术推进。";
+  const outputExample = isSelfUnderstanding
+    ? {
+        message: {
+          role: "自我理解",
+          text: "目前你更清楚地看到：你真正困惑的不是要不要努力，而是你如何判断努力是否值得。你在乎的似乎是结果之外的某种不自欺；你可能默认意义必须被证明，所以一旦没有确定结果就会动摇。还没想清楚的是：什么样的努力，即使没有外部回报，你也愿意承认它不是空的？",
+        },
+        socraticState: {
+          originalQuestion: "用户最初的问题",
+          currentUnderstanding: "用户正在形成一段关于意义和判断标准的阶段性自我理解。",
+          keyTerms: ["意义"],
+          clarifiedTerms: ["意义：用户暂时把它和结果感联系在一起"],
+          userClaims: ["用户认为努力可能只是自我说服"],
+          assumptions: ["有意义的事需要某种可见结果"],
+          tensions: ["怀疑努力的意义，但仍希望努力不是空的"],
+          openQuestions: ["什么样的努力即使没有外部回报也不是空的？"],
+          focus: "努力是否必须被结果证明",
+          wholeQuestionReminder: "用户不是只在问结果，而是在问努力、意义和自我说服之间的关系。",
+          driftCheck: "none",
+          stage: "summarizing",
+        },
+        stage: "summarizing",
+      }
+    : isTempoShift
+      ? {
+          message: {
+            role: "例子追问",
+            text: "换个方式问：在一个具体处境里，什么时候它会让你觉得值得主动推动，什么时候又会让你觉得已经背离了自己？",
+          },
+          socraticState: {
+            originalQuestion: "用户最初的问题",
+            currentUnderstanding: "用户已经连续澄清了几个概念，现在需要把概念放回具体判断。",
+            keyTerms: ["无为", "有为"],
+            clarifiedTerms: ["有为：用户暂时把它和主动推动联系在一起"],
+            userClaims: ["用户认为有为带有主动性"],
+            assumptions: ["主动推动是否值得取决于它是否背离自己"],
+            tensions: ["主动推动 vs 不背离自己"],
+            openQuestions: ["什么样的主动推动仍然没有背离自己？"],
+            focus: "主动推动是否背离自己",
+            wholeQuestionReminder: "用户在问应该无为还是有为。",
+            driftCheck: "none",
+            stage: "finding_tension",
+          },
+          stage: "finding_tension",
+        }
+    : isRedirect
+      ? {
+          message: {
+            role: "追问",
+            text: "所以你是不是在重新理解“努力”：它不只是追求结果，而是某种不背离自己的行动？这个理解成立吗？",
+          },
+          socraticState: {
+            originalQuestion: "用户最初的问题",
+            currentUnderstanding: "用户正在把局部例子接回原问题的直接分歧。",
+            keyTerms: ["意义"],
+            clarifiedTerms: ["意义：用户暂时把它和结果感联系在一起"],
+            userClaims: ["用户认为努力可能只是自我说服"],
+            assumptions: ["有意义的事需要某种可见结果"],
+            tensions: ["怀疑努力的意义，但仍希望努力不是空的"],
+            openQuestions: ["什么样的努力即使没有外部回报也不是空的？"],
+            focus: "努力是否需要被结果证明",
+            wholeQuestionReminder: "用户不是只在问结果，而是在问努力、意义和自我说服之间的关系。",
+            driftCheck: "none",
+            stage: "finding_tension",
+          },
+          stage: "finding_tension",
+        }
+    : {
+        message: {
+          role: "追问",
+          text: "一句短回应或追问，帮助用户继续澄清自己的判断。",
+        },
+        socraticState: {
+          originalQuestion: "用户最初的问题",
+          currentUnderstanding: "一句话说明当前理解",
+          keyTerms: ["意义"],
+          clarifiedTerms: ["意义：用户暂时把它和结果感联系在一起"],
+          userClaims: ["用户认为努力可能只是自我说服"],
+          assumptions: ["有意义的事需要某种可见结果"],
+          tensions: ["怀疑努力的意义，但仍希望努力不是空的"],
+          openQuestions: ["什么样的结果才算足以支撑意义？"],
+          focus: "结果是否支撑意义",
+          wholeQuestionReminder: "用户不是只在问结果，而是在问努力、意义和自我说服之间的关系。",
+          driftCheck: "none",
+          stage: "clarifying_terms",
+        },
+        stage: "clarifying_terms",
+      };
+  return [
+    {
+      role: "system",
+      content: [
+        "你是 Philophany 的苏格拉底产婆术引导者。",
+        "你的目标不是替用户给答案，而是帮助用户把自己的判断、概念和前提生出来。",
+        "你必须主要使用用户自己的词推进对话；不要把对话变成哲学史讲解、心理咨询或人生建议。",
+        "不要伪造苏格拉底、柏拉图或任何文本中的具体名言、章节、页码、历史场景。",
+        "中文输出。必须只返回合法 JSON，不要 Markdown，不要代码块。",
+      ].join("\n"),
+    },
+    {
+      role: "user",
+      content: [
+        "产婆术协议：",
+        "1. 每次只推进一个清楚问题，不要一次抛出多个问题。",
+        "2. 优先追问关键词的含义、判断标准、例外情形、隐藏前提和自相矛盾处。",
+        "3. 追问要短而具体，最好引用用户刚刚说过的词。",
+        "4. 不急着给建议；除非用户明确要求建议，否则不要输出行动清单。",
+        "5. 如果用户表达自我否定或痛苦，可以先承认感受，但不要扮演治疗师；仍回到概念澄清。",
+        "6. 如果发现矛盾，要温和指出：先复述两边，再问用户愿意修正哪一边。",
+        "7. 如果当前追问已经进入原问题派生出的细枝末节，不要继续深挖该局部；应回到原问题的直接部分继续追问。",
+        "8. 如果用户的问题过于抽象，要请用户给一个具体情境或例子。",
+        "9. 回答长度控制在 70 到 150 个中文字符；不要长篇解释。",
+        "10. 如果用户问“你觉得呢”“你怎么看”“你会怎么想”，不要机械继续上一问；先回应你的看法，再给一个追问。",
+        "11. 苏格拉底的看法不是结论裁判，而是对用户说法的临时镜像：指出你听见的前提、张力或可能修正方向。",
+        "12. message.role 只能是：追问、概念澄清、前提追问、温和反诘、小结、例子追问、临时判断、自我理解。",
+        "13. 如果本轮意图是 synthesize_self_understanding，第 1、7、9 条让位于阶段整理：不要提出新的追问，长度可到 260 个中文字符。",
+        "14. 每轮都要更新 focus、wholeQuestionReminder、driftCheck，用它们防止只抓住局部无限深挖。",
+        "15. 如果 driftCheck 是 narrow，下一问必须把当前局部接回原问题全貌；但不把原问题的直接概念链误判为偏题。",
+        "16. 如果 driftCheck 是 off_track，先用一句话拉回原问题，再提一个服务于原问题的问题。",
+        "17. 当输入 socraticState.driftCheck 已经是 narrow 或 off_track 时，message.text 必须明确提到 wholeQuestionReminder 中的另一个维度；不能只继续定义当前 focus。",
+        "18. 当 socraticControl.shouldRedirect 为 true 时，message.role 必须是“追问”，并且 message.text 要回到原问题直接提问。",
+        "19. 当 socraticControl.shouldShiftTempo 为 true 时，连续定义追问已经够多；必须改问例子、反例、判断标准或选择代价。",
+        "20. 用户已经提出新的区分标准时，优先追问是否要改写定义；不要反复把焦点归类到二分选项里。",
+        "",
+        "本轮用户意图：",
+        stanceRequestNote,
+        "",
+        "socraticState 规则：",
+        "- originalQuestion：用户最初的问题。",
+        "- currentUnderstanding：一句话说明当前对用户问题的理解。",
+        "- keyTerms：最多 6 个关键词。",
+        "- clarifiedTerms：最多 6 个已稍微澄清的概念。",
+        "- userClaims：最多 6 个用户已经表达过的判断。",
+        "- assumptions：最多 6 个可能前提。",
+        "- tensions：最多 5 个内部张力。",
+        "- openQuestions：最多 5 个还需要继续追问的问题。",
+        "- focus：这一轮正在追问的问题局部。",
+        "- wholeQuestionReminder：一句话提醒原问题的整体理解。",
+        "- driftCheck：只能是 none、narrow、off_track。none 表示仍服务于原问题；narrow 表示正在局部深挖，需要接回全貌；off_track 表示已经偏离，需要先拉回。",
+        "- stage 只能是 starting、clarifying_terms、testing_assumptions、finding_tension、summarizing。",
+        "",
+        "上下文 JSON：",
+        JSON.stringify(context, null, 2),
+        "",
+        "输出格式：",
+        JSON.stringify(outputExample, null, 2),
+      ].join("\n"),
+    },
+  ];
 }
 
 function buildQuestionAnalysisPrompt({ question, knownTopics, knownConcepts, philosophers }) {
@@ -779,6 +1332,371 @@ function sanitizeDynamicRound(value) {
   };
 }
 
+function sanitizeSocraticContext(body) {
+  const input = safeString(body.input || body.message || body.reply, 900);
+  const question = safeString(body.question, 700) || input;
+  if (!input && !question) {
+    throw new Error("question or input is required.");
+  }
+  const history = sanitizeSocraticHistory(body.history);
+  const socraticState = sanitizeSocraticState(body.socraticState || body.state);
+
+  return {
+    question: question || "我想把自己的困惑想清楚。",
+    input: input || question,
+    userIntent: sanitizeSocraticUserIntent(body.userIntent || inferSocraticUserIntent(input)),
+    history,
+    socraticState,
+    socraticControl: sanitizeSocraticControl(body.socraticControl, history, socraticState),
+  };
+}
+
+function inferSocraticUserIntent(input) {
+  return /你觉得呢|你怎么看|你认为呢|你会怎么想|你说呢|你的看法|给我一点判断|直接说/.test(input)
+    ? "ask_socrates_view"
+    : "answer";
+}
+
+function sanitizeSocraticUserIntent(value) {
+  const intent = safeString(value, 40);
+  return ["ask_socrates_view", "synthesize_self_understanding"].includes(intent) ? intent : "answer";
+}
+
+function sanitizeSocraticHistory(value) {
+  const allowedSpeakers = new Set(["user", "socrates"]);
+  return Array.isArray(value)
+    ? value
+        .map((message) => {
+          const speaker = safeString(message.speaker || message.speakerId, 30);
+          return {
+            speaker: allowedSpeakers.has(speaker) ? speaker : "user",
+            role: safeString(message.role, 30),
+            text: safeString(message.text, 520),
+          };
+        })
+        .filter((message) => message.text)
+        .slice(-16)
+    : [];
+}
+
+function sanitizeSocraticControl(value, history, socraticState) {
+  const control = value && typeof value === "object" ? value : {};
+  const userAnswerCount = userAnswerCountSinceSocraticRedirect(history);
+  const explicitRedirect = control.shouldRedirect === true;
+  const shouldShiftTempo = isDefinitionChainStale(history);
+  const shouldRedirect = shouldRedirectSocraticThread(history, socraticState, explicitRedirect);
+  const reason = explicitRedirect
+    ? "requested"
+    : ["narrow", "off_track"].includes(socraticState.driftCheck)
+      ? "drift"
+      : shouldShiftTempo
+        ? "definition_chain"
+      : isDerivativeSocraticFocus(socraticState) && userAnswerCount >= 2
+        ? "derivative_focus"
+        : "";
+  return {
+    shouldRedirect,
+    shouldShiftTempo,
+    reason,
+    userAnswerCountSinceRedirect: userAnswerCount,
+  };
+}
+
+function shouldRedirectSocraticThread(history, socraticState, explicitRedirect = false) {
+  const directConceptFocus = hasDirectSocraticConceptFocus(socraticState);
+  const driftRedirect =
+    socraticState.driftCheck === "off_track" || (socraticState.driftCheck === "narrow" && !directConceptFocus);
+  return (
+    explicitRedirect ||
+    driftRedirect ||
+    (isDerivativeSocraticFocus(socraticState) && !directConceptFocus && userAnswerCountSinceSocraticRedirect(history) >= 2)
+  );
+}
+
+function userAnswerCountSinceSocraticRedirect(history) {
+  let count = 0;
+  for (let index = history.length - 1; index >= 0; index -= 1) {
+    const message = history[index];
+    if (message.speaker === "socrates" && ["自我理解"].includes(message.role)) break;
+    if (message.speaker === "socrates" && textLooksLikeSocraticRedirect(message.text)) break;
+    if (message.speaker === "user") count += 1;
+  }
+  return count;
+}
+
+function isDerivativeSocraticFocus(socraticState) {
+  if (hasDirectSocraticConceptFocus(socraticState)) return false;
+  const state = socraticState || {};
+  const focus = safeString(state.focus, 160);
+  const original = safeString(state.originalQuestion || state.wholeQuestionReminder, 260);
+  if (!focus || !original) return false;
+  const focusTerms = importantSocraticTerms(focus);
+  if (focusTerms.length === 0) return false;
+  const originalTerms = new Set(importantSocraticTerms(original));
+  const sharedTerms = focusTerms.filter((term) => originalTerms.has(term));
+  return sharedTerms.length === 0;
+}
+
+function hasDirectSocraticConceptFocus(socraticState) {
+  const state = socraticState || {};
+  const focus = safeString(state.focus, 160);
+  const original = safeString(state.originalQuestion || state.wholeQuestionReminder, 260);
+  if (!focus || !original) return false;
+  const focusTerms = new Set(importantSocraticTerms(focus));
+  const originalTerms = importantSocraticTerms(original);
+  if (originalTerms.some((term) => focusTerms.has(term))) return true;
+  const definitionalFocus = /含义|意思|是指|定义|关系|标准|作用/.test(focus);
+  if (!definitionalFocus) return false;
+  return directSocraticConceptTerms(state).some((term) => {
+    if (concreteSocraticExampleTerm(term)) return false;
+    return focus.includes(term) || term.includes(focus.replace(/的?(含义|意思|定义|关系|标准|作用).*/, ""));
+  });
+}
+
+function directSocraticConceptTerms(socraticState) {
+  const state = socraticState || {};
+  const choice = splitSocraticChoice(state.originalQuestion || state.wholeQuestionReminder || "");
+  const values = [
+    choice?.left,
+    choice?.right,
+    ...(state.keyTerms || []),
+    ...(state.clarifiedTerms || []),
+    ...(state.tensions || []),
+  ];
+  return [...new Set(values.flatMap((value) => importantSocraticTerms(value)).filter((term) => term.length >= 2))];
+}
+
+function concreteSocraticExampleTerm(term) {
+  return /项目|工作|例子|动作|场景|职业|任务|事情|细节/.test(term);
+}
+
+function isDefinitionChainStale(history) {
+  return recentSocraticDefinitionQuestionCount(history) >= 2;
+}
+
+function recentSocraticDefinitionQuestionCount(history) {
+  let count = 0;
+  for (let index = history.length - 1; index >= 0; index -= 1) {
+    const message = history[index];
+    if (message.speaker === "user") continue;
+    if (message.speaker !== "socrates") continue;
+    if (textLooksLikeSocraticRedirect(message.text)) break;
+    if (!textLooksLikeDefinitionQuestion(message.text)) break;
+    count += 1;
+  }
+  return count;
+}
+
+function textLooksLikeDefinitionQuestion(text) {
+  return /(是什么|什么是|是指什么|指什么|什么意思|含义|定义)/.test(safeString(text, 260));
+}
+
+function importantSocraticTerms(value) {
+  const segments = safeString(value, 260).match(/[\u4e00-\u9fffA-Za-z0-9]{2,}/g) || [];
+  const stopWords = new Set([
+    "是否",
+    "什么",
+    "一个",
+    "一些",
+    "怎么",
+    "如何",
+    "还是",
+    "因为",
+    "这个",
+    "那个",
+    "问题",
+    "判断",
+    "标准",
+    "具体",
+    "动作",
+    "需要",
+    "可以",
+  ]);
+  const terms = new Set();
+  for (const segment of segments) {
+    const trimmed = segment.trim();
+    if (trimmed.length <= 4 && !stopWords.has(trimmed)) terms.add(trimmed);
+    for (let index = 0; index <= trimmed.length - 2; index += 1) {
+      const term = trimmed.slice(index, index + 2);
+      if (!stopWords.has(term)) terms.add(term);
+    }
+  }
+  return [...terms];
+}
+
+function textLooksLikeSocraticRedirect(text) {
+  const value = safeString(text, 260);
+  return /分界线|更接近.+还是|更像.+还是|最初在问/.test(value);
+}
+
+function sanitizeSocraticRole(value) {
+  const role = safeString(value, 30);
+  const allowedRoles = new Set(["追问", "概念澄清", "前提追问", "温和反诘", "小结", "例子追问", "临时判断", "自我理解"]);
+  return allowedRoles.has(role) ? role : "追问";
+}
+
+function enforceSocraticDriftText(text, context) {
+  if (!text) return "";
+  const driftCheck = context?.socraticState?.driftCheck;
+  const reminder = safeString(context?.socraticState?.wholeQuestionReminder, 180);
+  if (!["narrow", "off_track"].includes(driftCheck) || !reminder) return text;
+  if (hasDirectSocraticConceptFocus(context?.socraticState)) return text;
+  if (text.includes(reminder) || reminder.includes(text)) return text;
+  return safeString(`如果放回「${reminder}」里看，${text}`, 520);
+}
+
+function enforceSocraticRedirectText(text, context) {
+  const state = context?.socraticState || {};
+  const reminder = stripSentenceEnd(toSecondPersonSocraticLine(state.wholeQuestionReminder || context?.question, 180)) || "原问题仍需要被整体看见";
+  const focus = stripSentenceEnd(toSecondPersonSocraticLine(state.focus, 120)) || "刚才这一点";
+  return safeString(buildSocraticRedirectQuestion(context, reminder, focus), 520);
+}
+
+function buildSocraticRedirectQuestion(context, reminder, focus) {
+  if (shouldAskForSocraticDefinitionRevision(context)) {
+    return buildSocraticDefinitionRevisionQuestion(context, reminder, focus);
+  }
+  const choice = splitSocraticChoice(reminder);
+  if (choice) {
+    return `那「${focus}」更像是在支持「${choice.left}」，还是支持「${choice.right}」？决定它的关键细节是什么？`;
+  }
+  return `那「${focus}」和你最初在问的「${reminder}」之间，哪一步关系最需要分清？`;
+}
+
+function shouldAskForSocraticDefinitionRevision(context) {
+  const state = context?.socraticState || {};
+  const material = [
+    state.focus,
+    state.currentUnderstanding,
+    ...(state.clarifiedTerms || []),
+    ...(state.userClaims || []),
+    ...(state.assumptions || []),
+    ...(state.tensions || []),
+  ].join(" ");
+  return /区分|区别|标准|界限|不违背|背离|自然状态|内在|攀比|强迫|刻意/.test(material);
+}
+
+function buildSocraticDefinitionRevisionQuestion(context, reminder, focus) {
+  const state = context?.socraticState || {};
+  const choice = splitSocraticChoice(reminder);
+  const standard = normalizeSocraticDefinitionStandard(extractSocraticDefinitionStandard(state) || focus);
+  if (choice) {
+    return `所以你是不是在重新理解「${choice.left}」：它不是完全不行动，而是「${standard}」？那「${choice.right}」和它的真正分界在哪里？`;
+  }
+  return `所以你是不是在重新理解原问题：关键不在「${focus}」本身，而在「${standard}」这个标准是否成立？`;
+}
+
+function extractSocraticDefinitionStandard(state) {
+  const candidates = [
+    ...(state.userClaims || []),
+    ...(state.clarifiedTerms || []),
+    ...(state.assumptions || []),
+    state.focus,
+    ...(state.tensions || []),
+  ].map((value) => stripSentenceEnd(toSecondPersonSocraticLine(value, 120)));
+  return (
+    candidates.find((value) => /争取但不违背|不违背自然状态|违背自然状态|背离自己|攀比|强迫|刻意/.test(value)) ||
+    candidates.find((value) => /区分|区别|标准|界限/.test(value)) ||
+    ""
+  );
+}
+
+function normalizeSocraticDefinitionStandard(value) {
+  return stripSentenceEnd(toSecondPersonSocraticLine(value, 120))
+    .replace(/^.+?[：:]\s*/, "")
+    .replace(/可以是(无为|有为)$/g, "")
+    .replace(/仍可算(无为|有为)$/g, "")
+    .replace(/可能代表(无为|有为)$/g, "")
+    .replace(/^(用户认为|你认为|你开始理解为|你暂时理解为)/, "")
+    .replace(/^主动争取但/, "争取但")
+    .trim();
+}
+
+function buildSocraticTempoShiftQuestion(context) {
+  const state = context?.socraticState || {};
+  const reminder = stripSentenceEnd(toSecondPersonSocraticLine(state.wholeQuestionReminder || context?.question, 180)) || "原问题";
+  const focus = stripSentenceEnd(toSecondPersonSocraticLine(state.focus, 100)) || "刚才这个判断";
+  const choice = splitSocraticChoice(reminder);
+  if (choice) {
+    return safeString(
+      `换个方式问：在一个具体处境里，什么会让「${focus}」仍然属于「${choice.left}」，什么又会让它变成「${choice.right}」？`,
+      520
+    );
+  }
+  return safeString(`换个方式问：你能不能举一个具体处境，让「${focus}」真正影响你的选择？`, 520);
+}
+
+function splitSocraticChoice(value) {
+  const text = stripSentenceEnd(safeString(value, 180).replace(/[？?]/g, ""));
+  const match = text.match(/(.+?)(?:还是|或是|或者)(.+)/);
+  if (!match) return null;
+  const left = cleanSocraticChoicePart(match[1]);
+  const right = cleanSocraticChoicePart(match[2]);
+  return left && right ? { left, right } : null;
+}
+
+function cleanSocraticChoicePart(value) {
+  return safeString(value, 80)
+    .replace(/^(你|我|我们|到底|究竟|应该|应当|要不要|能不能|是否|是不是|该不该)/, "")
+    .replace(/[，,。；;：:]+$/g, "")
+    .trim();
+}
+
+function toSecondPersonSocraticLine(value, maxLength) {
+  return safeString(value, maxLength).replaceAll("用户", "你");
+}
+
+function stripSentenceEnd(value) {
+  return safeString(value, 220).replace(/[。！？!?]+$/g, "");
+}
+
+function enforceSocraticSecondPersonText(text, context, role) {
+  if (!text || context?.userIntent !== "synthesize_self_understanding" || role !== "自我理解") return text;
+  return text
+    .replaceAll("目前我更清楚地看到", "目前你更清楚地看到")
+    .replaceAll("我真正", "你真正")
+    .replaceAll("我如何", "你如何")
+    .replaceAll("我在乎", "你在乎")
+    .replaceAll("我可能", "你可能")
+    .replaceAll("我已经", "你已经")
+    .replaceAll("我还", "你还")
+    .replaceAll("我需要", "你需要")
+    .replaceAll("我也", "你也")
+    .replaceAll("我愿意", "你愿意");
+}
+
+function sanitizeSocraticStage(value) {
+  const stage = safeString(value, 40);
+  const allowedStages = new Set([
+    "starting",
+    "clarifying_terms",
+    "testing_assumptions",
+    "finding_tension",
+    "summarizing",
+  ]);
+  return allowedStages.has(stage) ? stage : "clarifying_terms";
+}
+
+function sanitizeSocraticState(value) {
+  const state = value && typeof value === "object" ? value : {};
+  const driftCheck = safeString(state.driftCheck, 30);
+  const allowedDriftChecks = new Set(["none", "narrow", "off_track"]);
+  return {
+    originalQuestion: safeString(state.originalQuestion, 220),
+    currentUnderstanding: safeString(state.currentUnderstanding, 260),
+    keyTerms: safeStringArray(state.keyTerms, 6, 40),
+    clarifiedTerms: safeStringArray(state.clarifiedTerms, 6, 120),
+    userClaims: safeStringArray(state.userClaims, 6, 140),
+    assumptions: safeStringArray(state.assumptions, 6, 140),
+    tensions: safeStringArray(state.tensions, 5, 140),
+    openQuestions: safeStringArray(state.openQuestions, 5, 140),
+    focus: safeString(state.focus, 120),
+    wholeQuestionReminder: safeString(state.wholeQuestionReminder, 180),
+    driftCheck: allowedDriftChecks.has(driftCheck) ? driftCheck : "none",
+    stage: sanitizeSocraticStage(state.stage),
+  };
+}
+
 function speakerTurnStats(context) {
   const stats = Object.fromEntries(
     context.participants.map((person) => [
@@ -853,6 +1771,122 @@ function sanitizeExampleStyle(value) {
     signatureExample,
   };
   return preferredExampleForms.length || avoidExampleForms.length || signatureExample ? exampleStyle : {};
+}
+
+function sanitizeDebateVoiceGuardrails(value) {
+  if (!value || typeof value !== "object") return {};
+  const mustDo = safeStringArray(value.mustDo, 4, 110);
+  const mustAvoid = safeStringArray(value.mustAvoid, 4, 110);
+  const guardrails = {
+    style: safeString(value.style, 180),
+    mustDo,
+    mustAvoid,
+  };
+  return guardrails.style || mustDo.length || mustAvoid.length ? guardrails : {};
+}
+
+function sanitizeDebateContext(body) {
+  const participants = Array.isArray(body.participants)
+    ? body.participants
+        .map(sanitizeDebateParticipant)
+        .filter((person) => person.id && person.name)
+        .slice(0, 2)
+    : [];
+  if (participants.length !== 2) {
+    throw new Error("Debate requires exactly two participants.");
+  }
+  const participantIds = new Set(participants.map((person) => person.id));
+  const requestedSpeakerId = safeString(body.currentSpeakerId, 40);
+  const currentSpeakerId = participantIds.has(requestedSpeakerId) ? requestedSpeakerId : participants[0].id;
+  return {
+    participants,
+    currentSpeakerId,
+    angle: sanitizeDebateAngle(body.angle),
+    intervention: safeString(body.intervention, 500),
+    pairRelations: Array.isArray(body.pairRelations)
+      ? body.pairRelations
+          .map((relation) => ({
+            source: safeString(relation.source, 40),
+            target: safeString(relation.target, 40),
+            sourceName: safeString(relation.sourceName, 40),
+            targetName: safeString(relation.targetName, 40),
+            type: safeString(relation.type, 30),
+            weight: clampNumber(Number(relation.weight), 0, 1),
+            reason: safeString(relation.reason, 260),
+          }))
+          .filter((relation) => participantIds.has(relation.source) && participantIds.has(relation.target))
+          .slice(0, 8)
+      : [],
+    stanceDifferences: Array.isArray(body.stanceDifferences)
+      ? body.stanceDifferences
+          .map((axis) => ({
+            dimensionId: safeString(axis.dimensionId, 40),
+            label: safeString(axis.label, 80),
+            firstPosition: safeString(axis.firstPosition, 60),
+            secondPosition: safeString(axis.secondPosition, 60),
+            gap: clampNumber(Number(axis.gap), 0, 2),
+          }))
+          .filter((axis) => axis.label)
+          .slice(0, 5)
+      : [],
+    recentConversation: Array.isArray(body.recentConversation)
+      ? body.recentConversation
+          .map((message) => ({
+            speakerId: safeString(message.speakerId, 40),
+            speaker: safeString(message.speaker, 40),
+            role: safeString(message.role, 30),
+            text: safeString(message.text, 420),
+          }))
+          .slice(-10)
+      : [],
+  };
+}
+
+function sanitizeDebateParticipant(person) {
+  return {
+    id: safeString(person.id, 40),
+    name: safeString(person.name, 40),
+    tradition: safeString(person.tradition, 80),
+    coreConcepts: safeStringArray(person.coreConcepts, 8, 40),
+    topics: safeStringArray(person.topics, 10, 30),
+    stance: typeof person.stance === "object" && person.stance ? person.stance : {},
+    voice: safeString(person.voice, 220),
+    speechPersona: sanitizeSpeechPersona(person.speechPersona),
+    exampleStyle: sanitizeExampleStyle(person.exampleStyle),
+    debateVoiceGuardrails: sanitizeDebateVoiceGuardrails(person.debateVoiceGuardrails),
+    summary: safeString(person.summary, 320),
+    questionHooks: safeStringArray(person.questionHooks, 6, 120),
+  };
+}
+
+function sanitizeDebateAngles(value) {
+  const rawAngles = Array.isArray(value?.angles) ? value.angles : Array.isArray(value) ? value : [];
+  return rawAngles
+    .map((angle, index) => sanitizeDebateAngle({ ...angle, id: angle?.id || `angle-${index + 1}` }))
+    .filter((angle) => angle.title && angle.focus)
+    .slice(0, 3);
+}
+
+function sanitizeDebateAngle(value) {
+  const angle = value && typeof value === "object" ? value : {};
+  return {
+    id: safeString(angle.id, 40),
+    title: safeString(angle.title, 60),
+    focus: safeString(angle.focus, 220),
+    reason: safeString(angle.reason, 260),
+    openingQuestion: safeString(angle.openingQuestion, 180),
+  };
+}
+
+function sanitizeDebateMessage(value, context) {
+  const raw = value && typeof value === "object" ? value : {};
+  const speakerId = safeString(raw.speakerId, 40);
+  const allowedId = context.participants.some((person) => person.id === speakerId) ? speakerId : context.currentSpeakerId;
+  return {
+    speakerId: allowedId,
+    role: safeString(raw.role, 18) || "回应",
+    text: safeString(raw.text, 900),
+  };
 }
 
 function sanitizeContext(body) {
@@ -1167,6 +2201,23 @@ function readJsonBody(request) {
   });
 }
 
+async function fetchWithTimeout(url, options = {}, timeoutMs = 30_000) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function isAbortError(error) {
+  return error?.name === "AbortError" || error?.code === "ABORT_ERR";
+}
+
 function parseModelJson(content) {
   const trimmed = content.trim();
   try {
@@ -1187,8 +2238,13 @@ function safeStringArray(value, maxItems, maxLength) {
 }
 
 function sanitizeModel(value) {
-  const model = safeString(value, 120);
-  return /^[a-zA-Z0-9._:/-]+$/.test(model) ? model : DEFAULT_ANALYSIS_MODEL;
+  const model = normalizeDeepSeekModel(value);
+  return /^deepseek-[a-z0-9._-]+$/i.test(model) ? model : DEFAULT_ANALYSIS_MODEL;
+}
+
+function normalizeDeepSeekModel(value) {
+  const model = safeString(value, 120).replace(/^deepseek\//, "");
+  return model || "deepseek-v4-pro";
 }
 
 function clampNumber(value, min, max) {
@@ -1200,8 +2256,8 @@ function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function getOpenRouterKey() {
-  return process.env.OPENROUTER_API_KEY || "";
+function getDeepSeekKey() {
+  return process.env.DEEPSEEK_API_KEY || "";
 }
 
 function sendJson(response, status, data) {
